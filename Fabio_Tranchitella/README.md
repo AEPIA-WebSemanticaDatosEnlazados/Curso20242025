@@ -15,7 +15,7 @@
   - [2.2. Analysis of the data set](#22-analysis-of-the-data-set)
   - [2.3. Naming stratregy](#23-naming-strategy)
   - [2.4. Ontology development](#24-ontology-development)
-- [9. Bibliography](#9-bibliography)
+- [5. Bibliography](#5-bibliography)
 
 ## 1. Introduction
 
@@ -45,13 +45,13 @@ As stated on the website, the data set is licensed under the terms of the Creati
 
 As explained in the legal terms of the licenes, the user is free to share the material, including adapt and transform it. However, the user must give appropriate credit to the publisher of the data set, provide a link to the license and indicate if changes were made. Additionally, the user cannot use this data set for commercial purposes.
 
-For more details about the legal terms of the license, please refer to the creativecommons.org website linked in the [bibliography](#9-bibliography).
+For more details about the legal terms of the license, please refer to the creativecommons.org website linked in the [bibliography](#5-bibliography).
 
 #### License of the transformed linked data set resulting from the project
 
 Given that the original license of the data set is a well-known, standard, open license, I selected the Creative Commons Attribution-NonCommercial 4.0 International ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)) one for the transformed and linked data. It is the same license as the one initially used by the publisher of the data set, therefore fully compatible, though a newer and updated version as suggested by the Creative Commons website.
 
-For more details about the legal terms of the license, please refer to the creativecommons.org website linked in the [bibliography](#9-bibliography) and the [LICENSE](./LICENSE) file included in this repository.
+For more details about the legal terms of the license, please refer to the creativecommons.org website linked in the [bibliography](#5-bibliography) and the [LICENSE](./LICENSE) file included in this repository.
 
 #### Explorative Data Analysis of the data set
 
@@ -115,7 +115,7 @@ These are the URIs we will therefore generate:
 
 As we are using multi-dimensional statistical data, I will make use of the [RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube/).
 
-## 9. Bibliography
+## 5. Bibliography
 
 This project leverages the following resources available in the Internet:
 
