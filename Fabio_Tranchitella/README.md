@@ -65,8 +65,8 @@ The columns available in the data set are:
 * **Geographic area**: (Text) English name of the country (e.g. `Afghanistan`)
 * **INDICATOR**: (Text) Code of the indicator (e.g. `CME_MRY0`)
 * **Indicator**: (Text) English name of the indicator (e.g. `Infant mortality rate`)
-* **SEX**: (Text) Gender code for the subset of the population the indicator is referred to (e.g. `F`)
-* **Sex**: (Text) Gender description for the subset of the population the indicator is referred to (e.g. `Female`)
+* **SEX**: (Text) Sex code for the subset of the population the indicator is referred to (e.g. `F`)
+* **Sex**: (Text) Sex description for the subset of the population the indicator is referred to (e.g. `Female`)
 * **WEALTH_QUINTILE**: (Text) Code of the wealth quintile the indicator is referred to (e.g. `_T`)
 * **Wealth Quintile**: (Text) Description of the wealth quintile the indicator is referred to (e.g. `Total`)
 * **DATA_SOURCE**: (Text) Code of the division/entity publishing the data (e.g. `UN_IGME`)
@@ -85,7 +85,7 @@ I transformed the columns marked as Integer and Float from the list above to num
 
 Using the Facets functionality, I verified the number of distinct values for the following columns: **INDICATOR**, **Indicator**, **WEALTH_QUINTILE**, **Wealth Quintile**, **DATA_SOURCE**, **UNIT_MEASURE**, **Unit of measure**, **REF_PERIOD**, **OBS_STATUS**, **Observation Status**. As all these columns contained precisely one value, they did not add any value to single records, so I dropped them.
 
-Additionally, the **Sex** column does not add any value to the data set, as it contains the gender description, which always matches the gender code specified in the column **SEX**, as I verified using Facets.
+Additionally, the **Sex** column does not add any value to the data set, as it contains the sex description, which always matches the sex code specified in the column **SEX**, as I verified using Facets.
 
 Using the Facets functionality and a simple sort, I verified the data ranges of the numerical values **OBS_VALUE**, **LOWER_BOUND**, and **UPPER_BOUND** and looked for outliers or anomalies. The data set does not contain spurious or out-of-range data, with maximum values for the indicators 293, 245, and 352, respectively. Given that the indicator is the number of deaths per 1,000 live births, values below 1,000 are congruent.
 
