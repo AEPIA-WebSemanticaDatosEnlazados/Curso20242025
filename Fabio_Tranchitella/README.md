@@ -13,6 +13,8 @@
 - [2. Transformation process](#2-transformation-process)
   - [2.1. Selection of the data set](#21-selection-of-the-data-set)
   - [2.2. Analysis of the data set](#22-analysis-of-the-data-set)
+  - [2.3. Naming stratregy](#23-naming-strategy)
+  - [2.4. Ontology development](#24-ontology-development)
 - [9. Bibliography](#9-bibliography)
 
 ## 1. Introduction
@@ -91,6 +93,28 @@ Using the Facets functionality and a simple sort, I verified the data ranges of 
 
 ![Data Ranges in OpenRefine](./images/openrefine-ranges.png)
 
+### 2.3. Naming strategy
+
+We will use the hash (`#`) as a separator for the ontology terms because the Ontology will include a limited number of items that will rarely change.
+
+We will use the slash (`/`) to publish statistical data for the individuals in the data set. This decision follows the suggestions from the course's training materials. It is based on the fact that the number of individual data points we will publish is significant (several tens of thousands), and fetching different documents is more efficient than downloading a single document with the whole data set.
+
+In this project we assume we control the unicef.org domain name; therefore, we will use the following prefixes:
+
+* `http://data.unicef.org/ontology/imr#` for the ontology terms;
+* `http://data.unicef.org/resource/imr/` for the individuals.
+
+These are the URIs we will therefore generate:
+
+* `http://data.unicef.org/ontology/imr#<term>` for ontology terms;
+* `http://data.unicef.org/resource/imr/<id>` for the individuals.
+
+### 2.4. Ontology development
+
+#### W3C Data Cube
+
+As we are using multi-dimensional statistical data, I will make use of the [RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube/).
+
 ## 9. Bibliography
 
 This project leverages the following resources available in the Internet:
@@ -101,3 +125,4 @@ This project leverages the following resources available in the Internet:
 - [CC BY-NC 3.0 IGO license](https://creativecommons.org/licenses/by-nc/3.0/igo/deed.en)
 - [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)
 - [OpenRefine](https://openrefine.org)
+- [The RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube/)
