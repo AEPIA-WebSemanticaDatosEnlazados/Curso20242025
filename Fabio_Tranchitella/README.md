@@ -15,6 +15,8 @@
   - [2.2. Analysis of the data set](#22-analysis-of-the-data-set)
   - [2.3. Naming stratregy](#23-naming-strategy)
   - [2.4. Ontology development](#24-ontology-development)
+- [3. Application and consumption](#3-application-and-consumption)
+  - [3.1. Apache Jena Fuseki](#31-apache-jena-fuseki)
 - [5. Bibliography](#5-bibliography)
 
 ## 1. Introduction
@@ -115,6 +117,60 @@ These are the URIs we will therefore generate:
 
 As we are using multi-dimensional statistical data, I will make use of the [RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube/).
 
+## 3. Application and consumption
+
+### 3.1. Apache Jena Fuseki
+
+I will make use of [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) to load and consume the linked data resulting from the steps above. Apache Jena Fuseki is a SPARQL server, and it includes a webapp with a User Interface for admin and query.
+
+I run the application using Docker Compose, where I configured the default password for the `admin` user (`pw`) and the automatic creation of a dataset named `imr`.
+
+To start the Docker composition, I run the following command:
+
+```bash
+docker compose up -d
+```
+
+I can verify that the application is running with:
+
+```bash
+docker compose ps
+```
+
+The output of the command above is:
+
+```
+NAME                          IMAGE               COMMAND                  SERVICE   CREATED          STATUS          PORTS
+fabio_tranchitella-fuseki-1   stain/jena-fuseki   "/sbin/tini -- sh /d…"   fuseki    29 seconds ago   Up 28 seconds   0.0.0.0:3030->3030/tcp
+```
+
+Finally, I can check the Fuseki logs running:
+
+```bash
+docker compose logs fuseki
+```
+
+The output of the command above is:
+
+```
+fuseki-1  | Waiting for Fuseki to finish starting up...
+fuseki-1  | 19:48:16 INFO  Server          :: Apache Jena Fuseki 5.1.0
+fuseki-1  | 19:48:16 INFO  Config          :: FUSEKI_HOME=/jena-fuseki
+fuseki-1  | 19:48:16 INFO  Config          :: FUSEKI_BASE=/fuseki
+fuseki-1  | 19:48:16 INFO  Config          :: Shiro file: file:///fuseki/shiro.ini
+fuseki-1  | 19:48:17 INFO  Server          :: Configuration file: /fuseki/config.ttl
+fuseki-1  | 19:48:17 INFO  Server          ::   Memory: 4.0 GiB
+fuseki-1  | 19:48:17 INFO  Server          ::   Java:   21.0.4
+fuseki-1  | 19:48:17 INFO  Server          ::   OS:     Linux 5.15.167.4-microsoft-standard-WSL2 amd64
+fuseki-1  | 19:48:17 INFO  Server          ::   PID:    10
+fuseki-1  | 19:48:17 INFO  Server          :: Started 2024/12/04 19:48:17 GMT on port 3030
+fuseki-1  | Fuseki is available :-)
+```
+
+At this point, I can open my browser and point it to http://localhost:3030 to start the Apache Jena Fuseki's UI:
+
+![Apache Jena Fuseki](./images/fuseki.png)
+
 ## 5. Bibliography
 
 This project leverages the following resources available in the Internet:
@@ -126,3 +182,4 @@ This project leverages the following resources available in the Internet:
 - [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/)
 - [OpenRefine](https://openrefine.org)
 - [The RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube/)
+- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
