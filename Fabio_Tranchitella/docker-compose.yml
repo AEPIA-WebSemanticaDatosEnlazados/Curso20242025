@@ -6,7 +6,9 @@ services:
     environment:
       - ADMIN_PASSWORD=pw
       - FUSEKI_DATASET_1=imr
+      - TDB=2
     volumes:
+      - ./ontology:/staging
       - fuseki_data:/fuseki
 
 volumes:
