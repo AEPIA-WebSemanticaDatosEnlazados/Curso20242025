@@ -366,6 +366,38 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val WHERE {
 } LIMIT 10
 ```
 
+Finally, to enrich our data set with information from other linked data, we can join it with Wikidata. For example, if we want to retrieve for each row not only the Infant Mortality Rate, but also the population and the area (squared kms) of the country, we can run the following query:
+
+```sparql
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX imr: <http://data.unicef.org/ontology/imr#>
+PREFIX sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val ?population ?area WHERE {
+  ?sub imr:infantMortalityRate ?val .
+  ?sub sdmx-dimension:sex ?sex .
+  ?sub imr:country ?country .
+  ?sub imr:year ?year .
+  ?country imr:countryName ?countryName .
+  ?country imr:isoAlpha3Code ?isoAlpha3Code .
+  ?country owl:sameAs ?sameAsUri
+  FILTER (?isoAlpha3Code = "KEN")
+  FILTER (?year = "2000"^^xsd:gYear )
+
+  BIND(IRI(REPLACE(REPLACE(STR(?sameAsUri), "/wiki/", "/entity/"), "https://", "http://")) AS ?wikidataEntity)
+
+  SERVICE  <https://query.wikidata.org/bigdata/namespace/wdq/sparql>
+  {
+    ?wikidataEntity wdt:P298 ?isoCode;       # ISO 3166-1 alpha-3 code
+                    wdt:P1082 ?population;   # Population
+                    wdt:P2046 ?area.         # Area
+  }
+} LIMIT 10
+```
+
 ## 5. Bibliography
 
 This project leverages the following resources available in the Internet:
