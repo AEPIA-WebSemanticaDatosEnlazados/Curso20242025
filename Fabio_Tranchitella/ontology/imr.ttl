@@ -1,0 +1,278 @@
+@prefix : <http://data.unicef.org/ontology/imr#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@base <http://data.unicef.org/ontology/imr#> .
+
+<http://data.unicef.org/ontology/imr#> rdf:type owl:Ontology ;
+                                        cc:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+                                        rdfs:comment "Ontology for the Infant Mortality Rate (IMR) index published by UNICEF."@en ;
+                                        rdfs:label "Infant Mortality Rate (IMR)"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+cc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://data.unicef.org/ontology/imr#country
+:country rdf:type owl:AnnotationProperty ;
+         rdfs:subPropertyOf sdmx-dimension:refArea ;
+         rdfs:range :Country .
+
+
+###  http://data.unicef.org/ontology/imr#infantMortalityRate
+:infantMortalityRate rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf sdmx-measure:obsValue .
+
+
+###  http://data.unicef.org/ontology/imr#infantMortalityRateLowerBound
+:infantMortalityRateLowerBound rdf:type owl:AnnotationProperty .
+
+
+###  http://data.unicef.org/ontology/imr#infantMortalityRateUpperBound
+:infantMortalityRateUpperBound rdf:type owl:AnnotationProperty .
+
+
+###  http://data.unicef.org/ontology/imr#year
+:year rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf sdmx-dimension:refPeriod ;
+      rdfs:range xsd:gYear .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/cube#component
+qb:component rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/cube#concept
+qb:concept rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/cube#dataSet
+qb:dataSet rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/cube#dimension
+qb:dimension rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/cube#measure
+qb:measure rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/cube#order
+qb:order rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/cube#structure
+qb:structure rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure
+sdmx-attribute:unitMeasure rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/sdmx/2009/dimension#refArea
+sdmx-dimension:refArea rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/sdmx/2009/dimension#refPeriod
+sdmx-dimension:refPeriod rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/linked-data/sdmx/2009/measure#obsValue
+sdmx-measure:obsValue rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#title
+rdfs:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.unicef.org/ontology/imr#country
+:country rdf:type owl:ObjectProperty .
+
+
+###  http://data.unicef.org/ontology/imr#year
+:year rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/linked-data/sdmx/2009/dimension#sex
+sdmx-dimension:sex rdf:type owl:ObjectProperty ;
+                   qb:concept sdmx-concept:sex ;
+                   rdfs:label "Sex"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.unicef.org/ontology/imr#countryName
+:countryName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Country ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The country's name"@en ;
+             rdfs:label "Name"@en .
+
+
+###  http://data.unicef.org/ontology/imr#infantMortalityRate
+:infantMortalityRate rdf:type owl:DatatypeProperty .
+
+
+###  http://data.unicef.org/ontology/imr#infantMortalityRateLowerBound
+:infantMortalityRateLowerBound rdf:type owl:DatatypeProperty .
+
+
+###  http://data.unicef.org/ontology/imr#infantMortalityRateUpperBound
+:infantMortalityRateUpperBound rdf:type owl:DatatypeProperty .
+
+
+###  http://data.unicef.org/ontology/imr#isoAlpha3Code
+:isoAlpha3Code rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Country ;
+               rdfs:range xsd:string ;
+               rdfs:label "ISO Alpha 3 code"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.unicef.org/ontology/imr#Country
+:Country rdf:type owl:Class ;
+         owl:equivalentClass dbo:Country ,
+                             schema:Country ,
+                             geo:Feature ;
+         rdfs:comment "Country for which the IMR is observed"@en ;
+         rdfs:label "Country"@en .
+
+
+###  http://dbpedia.org/ontology/Country
+dbo:Country rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#DataSet
+qb:DataSet rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#DataStructureDefinition
+qb:DataStructureDefinition rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#DimensionProperty
+qb:DimensionProperty rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#MeasureProperty
+qb:MeasureProperty rdf:type owl:Class .
+
+
+###  http://schema.org/Country
+schema:Country rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+geo:Feature rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://data.unicef.org/ontology/imr#InfantMortalityRateDataStructure
+:InfantMortalityRateDataStructure rdf:type owl:NamedIndividual ,
+                                           qb:DataStructureDefinition ;
+                                  qb:component [ qb:dimension sdmx-dimension:sex ;
+                                                 qb:order 2
+                                               ] ,
+                                               [ qb:measure :infantMortalityRateUpperBound ;
+                                                 qb:order 3
+                                               ] ,
+                                               [ qb:measure :infantMortalityRate ;
+                                                 qb:order 1
+                                               ] ,
+                                               [ qb:measure :infantMortalityRateLowerBound ;
+                                                 qb:order 2
+                                               ] ,
+                                               [ qb:dimension :year ;
+                                                 qb:order 3
+                                               ] ,
+                                               [ qb:dimension :country ;
+                                                 qb:order 1
+                                               ] ;
+                                  rdfs:label "Infant Mortality Rate Data Structure"@en .
+
+
+###  http://data.unicef.org/ontology/imr#InfantMortalityRateDataset
+:InfantMortalityRateDataset rdf:type owl:NamedIndividual ,
+                                     qb:DataSet ;
+                            cc:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+                            dcterms:description "A dataset containing infant mortality rates by country, year, and gender."@en ;
+                            dcterms:title "Infant Mortality Rate Data Set"@en ;
+                            qb:structure :InfantMortalityRateDataStructure ;
+                            sdmx-attribute:unitMeasure unit:DEATHS-PER-1000I-YR ;
+                            rdfs:comment "A dataset containing infant mortality rates by country, year, and gender."@en ;
+                            rdfs:label "Infant Mortality Rate Data Set"@en ;
+                            rdfs:title "Infant Mortality Rate Data Set"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:country qb:concept sdmx-concept:refArea ;
+         rdfs:label "Country"@en .
+
+
+:infantMortalityRate rdfs:comment "Number of deaths per 1,000 live births"@en ;
+                     rdfs:label "Infant Mortality Rate"@en .
+
+
+:infantMortalityRateLowerBound rdfs:comment "Lower bound of the number of deaths per 1,000 live births"@en ;
+                               rdfs:label "Infant Mortality Rate Lower Bound"@en .
+
+
+:infantMortalityRateUpperBound rdfs:comment "Upper bound of the number of deaths per 1,000 live births"@en ;
+                               rdfs:label "Infant Mortality Rate Upper Bound"@en .
+
+
+:year qb:concept sdmx-concept:refPeriod ;
+      rdfs:comment "The country's ISO Alpha 3 code for"@en ;
+      rdfs:label "Year"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
