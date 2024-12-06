@@ -21,6 +21,7 @@
 - [3. Application and consumption](#3-application-and-consumption)
   - [3.1. Apache Jena Fuseki](#31-apache-jena-fuseki)
   - [3.2. SPARQL Interface](#32-sparql-interface)
+- [4. Conclusions](#4-conclusions)
 - [5. Bibliography](#5-bibliography)
 
 ## 1. Introduction
@@ -412,6 +413,10 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val ?population ?area WHERE {
   }
 } LIMIT 10
 ```
+
+## 4. Conclusions
+
+Despite the simplicity of the data set and the SPARQL queries, this project provided an end-to-end example of publishing statistical open-linked data for a real-world data set. During the project, I used the typical software instruments and standards employed for this kind of activity and familiarized myself with them. In particular, using OpenRefine, Protégé, and Apache Jena Fuseki was a perfect toolset for architecting, manipulating, and publishing open data.
 
 ## 5. Bibliography
 
