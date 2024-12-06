@@ -17,6 +17,7 @@
   - [2.4. Ontology development](#24-ontology-development)
   - [2.5. Data Reconcilation](#25-data-reconciliation)
   - [2.6. Data serialization to RDF/Turtle](#26-data-serialization-to-rdfturtle)
+  - [2.7. OpenRefine project](#27-openrefine-project)
 - [3. Application and consumption](#3-application-and-consumption)
   - [3.1. Apache Jena Fuseki](#31-apache-jena-fuseki)
   - [3.2. SPARQL Interface](#32-sparql-interface)
@@ -241,6 +242,10 @@ Once the transformation is completed, I verified that all the rows got assigned 
 ### 2.6. Data serialization to RDF/Turtle
 
 At this point, I exported the data using the RDFTransform plugin to a file in RDF/Turtle format. In the very same file, I exported both the countries and the observations. The [RDFTransform template](./rdf-transform/template.json) used for the export can be found in this repository.
+
+### 2.7. OpenRefine project
+
+The OpenRefine project is available [in the repository](./openrefine/Infant-mortality-rate.openrefine.tar.gz). It was exported as project archived using OpenRefine version 3.8.7, and can be imported to further process the data or to re-execute the data cleansing and transformation steps on different data sets.
 
 ## 3. Application and consumption
 
