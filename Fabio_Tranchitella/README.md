@@ -308,7 +308,8 @@ At this point, I can open my browser and point it to http://localhost:3030 to st
 To load the ontology and the data, you can run the following command:
 
 ```bash
-docker compose exec -it fuseki /bin/bash -c './tdbloader2 --loc databases/imr /staging/{imr.ttl,data.ttl.gz}'
+docker compose stop fuseki
+docker compose run --name fuseki-loader -it fuseki /bin/bash -c './tdbloader2 --loc /fuseki/databases/imr /staging/{imr.ttl,data.ttl.gz}'
 ```
 
 It will import the files [imr.ttl](./ontology/imr.ttl) and [data.ttl.gz](./ontology/data.ttl.gz), outputting:
@@ -331,8 +332,13 @@ It will import the files [imr.ttl](./ontology/imr.ttl) and [data.ttl.gz](./ontol
 At this point, to let Apache Jena Fuseki to load the new data, restart the container:
 
 ```bash
-docker compose restart fuseki
+docker rm -f fuseki-loader
+docker compose up -d
 ```
+
+You can check that Fuseki correctly loaded the data in the info page of the dataset, as shown in the picture below:
+
+![Apache Jena Fuseki](./images/fuseki-data-loaded.png)
 
 ### 3.2 SPARQL interface
 
