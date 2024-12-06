@@ -190,7 +190,6 @@ I took advantage of the following ontologies and vocabularies:
 * [cc](http://creativecommons.org/ns#): Creative Commons, used to define the license of the ontology and the data set;
 * [qb](http://purl.org/linked-data/cube#): The W3C Data Cube vocabulary;
 * [dbo](http://dbpedia.org/ontology/): The dbpedia ontology, because it defines `dbo:Country`;
-* [geo](http://www.opengis.net/ont/geosparql#): The OpenGIS geospacial ontology, because it defines `geo:Feature`;
 * [owl](http://www.w3.org/2002/07/owl#): The OWL vocabulary to define the ontology;
 * [rdf](http://www.w3.org/1999/02/22-rdf-syntax-ns#): The RDF vocabulary to define the ontology;
 * [xsd](http://www.w3.org/2001/XMLSchema#): The XSD vocabulary to use the standard XML types;
@@ -214,9 +213,34 @@ The SDMX data structure I defined includes 3 dimensions:
 * <http://data.unicef.org/ontology/imr#year>: subproperty of `sdmx-dimension:refPeriod`, it defines the year an observation is referring to using an `xsd:gYear` (year according to the gregorian calendar);
 * <http://purl.org/linked-data/sdmx/2009/dimension#sex>: dimension expressing the sex an observation is referring to (Male, Female, Total).
 
+#### Validation
+
+To validate the ontology, I used the [OOPS! validator](https://oops.linkeddata.es/) as suggested in the course's training materials. I exported the ontology in RDF/XML format from Protégé and uploaded it in the validator. In the first interaction, the tool outputted the following errors:
+
+* Results for P04: Creating unconnected ontology elements. Minor (4 cases)
+* Results for P08: Missing annotations. Minor (10 cases)
+* Results for P10: Missing disjointness. Important (Ontology*)
+* Results for P11: Missing domain or range in properties. Important (6 cases)
+* Results for P13: Inverse relationships not explicitly declared. Minor (3 cases)
+* Results for P31: Defining wrong equivalent classes. Critical (1 case)
+
+![OOPS before](./images/oops-before.png)
+
+I decided to ignore the suggestions for P04 and P08, as they refer to classes and annotations I imported from other ontologies. I also decided to ignore P13: because of the scope of the project, I don't feel the need of defining the inverse properties.
+
+However, I fixed the following reported issues:
+
+* P10: added disjoints to the classes;
+* P11: I added domain and range properties where suggested;
+* P31: I removed the class equivalence between `imr:Country` and `geo:Feature`, which indeed was a stretch.
+
+After these changes, the ontology passed the validation with only minor (and not applicable/relavant) warnings:
+
+![OOPS before](./images/oops-after.png)
+
 #### Export
 
-The resulting ontology is stored in the Turtle pretty format in the file [imrr.ttl](./ontology/imr.ttl).
+The resulting ontology is stored in the Turtle pretty format in the file [imr.ttl](./ontology/imr.ttl) and in the RDF/XML format in the file [imr.rdf](./ontology/imr.rdf).
 
 ### 2.5. Data Reconciliation
 
@@ -431,5 +455,6 @@ This project leverages the following resources available in the Internet:
 - [The RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube/)
 - [Statistical Data and Metadata eXchange](https://sdmx.org/)
 - [Protégé](https://protege.stanford.edu/)
+- [OOPS! validator](https://oops.linkeddata.es/)
 - [Wikidata Reconciliation service](https://wikidata.reconci.link/en/api)
 - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
