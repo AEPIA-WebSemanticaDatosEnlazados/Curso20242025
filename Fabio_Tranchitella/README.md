@@ -224,6 +224,12 @@ In particular, I reconciliated the `REF_AREA` column using the [Wikidata Reconci
 
 Once the reconciliation was over, after inspecting the results using Facets, I created a new column `REF_AREA_MATCH` with the URI of the matched resource.
 
+At this point, I noticed that the URL generated is in the form `https://www.wikidata.org/wiki/Q889`, which does not match the canonical URI of the entities in Wikidata, which is in the form of `http://www.wikidata.org/entity/Q889` (note the `http` protocol instead of `https` and `/entity/` path instead of `/wiki/`). Therefore, I applied a transformation in OpenRefine to update the URIs accordingly using the folowing GREL expression:
+
+```
+value.replace('https://www.wikidata.org/wiki/', 'http://www.wikidata.org/entity/')
+```
+
 Similarly, I converted the values in the `SEX` column (`M`, `F` and `_T`) to the sdmx codes for sex creating a new column `SEX_URI` and the following `GREL` expression:
 
 ```
@@ -383,11 +389,9 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val ?population ?area WHERE {
   ?sub imr:year ?year .
   ?country imr:countryName ?countryName .
   ?country imr:isoAlpha3Code ?isoAlpha3Code .
-  ?country owl:sameAs ?sameAsUri
+  ?country owl:sameAs ?wikidataEntity
   FILTER (?isoAlpha3Code = "KEN")
   FILTER (?year = "2000"^^xsd:gYear )
-
-  BIND(IRI(REPLACE(REPLACE(STR(?sameAsUri), "/wiki/", "/entity/"), "https://", "http://")) AS ?wikidataEntity)
 
   SERVICE  <https://query.wikidata.org/bigdata/namespace/wdq/sparql>
   {
