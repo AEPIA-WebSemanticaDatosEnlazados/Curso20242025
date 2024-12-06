@@ -10,6 +10,8 @@
 ## Tables of contents
 
 - [1. Introduction](#1-introduction)
+  - [1.1. Functional requirements](#11-functional-requirements)
+  - [1.2. Non-functional requirements](#12-non-functional-requirements)
 - [2. Transformation process](#2-transformation-process)
   - [2.1. Selection of the data set](#21-selection-of-the-data-set)
   - [2.2. Analysis of the data set](#22-analysis-of-the-data-set)
@@ -31,6 +33,28 @@ This document describes the final project for the subject "Semantic web and link
 In particular, this project consists of the selection, transformation, preparation, and publication of a data set for the `Infant mortality rate` indicator from [The United Nations Children's Fund (UNICEF)](https://www.unicef.org), one of the agencies of the United Nations.
 
 It also includes a sample application exposing simple REST APIs that leverage the dataset, loaded in a triplestore, to answer queries that non-technical users cannot respond to directly because of the number of records contained in the dataset.
+
+### 1.1. Functional requirements
+
+The functional requirements that will drive this project follows:
+
+| ID | Description |
+|----|-------------|
+| FR1 | Return the specific Infant Mortality Rate (IMR) for specified countries, sex groups and years. |
+| FR2 | Return the list of IMRs for specified subset of countries, sex groups and years. |
+| FR3 | Return the upper and lower bounds of the IMR in addition to the observed value. |
+| FR4 | Enrich the returned record sets with third-party open linked data sources (e.g., population and area). |
+
+### 1.2. Non-functional requirements
+
+The non-functional requirements that will drive this project follows:
+
+| ID | Description |
+|----|-------------|
+| NF1 | The ontology used to model the data shall be designed leveraging open standards. |
+| NF2 | The ontology used to model the data shall reuse existing vocabularies as much as possible. |
+| NF3 | The ontology used to model the data shall be validated using industry-standard validation tools. |
+| NF4 | The process outlined in the project shall be scalable up to several hundreds of thousands of data points. |
 
 ## 2. Transformation process
 
@@ -369,6 +393,8 @@ You can check that Fuseki correctly loaded the data in the info page of the data
 
 We can query the infant mortality rate data set using the [SPARQL interface offered by Apache Jena Fuseki](http://localhost:3030/#/dataset/imr/query).
 
+#### Query 1
+
 For example, to get the IMR for males in Kenya (ISO ALPHA 3 code `KEN`) in 2000, we can use the following SPARQL query: 
 
 ```sparql
@@ -389,6 +415,8 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val WHERE {
 } LIMIT 10
 ```
 
+#### Query 2
+
 To get the IMR for males, females and the total, we can slightly change the query:
 
 ```sparql
@@ -407,6 +435,8 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val WHERE {
   FILTER (?year = "2000"^^xsd:gYear )
 } LIMIT 10
 ```
+
+#### Query 3
 
 Finally, to enrich our data set with information from other linked data, we can join it with Wikidata. For example, if we want to retrieve for each row not only the Infant Mortality Rate, but also the population and the area (squared kms) of the country, we can run the following query:
 
@@ -441,6 +471,24 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val ?population ?area WHERE {
 ## 4. Conclusions
 
 Despite the simplicity of the data set and the SPARQL queries, this project provided an end-to-end example of publishing statistical open-linked data for a real-world data set. During the project, I used the typical software instruments and standards employed for this kind of activity and familiarized myself with them. In particular, using OpenRefine, Protégé, and Apache Jena Fuseki was a perfect toolset for architecting, manipulating, and publishing open data.
+
+The project fulfills the functional requirements [listed at the beginning of the document](#11-functional-requirements):
+
+| ID | Description |
+|----|-------------|
+| FR1 | It is possible to query a specific data point using a SPARQL end-point (see [query 1](#query-1)). |
+| FR2 | It is possible to extract a subset of the dat apoints filter by countries, sex groups and years using a SPARQL end-point (see [query 2](#query-2)). |
+| FR3 | It is possible to extract the IMR, its upper and lower bounds (see [query 1](#query-1)). |
+| FR4 | It is possible to join the data set with third-party open linked data sets, for example Wikidata (see [query 3](#query-3)). |
+
+It also fulfills the non-functional requirements [listed at the beginning of the document](#12-non-functional-requirements):
+
+| ID | Description |
+|----|-------------|
+| NF1 | The ontology uses W3C RDF Data Cube Vocabulary and the SDMX standard (see the [Ontology Development](#24-ontology-development) section). |
+| NF2 | The ontology reuses many common vocabularies and ontologies (see the [Naming Strategy](#23-naming-strategy) section). |
+| NF3 | The ontology was validated using OOPS! Validator (see the [Ontology Development](#24-ontology-development) section). |
+| NF4 | In this project, we processed several tens of thousands of observations in a matter of seconds proving that we can scale to hundreds of thousands of data points on commodity hardware (see the [Apache Jena Fuseki](#31-apache-jena-fuseki) section) |
 
 ## 5. Bibliography
 
