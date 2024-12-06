@@ -38,15 +38,18 @@ cc:license rdf:type owl:AnnotationProperty .
 
 ###  http://data.unicef.org/ontology/imr#infantMortalityRate
 :infantMortalityRate rdf:type owl:AnnotationProperty ;
-                     rdfs:subPropertyOf sdmx-measure:obsValue .
+                     rdfs:subPropertyOf sdmx-measure:obsValue ;
+                     rdfs:range xsd:decimal .
 
 
 ###  http://data.unicef.org/ontology/imr#infantMortalityRateLowerBound
-:infantMortalityRateLowerBound rdf:type owl:AnnotationProperty .
+:infantMortalityRateLowerBound rdf:type owl:AnnotationProperty ;
+                               rdfs:range xsd:decimal .
 
 
 ###  http://data.unicef.org/ontology/imr#infantMortalityRateUpperBound
-:infantMortalityRateUpperBound rdf:type owl:AnnotationProperty .
+:infantMortalityRateUpperBound rdf:type owl:AnnotationProperty ;
+                               rdfs:range xsd:decimal .
 
 
 ###  http://data.unicef.org/ontology/imr#year
@@ -124,16 +127,21 @@ xsd:gYear rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://data.unicef.org/ontology/imr#country
-:country rdf:type owl:ObjectProperty .
+:country rdf:type owl:ObjectProperty ;
+         rdfs:domain qb:Observation .
 
 
 ###  http://data.unicef.org/ontology/imr#year
-:year rdf:type owl:ObjectProperty .
+:year rdf:type owl:ObjectProperty ;
+      rdfs:domain qb:Observation .
 
 
 ###  http://purl.org/linked-data/sdmx/2009/dimension#sex
 sdmx-dimension:sex rdf:type owl:ObjectProperty ;
+                   rdfs:domain qb:Observation ;
+                   rdfs:range owl:Thing ;
                    qb:concept sdmx-concept:sex ;
+                   rdfs:comment "The sex (Male, Female, Total) the observation refers to."@en ;
                    rdfs:label "Sex"@en .
 
 
@@ -150,21 +158,25 @@ sdmx-dimension:sex rdf:type owl:ObjectProperty ;
 
 
 ###  http://data.unicef.org/ontology/imr#infantMortalityRate
-:infantMortalityRate rdf:type owl:DatatypeProperty .
+:infantMortalityRate rdf:type owl:DatatypeProperty ;
+                     rdfs:domain qb:Observation .
 
 
 ###  http://data.unicef.org/ontology/imr#infantMortalityRateLowerBound
-:infantMortalityRateLowerBound rdf:type owl:DatatypeProperty .
+:infantMortalityRateLowerBound rdf:type owl:DatatypeProperty ;
+                               rdfs:domain qb:Observation .
 
 
 ###  http://data.unicef.org/ontology/imr#infantMortalityRateUpperBound
-:infantMortalityRateUpperBound rdf:type owl:DatatypeProperty .
+:infantMortalityRateUpperBound rdf:type owl:DatatypeProperty ;
+                               rdfs:domain qb:Observation .
 
 
 ###  http://data.unicef.org/ontology/imr#isoAlpha3Code
 :isoAlpha3Code rdf:type owl:DatatypeProperty ;
                rdfs:domain :Country ;
                rdfs:range xsd:string ;
+               rdfs:comment "ISO Alpha 3 code for the country"@en ;
                rdfs:label "ISO Alpha 3 code"@en .
 
 
@@ -175,8 +187,7 @@ sdmx-dimension:sex rdf:type owl:ObjectProperty ;
 ###  http://data.unicef.org/ontology/imr#Country
 :Country rdf:type owl:Class ;
          owl:equivalentClass dbo:Country ,
-                             schema:Country ,
-                             geo:Feature ;
+                             schema:Country ;
          rdfs:comment "Country for which the IMR is observed"@en ;
          rdfs:label "Country"@en .
 
@@ -186,7 +197,8 @@ dbo:Country rdf:type owl:Class .
 
 
 ###  http://purl.org/linked-data/cube#DataSet
-qb:DataSet rdf:type owl:Class .
+qb:DataSet rdf:type owl:Class ;
+           owl:disjointWith qb:DataStructureDefinition .
 
 
 ###  http://purl.org/linked-data/cube#DataStructureDefinition
@@ -194,19 +206,20 @@ qb:DataStructureDefinition rdf:type owl:Class .
 
 
 ###  http://purl.org/linked-data/cube#DimensionProperty
-qb:DimensionProperty rdf:type owl:Class .
+qb:DimensionProperty rdf:type owl:Class ;
+                     owl:disjointWith qb:MeasureProperty .
 
 
 ###  http://purl.org/linked-data/cube#MeasureProperty
 qb:MeasureProperty rdf:type owl:Class .
 
 
+###  http://purl.org/linked-data/cube#Observation
+qb:Observation rdf:type owl:Class .
+
+
 ###  http://schema.org/Country
 schema:Country rdf:type owl:Class .
-
-
-###  http://www.opengis.net/ont/geosparql#Feature
-geo:Feature rdf:type owl:Class .
 
 
 #################################################################
@@ -216,22 +229,22 @@ geo:Feature rdf:type owl:Class .
 ###  http://data.unicef.org/ontology/imr#InfantMortalityRateDataStructure
 :InfantMortalityRateDataStructure rdf:type owl:NamedIndividual ,
                                            qb:DataStructureDefinition ;
-                                  qb:component [ qb:dimension sdmx-dimension:sex ;
-                                                 qb:order 2
-                                               ] ,
-                                               [ qb:measure :infantMortalityRateUpperBound ;
-                                                 qb:order 3
-                                               ] ,
-                                               [ qb:measure :infantMortalityRate ;
-                                                 qb:order 1
-                                               ] ,
-                                               [ qb:measure :infantMortalityRateLowerBound ;
+                                  qb:component [ qb:measure :infantMortalityRateLowerBound ;
                                                  qb:order 2
                                                ] ,
                                                [ qb:dimension :year ;
                                                  qb:order 3
                                                ] ,
                                                [ qb:dimension :country ;
+                                                 qb:order 1
+                                               ] ,
+                                               [ qb:measure :infantMortalityRateUpperBound ;
+                                                 qb:order 3
+                                               ] ,
+                                               [ qb:dimension sdmx-dimension:sex ;
+                                                 qb:order 2
+                                               ] ,
+                                               [ qb:measure :infantMortalityRate ;
                                                  qb:order 1
                                                ] ;
                                   rdfs:label "Infant Mortality Rate Data Structure"@en .
@@ -255,6 +268,7 @@ geo:Feature rdf:type owl:Class .
 #################################################################
 
 :country qb:concept sdmx-concept:refArea ;
+         rdfs:comment "The country the observation refers to."@en ;
          rdfs:label "Country"@en .
 
 
@@ -271,7 +285,7 @@ geo:Feature rdf:type owl:Class .
 
 
 :year qb:concept sdmx-concept:refPeriod ;
-      rdfs:comment "The country's ISO Alpha 3 code for"@en ;
+      rdfs:comment "The year (gregorian calendar) the observation refers to."@en ;
       rdfs:label "Year"@en .
 
 
