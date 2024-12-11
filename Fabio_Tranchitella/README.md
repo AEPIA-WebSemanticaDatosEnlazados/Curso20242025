@@ -10,6 +10,8 @@
 ## Tables of contents
 
 - [1. Introduction](#1-introduction)
+  - [1.1. Functional requirements](#11-functional-requirements)
+  - [1.2. Non-functional requirements](#12-non-functional-requirements)
 - [2. Transformation process](#2-transformation-process)
   - [2.1. Selection of the data set](#21-selection-of-the-data-set)
   - [2.2. Analysis of the data set](#22-analysis-of-the-data-set)
@@ -17,9 +19,11 @@
   - [2.4. Ontology development](#24-ontology-development)
   - [2.5. Data Reconcilation](#25-data-reconciliation)
   - [2.6. Data serialization to RDF/Turtle](#26-data-serialization-to-rdfturtle)
+  - [2.7. OpenRefine project](#27-openrefine-project)
 - [3. Application and consumption](#3-application-and-consumption)
   - [3.1. Apache Jena Fuseki](#31-apache-jena-fuseki)
   - [3.2. SPARQL Interface](#32-sparql-interface)
+- [4. Conclusions](#4-conclusions)
 - [5. Bibliography](#5-bibliography)
 
 ## 1. Introduction
@@ -29,6 +33,28 @@ This document describes the final project for the subject "Semantic web and link
 In particular, this project consists of the selection, transformation, preparation, and publication of a data set for the `Infant mortality rate` indicator from [The United Nations Children's Fund (UNICEF)](https://www.unicef.org), one of the agencies of the United Nations.
 
 It also includes a sample application exposing simple REST APIs that leverage the dataset, loaded in a triplestore, to answer queries that non-technical users cannot respond to directly because of the number of records contained in the dataset.
+
+### 1.1. Functional requirements
+
+The functional requirements that will drive this project follows:
+
+| ID | Description |
+|----|-------------|
+| FR1 | Return the specific Infant Mortality Rate (IMR) for specified countries, sex groups and years. |
+| FR2 | Return the list of IMRs for specified subset of countries, sex groups and years. |
+| FR3 | Return the upper and lower bounds of the IMR in addition to the observed value. |
+| FR4 | Enrich the returned record sets with third-party open linked data sources (e.g., population and area). |
+
+### 1.2. Non-functional requirements
+
+The non-functional requirements that will drive this project follows:
+
+| ID | Description |
+|----|-------------|
+| NF1 | The ontology used to model the data shall be designed leveraging open standards. |
+| NF2 | The ontology used to model the data shall reuse existing vocabularies as much as possible. |
+| NF3 | The ontology used to model the data shall be validated using industry-standard validation tools. |
+| NF4 | The process outlined in the project shall be scalable up to several hundreds of thousands of data points. |
 
 ## 2. Transformation process
 
@@ -188,7 +214,6 @@ I took advantage of the following ontologies and vocabularies:
 * [cc](http://creativecommons.org/ns#): Creative Commons, used to define the license of the ontology and the data set;
 * [qb](http://purl.org/linked-data/cube#): The W3C Data Cube vocabulary;
 * [dbo](http://dbpedia.org/ontology/): The dbpedia ontology, because it defines `dbo:Country`;
-* [geo](http://www.opengis.net/ont/geosparql#): The OpenGIS geospacial ontology, because it defines `geo:Feature`;
 * [owl](http://www.w3.org/2002/07/owl#): The OWL vocabulary to define the ontology;
 * [rdf](http://www.w3.org/1999/02/22-rdf-syntax-ns#): The RDF vocabulary to define the ontology;
 * [xsd](http://www.w3.org/2001/XMLSchema#): The XSD vocabulary to use the standard XML types;
@@ -212,9 +237,34 @@ The SDMX data structure I defined includes 3 dimensions:
 * <http://data.unicef.org/ontology/imr#year>: subproperty of `sdmx-dimension:refPeriod`, it defines the year an observation is referring to using an `xsd:gYear` (year according to the gregorian calendar);
 * <http://purl.org/linked-data/sdmx/2009/dimension#sex>: dimension expressing the sex an observation is referring to (Male, Female, Total).
 
+#### Validation
+
+To validate the ontology, I used the [OOPS! validator](https://oops.linkeddata.es/) as suggested in the course's training materials. I exported the ontology in RDF/XML format from Protégé and uploaded it in the validator. In the first interaction, the tool outputted the following errors:
+
+* Results for P04: Creating unconnected ontology elements. Minor (4 cases)
+* Results for P08: Missing annotations. Minor (10 cases)
+* Results for P10: Missing disjointness. Important (Ontology*)
+* Results for P11: Missing domain or range in properties. Important (6 cases)
+* Results for P13: Inverse relationships not explicitly declared. Minor (3 cases)
+* Results for P31: Defining wrong equivalent classes. Critical (1 case)
+
+![OOPS before](./images/oops-before.png)
+
+I decided to ignore the suggestions for P04 and P08, as they refer to classes and annotations I imported from other ontologies. I also decided to ignore P13: because of the scope of the project, I don't feel the need of defining the inverse properties.
+
+However, I fixed the following reported issues:
+
+* P10: added disjoints to the classes;
+* P11: I added domain and range properties where suggested;
+* P31: I removed the class equivalence between `imr:Country` and `geo:Feature`, which indeed was a stretch.
+
+After these changes, the ontology passed the validation with only minor (and not applicable/relavant) warnings:
+
+![OOPS before](./images/oops-after.png)
+
 #### Export
 
-The resulting ontology is stored in the Turtle pretty format in the file [imrr.ttl](./ontology/imr.ttl).
+The resulting ontology is stored in the Turtle pretty format in the file [imr.ttl](./ontology/imr.ttl) and in the RDF/XML format in the file [imr.rdf](./ontology/imr.rdf).
 
 ### 2.5. Data Reconciliation
 
@@ -223,6 +273,12 @@ In our data set, one of the dimensions is the country the observation is referri
 In particular, I reconciliated the `REF_AREA` column using the [Wikidata Reconciliation service](https://wikidata.reconci.link/en/api) which is available by default in OpenRefine selecting the `country` type (`Q6256`).
 
 Once the reconciliation was over, after inspecting the results using Facets, I created a new column `REF_AREA_MATCH` with the URI of the matched resource.
+
+At this point, I noticed that the URL generated is in the form `https://www.wikidata.org/wiki/Q889`, which does not match the canonical URI of the entities in Wikidata, which is in the form of `http://www.wikidata.org/entity/Q889` (note the `http` protocol instead of `https` and `/entity/` path instead of `/wiki/`). Therefore, I applied a transformation in OpenRefine to update the URIs accordingly using the folowing GREL expression:
+
+```
+value.replace('https://www.wikidata.org/wiki/', 'http://www.wikidata.org/entity/')
+```
 
 Similarly, I converted the values in the `SEX` column (`M`, `F` and `_T`) to the sdmx codes for sex creating a new column `SEX_URI` and the following `GREL` expression:
 
@@ -235,6 +291,10 @@ Once the transformation is completed, I verified that all the rows got assigned 
 ### 2.6. Data serialization to RDF/Turtle
 
 At this point, I exported the data using the RDFTransform plugin to a file in RDF/Turtle format. In the very same file, I exported both the countries and the observations. The [RDFTransform template](./rdf-transform/template.json) used for the export can be found in this repository.
+
+### 2.7. OpenRefine project
+
+The OpenRefine project is available [in the repository](./openrefine/Infant-mortality-rate.openrefine.tar.gz). It was exported as project archived using OpenRefine version 3.8.7, and can be imported to further process the data or to re-execute the data cleansing and transformation steps on different data sets.
 
 ## 3. Application and consumption
 
@@ -297,7 +357,8 @@ At this point, I can open my browser and point it to http://localhost:3030 to st
 To load the ontology and the data, you can run the following command:
 
 ```bash
-docker compose exec -it fuseki /bin/bash -c './tdbloader2 --loc databases/imr /staging/{imr.ttl,data.ttl.gz}'
+docker compose stop fuseki
+docker compose run --name fuseki-loader -it fuseki /bin/bash -c './tdbloader2 --loc /fuseki/databases/imr /staging/{imr.ttl,data.ttl.gz}'
 ```
 
 It will import the files [imr.ttl](./ontology/imr.ttl) and [data.ttl.gz](./ontology/data.ttl.gz), outputting:
@@ -320,12 +381,19 @@ It will import the files [imr.ttl](./ontology/imr.ttl) and [data.ttl.gz](./ontol
 At this point, to let Apache Jena Fuseki to load the new data, restart the container:
 
 ```bash
-docker compose restart fuseki
+docker rm -f fuseki-loader
+docker compose up -d
 ```
+
+You can check that Fuseki correctly loaded the data in the info page of the dataset, as shown in the picture below:
+
+![Apache Jena Fuseki](./images/fuseki-data-loaded.png)
 
 ### 3.2 SPARQL interface
 
 We can query the infant mortality rate data set using the [SPARQL interface offered by Apache Jena Fuseki](http://localhost:3030/#/dataset/imr/query).
+
+#### Query 1
 
 For example, to get the IMR for males in Kenya (ISO ALPHA 3 code `KEN`) in 2000, we can use the following SPARQL query: 
 
@@ -347,6 +415,8 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val WHERE {
 } LIMIT 10
 ```
 
+#### Query 2
+
 To get the IMR for males, females and the total, we can slightly change the query:
 
 ```sparql
@@ -366,6 +436,8 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val WHERE {
 } LIMIT 10
 ```
 
+#### Query 3
+
 Finally, to enrich our data set with information from other linked data, we can join it with Wikidata. For example, if we want to retrieve for each row not only the Infant Mortality Rate, but also the population and the area (squared kms) of the country, we can run the following query:
 
 ```sparql
@@ -383,11 +455,9 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val ?population ?area WHERE {
   ?sub imr:year ?year .
   ?country imr:countryName ?countryName .
   ?country imr:isoAlpha3Code ?isoAlpha3Code .
-  ?country owl:sameAs ?sameAsUri
+  ?country owl:sameAs ?wikidataEntity
   FILTER (?isoAlpha3Code = "KEN")
   FILTER (?year = "2000"^^xsd:gYear )
-
-  BIND(IRI(REPLACE(REPLACE(STR(?sameAsUri), "/wiki/", "/entity/"), "https://", "http://")) AS ?wikidataEntity)
 
   SERVICE  <https://query.wikidata.org/bigdata/namespace/wdq/sparql>
   {
@@ -397,6 +467,28 @@ SELECT ?isoAlpha3Code ?countryName ?year ?sex ?val ?population ?area WHERE {
   }
 } LIMIT 10
 ```
+
+## 4. Conclusions
+
+Despite the simplicity of the data set and the SPARQL queries, this project provided an end-to-end example of publishing statistical open-linked data for a real-world data set. During the project, I used the typical software instruments and standards employed for this kind of activity and familiarized myself with them. In particular, using OpenRefine, Protégé, and Apache Jena Fuseki was a perfect toolset for architecting, manipulating, and publishing open data.
+
+The project fulfills the functional requirements [listed at the beginning of the document](#11-functional-requirements):
+
+| ID | Description |
+|----|-------------|
+| FR1 | It is possible to query a specific data point using a SPARQL end-point (see [query 1](#query-1)). |
+| FR2 | It is possible to extract a subset of the dat apoints filter by countries, sex groups and years using a SPARQL end-point (see [query 2](#query-2)). |
+| FR3 | It is possible to extract the IMR, its upper and lower bounds (see [query 1](#query-1)). |
+| FR4 | It is possible to join the data set with third-party open linked data sets, for example Wikidata (see [query 3](#query-3)). |
+
+It also fulfills the non-functional requirements [listed at the beginning of the document](#12-non-functional-requirements):
+
+| ID | Description |
+|----|-------------|
+| NF1 | The ontology uses W3C RDF Data Cube Vocabulary and the SDMX standard (see the [Ontology Development](#24-ontology-development) section). |
+| NF2 | The ontology reuses many common vocabularies and ontologies (see the [Naming Strategy](#23-naming-strategy) section). |
+| NF3 | The ontology was validated using OOPS! Validator (see the [Ontology Development](#24-ontology-development) section). |
+| NF4 | In this project, we processed several tens of thousands of observations in a matter of seconds proving that we can scale to hundreds of thousands of data points on commodity hardware (see the [Apache Jena Fuseki](#31-apache-jena-fuseki) section) |
 
 ## 5. Bibliography
 
@@ -411,5 +503,6 @@ This project leverages the following resources available in the Internet:
 - [The RDF Data Cube Vocabulary](https://www.w3.org/TR/vocab-data-cube/)
 - [Statistical Data and Metadata eXchange](https://sdmx.org/)
 - [Protégé](https://protege.stanford.edu/)
+- [OOPS! validator](https://oops.linkeddata.es/)
 - [Wikidata Reconciliation service](https://wikidata.reconci.link/en/api)
 - [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)

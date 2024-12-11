@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=http://127.0.0.1:3333/project?project=2072960671805
+HostUrl=http://127.0.0.1:3333/command/core/export-project/Infant-mortality-rate.openrefine.tar.gz
