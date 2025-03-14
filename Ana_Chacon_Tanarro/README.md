@@ -2,7 +2,8 @@ Nota: trabajo en proceso y no finalizado
 
 # Trabajo final Web semántica y datos enlazados
 ## Ana Chacón Tanarro. Curso 2024-2025
-
+1. [Introducción](#1-introducción)
+2. [Proceso de transformación](#2-proceso-de-transformación)
 # 1. Introducción
 
 Este trabajo se centra en transformar y crear un conjunto de datos enlazados a partir de la selección de un conjunto de datos publicado por el Instituto Nacional de Estadística de España (INE) y crear una aplicación que consiga mostrar los datos de manera sencilla.
