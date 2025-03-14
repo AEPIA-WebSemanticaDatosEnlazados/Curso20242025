@@ -3,7 +3,7 @@ Nota: trabajo en proceso y no finalizado
 # Trabajo final Web semántica y datos enlazados
 ## Ana Chacón Tanarro. Curso 2024-2025
 
-1. Introducción
+# 1. Introducción
 
 Este trabajo se centra en transformar y crear un conjunto de datos enlazados a partir de la selección de un conjunto de datos publicado por el Instituto Nacional de Estadística de España (INE) y crear una aplicación que consiga mostrar los datos de manera sencilla.
 
@@ -14,8 +14,8 @@ El conjunto de datos seleccionado pertenece al censo anual de población a nivel
 
 En particular, los datos provienen de la tabla [68542 - Población por sexo y edad (año a año)](https://www.ine.es/jaxiT3/dlgExport.htm?t=68542&L=0), la cual se descarga automáticamente en formato csv. 
 
-2.2. Análisis de datos
-2.2.1. Descripción de los datos
+# 2.2. Análisis de datos
+## 2.2.1. Descripción de los datos
 
 Los datos presentan 7 variables:
 - Total Nacional: esta columna solo presenta un valor, "Total Nacional", por lo que carece de información útil. 
@@ -26,7 +26,7 @@ Los datos presentan 7 variables:
 - Periodo: Referido al año de referencia (desde 2021 a 2024).
 - Total: valor de la población censada.
 
-2.2.5. Licencia
+## 2.2.5. Licencia
 
 Como el propio INE informa en su [página web](https://www.ine.es/dyngs/AYU/index.htm?cid=125), la licencia de uso general es la Creative Commons Reconocimiento 4.0 [(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es). Esta licencia permite compartir (copiar y redistribuir el material en cualquier medio o formato para cualquier propósito) y adaptar (remezclar, transformar y construir a partir del material para cualquier propósito), siempre dando crédito de manera adecuada, brindando un enlace a la licencia e indicando si se han realizado cambios. 
 
