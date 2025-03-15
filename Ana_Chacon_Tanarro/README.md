@@ -62,8 +62,11 @@ Por facilitar la interpretación de los datos, se ha sustituido el valor "Total 
 
 Lo primero que se debe elegir, es el uso de # o /. Debido a que tenemos muchos datos y son modulares, se usará / para nuestros datos. Por otro lado, se usará # para la ontología, ya que se puede acceder a todos los términos del vocabulario de una sola vez. 
 
-Se va a asumir que se tiene control en el dominio datos.ine.es
+Asumiendo que tenemos control sobre el dominio datos.ine.es, tendríamos la siguiente estructura:
+- Dominio: http://datos.ine.es/
+- Ruta para los términos ontológicos: http://datos.ine.es/vocab#
+  - Patrón para términos ontológicos: http://datos.ine.es/vocab#<term>
+- Ruta para los individuos: http://datos.ine.es/resources/
+  - Patrón para individuos:  http://datos.ine.es/resources/<resource>
 
-En el portal [datos.gob.es](https://datos.gob.es/es/documentacion/guia-practica-para-la-publicacion-de-datos-enlazados-en-rdf) existe una guía para la publicación de datos enlazados en RDF. En dicha guía, se menciona el proyecto [Ciudades Abiertas](https://ciudades-abiertas.es/), liderado por los Ayuntamientos de A Coruña, Madrid, Santiago de Compostela y Zaragoza, que entre sus actuaciones está la de definir nuevos vocabularios en el ámbito de ciudades y desarrollo de soluciones para la publicación de Datos Abiertos. En este contexto, ya han definido un [vocabulario para la representación de datos del padrón de habitantes](https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html) y la definición de [cubos para facilitar la explotación estadística](https://vocab.ciudadesabiertas.es/def/demografia/cubo-padron-municipal/index-es.html). Es por ello, que se va a usar este vocabulario para nuestro proyecto, ya que la única diferencia es que en lugar de población empadronada, hablamos de población censada. 
-
-
+Vamos a usar como base la ontología de [Data Cube](https://www.w3.org/TR/vocab-data-cube/), ya que está específicamente diseñada para la publicación de datos multidimensionales, como los estadísticos, utilizando el estándar W3C RDF y basándose en el modelo de información SDMX 2.0, estándar ISO para el intercambio de datos y metadatos estadísticos. Extenderemos la ontología con aquellos elementos específicos de nuestro conjunto de datos. 
