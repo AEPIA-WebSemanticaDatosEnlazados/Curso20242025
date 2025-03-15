@@ -12,8 +12,9 @@ Nota: trabajo en proceso y no finalizado
 
 Este trabajo se centra en transformar y crear un conjunto de datos enlazados a partir de la selección de un conjunto de datos publicado por el Instituto Nacional de Estadística (INE) y crear una aplicación que consiga mostrar los datos de manera sencilla.
 
-## 2. Preparación y análisis de datos
-### 2.1. Selección de la fuente de datos y acceso
+## 2. Proceso de transformación
+### 2.1. Preparación y análisis de datos
+#### 2.1.1. Selección de la fuente de datos y acceso
 
 Este trabajo se centra principalmente en la obtención y transformación de un conjunto de datos que represente el censo de la población española con la distribución de la población por edades y municipios. Los requisitos principales han sido:
 - Que la fuente de datos fuese una institución pública, por asegurar la calidad de los datos. También se priorizaba que ésta fuese la generadora y propietaria de los datos.
@@ -24,7 +25,7 @@ Así, se ha seleccionado como conjunto de datos el censo anual de población a n
 
 En particular, los datos provienen de la tabla [68542 - Población por sexo y edad (año a año)](https://www.ine.es/jaxiT3/dlgExport.htm?t=68542&L=0), la cual se descarga automáticamente en formato csv. Se comprueba que los datos descargados están bien estructurados y contienen la información mínima exigida: población censada por municipio y edad.
 
-#### 2.2. Licencia
+#### 2.1.2. Licencia
 
 Como el propio INE informa en su [página web](https://www.ine.es/dyngs/AYU/index.htm?cid=125), la licencia de uso general es la Creative Commons Reconocimiento 4.0 [(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es). Esta licencia permite compartir (copiar y redistribuir el material en cualquier medio o formato para cualquier propósito) y adaptar (remezclar, transformar y construir a partir del material para cualquier propósito), siempre dando crédito de manera adecuada, brindando un enlace a la licencia e indicando si se han realizado cambios. 
 
@@ -37,7 +38,7 @@ Respecto a este último punto, el INE también indica lo siguiente:
 
 Debido a que la transformación de los datos no va a suponer una agregación de valor sustancial al conjunto de datos original, se mantiene la misma licencia para cumplir con la licencia de los datos originales. 
 
-### 2.3. Análisis de datos
+#### 2.1.3. Análisis de datos
 
 A continuación, se muestra el proceso seguido para el análisis y procesamiento de los datos en [OpenRefine](https://openrefine.org/). 
 
@@ -57,6 +58,12 @@ No se encuentran valores fuera de rango o erróneos.
 
 Por facilitar la interpretación de los datos, se ha sustituido el valor "Total Nacional" por "España" y se ha renombrado dicha columna a "País", de tal manera que existe una jerarquía entre las columnas País, Provincias y Municipios. 
 
-## 3. Estrategia de nombrado
+### 2.2. Estrategia de nombrado
+
+Lo primero que se debe elegir, es el uso de # o /. Debido a que tenemos muchos datos y son modulares, se usará / para nuestros datos. Por otro lado, se usará # para la ontología, ya que se puede acceder a todos los términos del vocabulario de una sola vez. 
+
+Se va a asumir que se tiene control en el dominio datos.ine.es
+
+En el portal [datos.gob.es](https://datos.gob.es/es/documentacion/guia-practica-para-la-publicacion-de-datos-enlazados-en-rdf) existe una guía para la publicación de datos enlazados en RDF. En dicha guía, se menciona el proyecto [Ciudades Abiertas](https://ciudades-abiertas.es/), liderado por los Ayuntamientos de A Coruña, Madrid, Santiago de Compostela y Zaragoza, que entre sus actuaciones está la de definir nuevos vocabularios en el ámbito de ciudades y desarrollo de soluciones para la publicación de Datos Abiertos. En este contexto, ya han definido un [vocabulario para la representación de datos del padrón de habitantes](https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html) y la definición de [cubos para facilitar la explotación estadística](https://vocab.ciudadesabiertas.es/def/demografia/cubo-padron-municipal/index-es.html). Es por ello, que se va a usar este vocabulario para nuestro proyecto, ya que la única diferencia es que en lugar de población empadronada, hablamos de población censada. 
 
 
