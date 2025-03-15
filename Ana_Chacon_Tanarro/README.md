@@ -38,7 +38,7 @@ Respecto a este último punto, el INE también indica lo siguiente:
 Debido a que la transformación de los datos no va a suponer una agregación de valor sustancial al conjunto de datos original, se mantiene la misma licencia para cumplir con la licencia de los datos originales. 
 
 ### 2.3. Análisis de datos
-#### 2.2.1. Descripción de los datos
+#### 2.2.1. Análisis explorativo de los datos
 
 A continuación, se muestra el proceso seguido para el análisis y procesamiento de los datos en [OpenRefine](https://openrefine.org/). 
 
@@ -51,7 +51,8 @@ Existen 10.018.440 filas, indicando los valores de población censada dependiend
 - Municipios: desagrega la información por municipio. Sigue la misma estructura que la anterior, se compone de un código identificativo del municipio y el nombre de éste. Ejemplo: "01001 Alegría-Dulantzi". También presenta valores vacíos cuando los valores de población se refieren a los totales nacionales o totales a nivel provincia. Se presenta en formato texto.  
 - Sexo: desagrega la información entre "Hombres", "Mujeres" y "Total". Se presenta en formato texto. 
 - Edad: desagrega la información entre "Todas las edades" y año por año (de 0 a 99 años y más de 100, como por ejemplo "0 años"). Se presenta en formato texto. 
-- Periodo: Referido al año de referencia (desde 2021 a 2024). Se presenta en formato número entero. 
-- Total: valor de la población censada. Se presenta en formato número entero. 
+- Periodo: Referido al año de referencia (desde 2021 a 2024). Se ha transformado a formato de fecha. 
+- Total: valor de la población censada. Se ha transformado a formato de número y los valores van de 0 a 48.619.695.
 
-Para asegurarnos de que OpenRefine trata los datos en su correcto formato, se transforman las columnas de Periodo y Total a número. 
+No se encuentran valores fuera de rango o erróneos. La única particularidad especial son las celdas vacías para los valores totales a nivel de provincia o nacional y la columna de Total Nacional, que solo contiene un único valor. 
+
