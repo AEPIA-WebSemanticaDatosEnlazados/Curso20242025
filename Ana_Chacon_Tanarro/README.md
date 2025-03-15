@@ -5,14 +5,15 @@ Nota: trabajo en proceso y no finalizado
 - [1. Introducción](#1-introducción)
 - [2. Proceso de transformación](#2-proceso-de-transformación)
   - [2.1. Selección de la fuente de datos](#21-selección-de-la-fuente-de-datos)
-  - [2.2. Análisis de datos](#22-análisis-de-datos)
+  - [2.2. Licencia](#22-licencia)
+  - [2.3. Análisis de datos](#22-análisis-de-datos)
 
 ## 1. Introducción
 
 Este trabajo se centra en transformar y crear un conjunto de datos enlazados a partir de la selección de un conjunto de datos publicado por el Instituto Nacional de Estadística (INE) y crear una aplicación que consiga mostrar los datos de manera sencilla.
 
 ## 2. Proceso de transformación
-### 2.1. Selección de la fuente de datos
+### 2.1. Selección de la fuente de datos y acceso
 
 Este trabajo se centra principalmente en la obtención y transformación de un conjunto de datos que represente el censo de la población española con la distribución de la población por edades y municipios. Los requisitos principales han sido:
 - Que la fuente de datos fuese una institución pública, por asegurar la calidad de los datos. También se priorizaba que ésta fuese la generadora y propietaria de los datos.
@@ -23,7 +24,7 @@ Así, se ha seleccionado como conjunto de datos el censo anual de población a n
 
 En particular, los datos provienen de la tabla [68542 - Población por sexo y edad (año a año)](https://www.ine.es/jaxiT3/dlgExport.htm?t=68542&L=0), la cual se descarga automáticamente en formato csv. Se comprueba que los datos descargados están bien estructurados y contienen la información mínima exigida: población censada por municipio y edad.
 
-#### 2.1.1. Licencia
+#### 2.2. Licencia
 
 Como el propio INE informa en su [página web](https://www.ine.es/dyngs/AYU/index.htm?cid=125), la licencia de uso general es la Creative Commons Reconocimiento 4.0 [(CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es). Esta licencia permite compartir (copiar y redistribuir el material en cualquier medio o formato para cualquier propósito) y adaptar (remezclar, transformar y construir a partir del material para cualquier propósito), siempre dando crédito de manera adecuada, brindando un enlace a la licencia e indicando si se han realizado cambios. 
 
@@ -36,7 +37,7 @@ Respecto a este último punto, el INE también indica lo siguiente:
 
 Debido a que la transformación de los datos no va a suponer una agregación de valor sustancial al conjunto de datos original, se mantiene la misma licencia para cumplir con la licencia de los datos originales. 
 
-### 2.2. Análisis de datos
+### 2.3. Análisis de datos
 #### 2.2.1. Descripción de los datos
 
 A continuación, se muestra el proceso seguido para el análisis y procesamiento de los datos en [OpenRefine](https://openrefine.org/). 
