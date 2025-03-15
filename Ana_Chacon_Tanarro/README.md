@@ -46,7 +46,7 @@ Para cargar los datos en OpenRefine, se ha tenido que aumentar la memoria RAM de
 ![Previsualización de los datos](figs/swld_view_data.png)
 
 Existen 10.018.440 filas, indicando los valores de población censada dependiendo del valor de otras 6 variables. Así, el conjunto de datos presenta 7 columnas:
-- Total Nacional: esta columna solo presenta un valor, "Total Nacional", por lo que carece de información útil. Se presenta en formato texto. 
+- Total Nacional: esta columna solo presenta un valor, "Total Nacional". Se presenta en formato texto. 
 - Provincias: desagrega los datos de población censada por provincias. La información que se da en esta tabla es el código de provincia seguido del nombre. Ejemplo: "01 Araba/Álava". Esta columna está vacía para los valores totales nacionales a nivel España como conjunto. Se presenta en formato texto. 
 - Municipios: desagrega la información por municipio. Sigue la misma estructura que la anterior, se compone de un código identificativo del municipio y el nombre de éste. Ejemplo: "01001 Alegría-Dulantzi". También presenta valores vacíos cuando los valores de población se refieren a los totales nacionales o totales a nivel provincia. Se presenta en formato texto.  
 - Sexo: desagrega la información entre "Hombres", "Mujeres" y "Total". Se presenta en formato texto. 
@@ -55,4 +55,7 @@ Existen 10.018.440 filas, indicando los valores de población censada dependiend
 - Total: valor de la población censada. Se ha transformado a formato de número y los valores van de 0 a 48.619.695.
 ![Facetas](figs/facets.png)
 No se encuentran valores fuera de rango o erróneos.
+
+Por facilitar la interpretación de los datos, se ha sustituido el valor "Total Nacional" por "España" y se ha renombrado dicha columna a "País", de tal manera que existe una jerarquía entre las columnas País, Provincias y Municipios. 
+
 
