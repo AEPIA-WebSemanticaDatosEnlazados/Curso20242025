@@ -54,11 +54,5 @@ Existen 10.018.440 filas, indicando los valores de población censada dependiend
 - Periodo: Referido al año de referencia (desde 2021 a 2024). Se ha transformado a formato de fecha. 
 - Total: valor de la población censada. Se ha transformado a formato de número y los valores van de 0 a 48.619.695.
 ![Facetas](figs/facets.png)
-No se encuentran valores fuera de rango o erróneos. La única particularidad especial son las celdas vacías para los valores totales a nivel de provincia o nacional y la columna de Total Nacional, que solo contiene un único valor. Tampoco tenemos, a priori, una columna que nos sirva como identificador único de nuestros datos.
-
-Para tratar con estas celdas vacías, lo que se va a realizar es una transformación de los datos en la cual se tenga una única columna describiendo la región a la cual se refiere el valor censal. Esta columna tendrá el valor "00 España" para el valor total nacional, "Código provincia + Nombre provincia" para el valor total provincial y "Código municipio + Nombre municipio" para los valores desagregados a nivel municipal. Esto se ha realizado en tres pasos:
-1. Las celdas vacías de la columna Provincias se han rellenado con el valor "00 España"
-2. Con una función de transformación en GREL se han rellenado las celdas vacías de la columna Municipios con la columna Provincias.
-3. Se eliminan las columnas Total Nacional y Provincias y se modifica el nombre de Municipios por Región.
-
+No se encuentran valores fuera de rango o erróneos.
 
