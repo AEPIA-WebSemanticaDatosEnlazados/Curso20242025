@@ -2,10 +2,10 @@ Nota: trabajo en proceso y no finalizado
 
 # Trabajo final Web semántica y datos enlazados
 ## Ana Chacón Tanarro. Curso 2024-2025
-1. [Introducción](#1-introducción)
-2. [Proceso de transformación](#2-proceso-de-transformación)
-  - [Selección de la fuente de datos](#21-selección-de-la-fuente-de-datos)
-  - [Análisis de datos](#22-análisis-de-datos)
+- [1. Introducción](#1-introducción)
+- [2. Proceso de transformación](#2-proceso-de-transformación)
+  - [2.1. Selección de la fuente de datos](#21-selección-de-la-fuente-de-datos)
+  - [2.2. Análisis de datos](#22-análisis-de-datos)
 
 ## 1. Introducción
 
@@ -20,6 +20,8 @@ En particular, los datos provienen de la tabla [68542 - Población por sexo y ed
 
 ### 2.2. Análisis de datos
 #### 2.2.1. Descripción de los datos
+
+Los datos tienen la siguiente apariencia:
 
 Los datos presentan 7 variables:
 - Total Nacional: esta columna solo presenta un valor, "Total Nacional", por lo que carece de información útil. 
