@@ -12,7 +12,7 @@ Nota: trabajo en proceso y no finalizado
 
 Este trabajo se centra en transformar y crear un conjunto de datos enlazados a partir de la selección de un conjunto de datos publicado por el Instituto Nacional de Estadística (INE) y crear una aplicación que consiga mostrar los datos de manera sencilla.
 
-## 2. Proceso de transformación
+## 2. Preparación y análisis de datos
 ### 2.1. Selección de la fuente de datos y acceso
 
 Este trabajo se centra principalmente en la obtención y transformación de un conjunto de datos que represente el censo de la población española con la distribución de la población por edades y municipios. Los requisitos principales han sido:
@@ -38,7 +38,6 @@ Respecto a este último punto, el INE también indica lo siguiente:
 Debido a que la transformación de los datos no va a suponer una agregación de valor sustancial al conjunto de datos original, se mantiene la misma licencia para cumplir con la licencia de los datos originales. 
 
 ### 2.3. Análisis de datos
-#### 2.2.1. Análisis explorativo de los datos
 
 A continuación, se muestra el proceso seguido para el análisis y procesamiento de los datos en [OpenRefine](https://openrefine.org/). 
 
@@ -57,5 +56,7 @@ Existen 10.018.440 filas, indicando los valores de población censada dependiend
 No se encuentran valores fuera de rango o erróneos.
 
 Por facilitar la interpretación de los datos, se ha sustituido el valor "Total Nacional" por "España" y se ha renombrado dicha columna a "País", de tal manera que existe una jerarquía entre las columnas País, Provincias y Municipios. 
+
+## 3. Estrategia de nombrado
 
 
