@@ -70,3 +70,5 @@ Asumiendo que tenemos control sobre el dominio datos.ine.es, tendríamos la sigu
   - Patrón para individuos:  http://datos.ine.es/resources/<resource>
 
 Vamos a usar como base la ontología de [Data Cube](https://www.w3.org/TR/vocab-data-cube/), ya que está específicamente diseñada para la publicación de datos multidimensionales, como los estadísticos, utilizando el estándar W3C RDF y basándose en el modelo de información SDMX 2.0, estándar ISO para el intercambio de datos y metadatos estadísticos. Extenderemos la ontología con aquellos elementos específicos de nuestro conjunto de datos. 
+
+Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Por ello, se ha optado por generar una propia enlazando cada elemento con ontologías ampliamente conocidas y usadas. 
