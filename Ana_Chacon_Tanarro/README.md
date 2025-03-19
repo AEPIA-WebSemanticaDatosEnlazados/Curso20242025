@@ -60,6 +60,11 @@ Por facilitar la interpretación de los datos, se ha sustituido el valor "Total 
 
 ### 2.2. Estrategia de nombrado
 
+Nos planteamos nuestro problema desde el punto de vista de los siguientes requisitos funcionales:
+- Mostrar el valor de personas censadas en un municipio en un año determinado, pudiendo seleccionar sexo y edad.
+- Mostrar la evolución del valor del censo con el tiempo.
+- Mostrar valores totales según el país o la provincia.
+  
 Lo primero que se debe elegir, es el uso de # o /. Debido a que tenemos muchos datos y son modulares, se usará / para nuestros datos. Por otro lado, se usará # para la ontología, ya que se puede acceder a todos los términos del vocabulario de una sola vez. 
 
 Asumiendo que tenemos control sobre el dominio datos.ine.es, tendríamos la siguiente estructura:
@@ -69,8 +74,5 @@ Asumiendo que tenemos control sobre el dominio datos.ine.es, tendríamos la sigu
 - Ruta para los individuos: http://datos.ine.es/resources/
   - Patrón para individuos:  http://datos.ine.es/resources/<resource>
 
-Vamos a usar como base la ontología de [Data Cube](https://www.w3.org/TR/vocab-data-cube/), ya que está específicamente diseñada para la publicación de datos multidimensionales, como los estadísticos, utilizando el estándar W3C RDF y basándose en el modelo de información SDMX 2.0, estándar ISO para el intercambio de datos y metadatos estadísticos. Extenderemos la ontología con aquellos elementos específicos de nuestro conjunto de datos. 
+Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Existen también ontologías muy completas de censos de otros países como en [Canadá](https://ijpds.org/article/view/2378), pero los censos no siguen la misma estructura ni finalidad. Por otro lado, esos autores mencionan también un trabajo realizado con el censo español por Fernández et al. (2011). Sin embargo, no se ha encontrado la ontología publicada. Por ello, se ha optado por generar una propia enlazando cada elemento con ontologías ampliamente conocidas y usadas. 
 
-Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Por ello, se ha optado por generar una propia enlazando cada elemento con ontologías ampliamente conocidas y usadas. 
-
-https://ijpds.org/article/view/2378 - artículo sobre Canadá
