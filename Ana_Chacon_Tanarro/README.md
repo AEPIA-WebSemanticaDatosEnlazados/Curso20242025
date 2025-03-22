@@ -56,7 +56,43 @@ Existen 10.018.440 filas, indicando los valores de población censada dependiend
 ![Facetas](figs/facets.png)
 No se encuentran valores fuera de rango o erróneos.
 
-Por facilitar la interpretación de los datos, se ha sustituido el valor "Total Nacional" por "España" y se ha renombrado dicha columna a "País", de tal manera que existe una jerarquía entre las columnas País, Provincias y Municipios. 
+#### 2.1.4. Transformación de los datos
+
+Se han transformado ligeramente los datos para una presentación más clara y con menor opción a cometer errores. Sin embargo, este proceso no ha sido posible realizarlo en OpenRefine: tras varios intentos, la memoria RAM era insuficiente para gestionar los datos. Por tanto, este paso se realiza en Python. 
+
+Los pasos que se han seguido han sido:
+- Se ha sustituido el valor "Total Nacional" por "España" y se ha renombrado dicha columna a "País", de tal manera que existe una jerarquía entre las columnas País, Provincia y Municipio. También se han modificado los nombres de estas columnas para que aparezcan en singular.
+- Se han eliminado todas las filas en las cuales la columna Municipio estaba vacía. Los valores totales, mostrados en estas filas eliminadas, son cifras duplicadas con respecto a la suma total de los municipios y por tanto puede llevar a error de interpretación en las cifras.
+- Por la misma razón, se han eliminado las filas con "Total" en la columna de Sexo, y de "Todas las edades" en la columna Edad. De esta manera, no existe ninguna duplicidad de datos poblacionales en nuestro conjunto de datos.
+
+
+```python
+import pandas as pd
+# Cargar el archivo CSV
+file_name = '68542.csv'
+data = pd.read_csv(file_name, delimiter=';')
+
+# Cambiar los valores de la columna "País" a "España"
+data['Total Nacional'] = 'España'
+
+# Cambiar nombres a las columnas
+data = data.rename(columns={'Total Nacional': 'País'})
+data = data.rename(columns={'Provincias': 'Provincia'})
+data = data.rename(columns={'Municipios': 'Municipio'})
+
+# Eliminar las filas que están vacías en la columna "Municipio"
+data = data[data['Municipio'].notna()]
+
+# Eliminar las filas con "Total" en la columna "Sexo"
+data = data[data['Sexo'] != 'Total']
+
+# Eliminar las filas con "Todas las Edades" en la columna "Edad"
+data = data[data['Edad'] != 'Todas las edades']
+
+# Guardar el archivo modificado
+data.to_csv('68542_modificado.csv', index=False)
+```
+Tras estas modificaciones, podemos cargar de nuevo nuestros datos en OpenRefine. 
 
 ### 2.2. Estrategia de nombrado
 
