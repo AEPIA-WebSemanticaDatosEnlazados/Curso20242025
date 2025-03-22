@@ -68,6 +68,7 @@ Los pasos que se han seguido han sido:
 
 ```python
 import pandas as pd
+
 # Cargar el archivo CSV
 file_name = '68542.csv'
 data = pd.read_csv(file_name, delimiter=';')
@@ -89,9 +90,16 @@ data = data[data['Sexo'] != 'Total']
 # Eliminar las filas con "Todas las Edades" en la columna "Edad"
 data = data[data['Edad'] != 'Todas las edades']
 
+# Separar la columna "Provincia" en "Código provincial" y "Provincia"
+data[['Código provincial', 'Provincia']] = data['Provincia'].str.split(' ', n=1, expand=True)
+
+# Separar la columna "Municipio" en "Código municipal" y "Municipio"
+data[['Código municipal', 'Municipio']] = data['Municipio'].str.split(' ', n=1, expand=True)
+
 # Guardar el archivo modificado
 data.to_csv('68542_modificado.csv', index=False)
 ```
+
 Tras estas modificaciones, podemos cargar de nuevo nuestros datos en OpenRefine. 
 
 ### 2.2. Estrategia de nombrado
