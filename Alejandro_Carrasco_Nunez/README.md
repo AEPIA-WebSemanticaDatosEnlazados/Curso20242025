@@ -30,9 +30,12 @@ El conjunto de datos elegido incluye información sobre miles de vehículos elé
 El dataset fue descargado en formato CSV, desde la página web. Dicho archivo tiene un tamaño de 55.74 MB.
 
 ### 2.2. Análisis de los datos
-Mediante la herramienta Openrefine, aprendida durante el curso, se han analizado los datos contenidos en el archivo CSV.
+Mediante la herramienta OpenRefine, aprendida durante el curso, se han analizado los datos contenidos en el archivo CSV.
 
 El archivo se compone de 235.692 registros.
-./images/openrefine1.png
-./images/openrefine2.PNG
+![Datos 1 OpenRefine](./images/openrefine1.png)
+
+![Datos 2 OpenRefine](./images/openrefine2.PNG)
+
+
 
