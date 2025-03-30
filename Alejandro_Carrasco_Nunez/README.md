@@ -60,6 +60,12 @@ En total para cada registro hay **18 columnas** (atributos), que son las siguien
 *	**Electric Utility**: Campo de tipo texto que representa la empresa de electricidad. Hay 76 valores.
 *	**2020 Census Tract**: Campo de tipo entero que representa el tramo censal. Su rango va de 1 billón a 57 billones.
 
+A los campos que se han considerado de tipo entero se les ha aplicado la transformación de celdas a tipo “**Number**”.
+
+Por otro lado, para verificar los rangos y número de valores que cada campo puede tomar se han empleado distintas **Facets**. Se han generado tanto Facets de tipo “**Text**” para las cadenas, como “**Numeric**” para los campos de tipo entero. Algunas de esas Facets se pueden visualizar en la siguiente imagen.
+
+![Facets OpenRefine](./images/openrefinefacets.PNG)
+
 
 
 
