@@ -62,9 +62,9 @@ En total para cada registro hay **18 columnas** (atributos), que son las siguien
 
 A los campos que se han considerado de tipo entero se les ha aplicado la transformación de celdas a tipo “**Number**”.
 
-Por otro lado, para verificar los rangos y número de valores que cada campo puede tomar se han empleado distintas **Facets**. Se han generado tanto Facets de tipo “**Text**” para las cadenas, como “**Numeric**” para los campos de tipo entero. Algunas de esas Facets se pueden visualizar en la siguiente imagen.
+Por otro lado, para verificar los rangos y número de valores que cada campo puede tomar se han empleado distintas **Facets**. Se han generado tanto Facets de tipo “**Text**” para las cadenas, como “**Numeric**” para los campos de tipo entero. Algunas de esas Facets se pueden visualizar en las siguientes imágenes.
 
-![Facets OpenRefine](./images/openrefinefacets.PNG)
+![Facets OpenRefine](./images/openrefinefacets.PNG)![Facets2 OpenRefine](./images/openrefinefacets2.PNG)
 
 
 
