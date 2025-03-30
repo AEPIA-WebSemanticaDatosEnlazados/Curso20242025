@@ -66,7 +66,7 @@ Por otro lado, para verificar los rangos y número de valores que cada campo pue
 
 ![Facets OpenRefine](./images/openrefinefacets.PNG)     ![Facets2 OpenRefine](./images/openrefinefacets2.PNG)
 
-Para el campo Vehicle Location se ha aplicado una transformación. Se han generado dos columnas nuevas (Coordinate X, Coordinate Y) para separar las dos coordenadas que contiene la ubicación. Se han creado mediante la opción Add column based on this column, utilizando dos expresiones regulares GREL para extraer cada valor.
+Para el campo **Vehicle Location** se ha aplicado una transformación. Se han generado dos columnas nuevas (**Coordinate X**, **Coordinate Y**) para separar las dos coordenadas que contiene la ubicación. Se han creado mediante la opción **Add column based on this column**, utilizando dos expresiones regulares **GREL** para extraer cada valor.
 El uso de las expresiones se muestra en las siguientes imágenes.
 
 ![Regular expression 1 OpenRefine](./images/openrefinecoordinatex.PNG)     ![Regular expression 2 OpenRefine](./images/openrefinecoordinatey.PNG)
