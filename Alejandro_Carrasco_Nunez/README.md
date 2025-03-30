@@ -2,7 +2,8 @@
 # Memoria Trabajo Web Semántica y Datos Enlazados
 
 - **Asignatura:** Web Semántica y Datos Enlazados
-- **Author:** Alejandro Carrasco Núñez
+- **Máster:** MÁSTER UNIVERSITARIO EN INVESTIGACIÓN EN INTELIGENCIA ARTIFICIAL
+- **Autor:** Alejandro Carrasco Núñez
 
 ## Índice
 
