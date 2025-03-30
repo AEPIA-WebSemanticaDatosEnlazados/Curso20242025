@@ -32,7 +32,9 @@ El dataset fue descargado en formato CSV, desde la página web. Dicho archivo ti
 ### 2.2. Análisis de los datos
 Mediante la herramienta **OpenRefine**, aprendida durante el curso, se han analizado los datos contenidos en el archivo CSV.
 
-El archivo se compone de 235.692 registros.
+Se creó un proyecto de nombre “**Electric Vehicle Population Data Proyect**” y se importó el CSV. El resultado fue una tabla de datos compuesta por 235.692 filas, siendo cada fila el registro de un vehículo eléctrico.
+
+En las siguientes imágenes se pueden ver una parte de los registros y sus valores para cada columna.
 
 ![Datos 1 OpenRefine](./images/openrefine1.png)
 
