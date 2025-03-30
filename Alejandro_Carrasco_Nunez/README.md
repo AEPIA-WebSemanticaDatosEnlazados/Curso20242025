@@ -56,7 +56,7 @@ En total para cada registro hay **18 columnas** (atributos), que son las siguien
 *	**Base MSRP**: Campo de tipo entero que representa el precio base del vehículo. El rango comprende de 0 a 845000.
 *	**Legislative District**: Campo de tipo entero que representa el distrito legislativo. El rango comprende de 1 a 49.
 *	**DOL Vehicle ID**: Campo de tipo texto que representa el id de cada vehículo. Es una ristra única de 9 dígitos aunque se ha mantenido como cadena de texto.
-*	**Vehicle Location**: Campo de texto que representa la localización geográfica del vehículo. La representación viene dada por defecto por el CSV, y se representa de la siguiente manera: POINT (coordenadaX coordenadaY), que en un ejemplo real se vería: POINT (-122.23825 47.49461).
+*	**Vehicle Location**: Campo de texto que representa la localización geográfica del vehículo. La representación viene dada por defecto por el CSV, y se representa de la siguiente manera: POINT (coordenadaX coordenadaY), que en un ejemplo real se vería: POINT (-122.23825 47.49461). Para este campo se ha realizado una transformación con el fin de separar las coordenadas x e y.
 *	**Electric Utility**: Campo de tipo texto que representa la empresa de electricidad. Hay 76 valores.
 *	**2020 Census Tract**: Campo de tipo entero que representa el tramo censal. Su rango va de 1 billón a 57 billones.
 
@@ -66,6 +66,14 @@ Por otro lado, para verificar los rangos y número de valores que cada campo pue
 
 ![Facets OpenRefine](./images/openrefinefacets.PNG)     ![Facets2 OpenRefine](./images/openrefinefacets2.PNG)
 
+Para el campo Vehicle Location se ha aplicado una transformación. Se han generado dos columnas nuevas (Coordinate X, Coordinate Y) para separar las dos coordenadas que contiene la ubicación. Se han creado mediante la opción Add column based on this column, utilizando dos expresiones regulares GREL para extraer cada valor.
+El uso de las expresiones se muestra en las siguientes imágenes.
 
+![Regular expression 1 OpenRefine](./images/openrefinecoordinatex.PNG)     ![Regular expression 2 OpenRefine](./images/openrefinecoordinatey.PNG)
 
+Las dos columnas nuevas siguen siendo de tipo texto, por lo que se ha aplicado una transformación a tipo numérico.
+
+![Transformed Point OpenRefine](./images/openrefinetransformedpoint.PNG)
+
+**Licencia de los datos**
 
