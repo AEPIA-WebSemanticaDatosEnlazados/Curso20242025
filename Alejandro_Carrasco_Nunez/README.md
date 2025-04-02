@@ -75,5 +75,12 @@ Las dos columnas nuevas siguen siendo de tipo texto, por lo que se ha aplicado u
 
 ![Transformed Point OpenRefine](./images/openrefinetransformedpoint.PNG)
 
-**Licencia de los datos**
+**Licencia de los datos** El sitio web indica que el conjunto de datos se encuentra bajo la licencia [**Open Data Commons Open Database License (ODbL) 1.0**]([https://catalog.data.gov/dataset/electric-vehicle-population-data](https://opendatacommons.org/licenses/odbl/1-0/)). Esta licencia permite al usuario compartir, modificar y utilizar la base de datos, siempre que se cumpla lo siguiente:
+
+*	Se debe dar crédito al publicador de este conjunto de datos, indicando un enlace a la licencia y si se han realizado cambios; además, cualquier redistribución de la base de datos debe realizarse bajo la misma licencia ODbL 1.0 (condición de **share-alike**).
+
+Es importante destacar que la licencia se aplica tanto a los datos en sí como a la estructura de la base de datos, de modo que cualquier extracción o combinación que identifique la fuente original está sujeta a los términos de la licencia.
+
+Dado que el CSV original está bajo la licencia ODbL 1.0, para la transformación a datos enlazados se debe mantener la **misma licencia**. De esta forma se cumple con las condiciones de atribución y de share-alike que establece la licencia. Esto implica que, aunque se haya cambiado el formato y la estructura (de CSV a datos enlazados), la base de datos derivada debe seguir compartiéndose bajo los mismos términos, y cualquier redistribución o modificación futura también se haga bajo ODbL 1.0.
+
 
