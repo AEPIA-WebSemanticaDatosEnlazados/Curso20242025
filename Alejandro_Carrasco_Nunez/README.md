@@ -81,6 +81,6 @@ Las dos columnas nuevas siguen siendo de tipo texto, por lo que se ha aplicado u
 
 Es importante destacar que la licencia se aplica tanto a los datos en sí como a la estructura de la base de datos, de modo que cualquier extracción o combinación que identifique la fuente original está sujeta a los términos de la licencia.
 
-Dado que el CSV original está bajo la licencia ODbL 1.0, para la transformación a datos enlazados se debe mantener la **misma licencia**. De esta forma se cumple con las condiciones de atribución y de share-alike que establece la licencia. Esto implica que, aunque se haya cambiado el formato y la estructura (de CSV a datos enlazados), la base de datos derivada debe seguir compartiéndose bajo los mismos términos, y cualquier redistribución o modificación futura también se haga bajo ODbL 1.0.
+Dado que el CSV original está bajo la licenci ODbL 1.0, para la transformación a datos enlazados se debe mantener la **misma licencia**. De esta forma se cumple con las condiciones de atribución y de share-alike que se establecen. Esto implica que, aunque se haya cambiado el formato y la estructura (de CSV a datos enlazados), los términos de la licencia deben seguir siendo los mismos, y cualquier base de datos derivada o modificación futura se hará bajo ODbL 1.0.
 
 
