@@ -83,4 +83,18 @@ Es importante destacar que la licencia se aplica tanto a los datos en sí como a
 
 Dado que el CSV original está bajo la licenci ODbL 1.0, para la transformación a datos enlazados se debe mantener la **misma licencia**. De esta forma se cumple con las condiciones de atribución y de share-alike que se establecen. Esto implica que, aunque se haya cambiado el formato y la estructura (de CSV a datos enlazados), los términos de la licencia deben seguir siendo los mismos, y cualquier base de datos derivada o modificación futura se hará bajo ODbL 1.0.
 
+### 2.3. Estrategia de nombrado
+Se considera el dominio **http://catalog.data.gov/** para la consulta de los datos. Dada la naturaleza de nuestro conjunto de datos y su contenido se adoptarán las siguientes convenciones:
 
+*	**Términos ontológicos**:
+**	Usaremos el hash (**#**) como separador para los términos de la ontología.
+***	Ruta para términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#**
+***	Patrón para términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#<term>**
+
+*	**Individuos**:
+**	Usaremos la barra (/) para recuperar los datos de manera individual o en grupo.
+***	Ruta para individuos: **http://catalog.data.gov/resource**
+***	Patrón para individuos: **http://catalog.data.gov/resource/<resource_type>/<id>**
+Ejemplos de URIs generadas:
+*	Términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#electricVehicleType**
+*	Individuos (por ejemplo vehículos): **http://catalog.data.gov/resource/Vehicle/5YJ3E1EBXK**
