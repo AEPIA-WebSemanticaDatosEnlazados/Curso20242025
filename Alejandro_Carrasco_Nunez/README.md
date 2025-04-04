@@ -88,12 +88,13 @@ Se considera el dominio **http://catalog.data.gov/** para la consulta de los dat
 
 *	**Términos ontológicos**:
     *	Usaremos el hash (**#**) como separador para los términos de la ontología.
-      *	Ruta para términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#**
-      *	Patrón para términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#<term>**
+        *	Ruta para términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#**
+        *	Patrón para términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#<term>**
 *	**Individuos**:
     *	Usaremos la barra (/) para recuperar los datos de manera individual o en grupo.
-      *	Ruta para individuos: **http://catalog.data.gov/resource**
-      *	Patrón para individuos: **http://catalog.data.gov/resource/<resource_type>/<id>**
+        *	Ruta para individuos: **http://catalog.data.gov/resource**
+        *	Patrón para individuos: **http://catalog.data.gov/resource/<resource_type>/<id>**
+
 Ejemplos de URIs generadas:
 *	Términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#electricVehicleType**
 *	Individuos (por ejemplo vehículos): **http://catalog.data.gov/resource/Vehicle/5YJ3E1EBXK**
