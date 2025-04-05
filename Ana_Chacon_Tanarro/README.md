@@ -137,6 +137,7 @@ Como requisitos no funcionales, se han tenido en cuenta los siguientes:
 #### 2.3.2. Glosario de términos
 Se puede definir el siguiente glosario de términos:
 | Término | Definición |
+|--------------|--------------|
 | País | País de referencia del valor de censo observado al cual pertenece una provincia y municipio |
 | Provincia | Provincia de referencia del valor de censo observado al cual pertenece un municipio |
 | Municipio | Municipio de referencia del valor de censo observado |
@@ -149,9 +150,22 @@ Se puede definir el siguiente glosario de términos:
 | ID | Valor único identificativo de cada valor censal observado |
 
 #### 2.3.3. Conceptualización
-Identificar dominios generales, conceptos claves y definiremos el modelo en detalle con jerarquías y relaciones 
+La representación de los términos definidos anteriormente y la base inicial de su representación sigue:
+
+
 #### 2.3.4. Búsqueda de ontologías
 Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Existen también ontologías muy completas de censos de otros países como en [Canadá](https://ijpds.org/article/view/2378), pero los censos no siguen la misma estructura ni finalidad. Por otro lado, esos autores mencionan también un trabajo realizado con el censo español por Fernández et al. (2011). Sin embargo, no se ha encontrado la ontología publicada. Por ello, se ha optado por utilizar otras ontologías más generales.
+
+Se ha optado por la siguiente estructura:
+| Término | Clase |
+|--------------|--------------|
+| ID | http://purl.org/linked-data/cube#Observation |
+| País | http://schema.org/Place |
+| Provincia |  http://schema.org/Place |
+| Municipio |  http://schema.org/Place |
+| Sexo | http://schema.org/Observation |
+| Edad | http://schema.org/Observation |
+| Periodo | http://schema.org/DateTime |
 
 #### 2.3.5. Implementación de la ontología
 
