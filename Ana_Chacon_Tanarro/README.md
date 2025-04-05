@@ -144,8 +144,8 @@ Se puede definir el siguiente glosario de términos:
 | Sexo | Sexo de la población censada |
 | Edad | Edad de la población censada |
 | Periodo | Periodo de referencia del valor de censo observado |
-| Código provincial | Código INE de la provincia |
-| Código municipal | Código INE del municipio |
+| Código provincial | Código INE de la provincia, código LAU |
+| Código municipal | Código INE del municipio, código LAU |
 | Total | Valor observado de la población censada |
 | ID | Valor único identificativo de cada valor censal observado |
 
@@ -154,7 +154,11 @@ La representación de los términos definidos anteriormente y la base inicial de
 
 
 #### 2.3.4. Búsqueda de ontologías
-Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Existen también ontologías muy completas de censos de otros países como en [Canadá](https://ijpds.org/article/view/2378), pero los censos no siguen la misma estructura ni finalidad. Por otro lado, esos autores mencionan también un trabajo realizado con el censo español por Fernández et al. (2011). Sin embargo, no se ha encontrado la ontología publicada. Por ello, se ha optado por utilizar otras ontologías más generales.
+Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Existen también ontologías muy completas de censos de otros países como en [Canadá](https://ijpds.org/article/view/2378), pero los censos no siguen la misma estructura ni finalidad. Por otro lado, esos autores mencionan también un trabajo realizado con el censo español por Fernández et al. (2011). Sin embargo, no se ha encontrado la ontología publicada. Por ello, se ha optado por utilizar otras ontologías más generales. En particular se ha hecho mucho uso de las clases y propiedades de:
+- http://schema.org/: ideal para definir entidades y relaciones entre entidades y acciones. 
+- http://purl.org/linked-data/cube#: vocabulario que permite publicar datos multidimensionales, como los estadísticos, en formato RDF.
+- http://purl.org/linked-data/sdmx/2009/dimension#: define dimensiones para los cubos estadísticos definidos por SDMX.
+- http://purl.org/dc/terms/: usado para la definción de la licencia.
 
 Se ha optado por la siguiente estructura:
 | Término | Clase |
@@ -166,8 +170,14 @@ Se ha optado por la siguiente estructura:
 | Sexo | http://schema.org/Observation |
 | Edad | http://schema.org/Observation |
 | Periodo | http://schema.org/DateTime |
+| Código provincial | http://schema.org/postalCode |
+| Código municipal | http://schema.org/postalCode |
 
 #### 2.3.5. Implementación de la ontología
+Para implementar la ontología y la transformación de los datos al formato adecuado, se ha utilizado la herramienta OpenRefine, apoyado por la extensión [RDF Transform](https://github.com/AtesComp/rdf-transform). Se intentó también usar la extensión [RDF extension](https://github.com/stkenny/grefine-rdf-extension). Sin embargo, está desactualizada y daba errores de compatibilidad a la hora de exportar los datos. 
+
+El proceso de transformación ha sido el siguiente:
+1. 
 
 #### 2.3.6. Evaluación
 
