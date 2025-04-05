@@ -17,11 +17,11 @@ Este trabajo se centra en transformar y crear un conjunto de datos enlazados a p
 #### 2.1.1. Selección de la fuente de datos y acceso
 
 Este trabajo se centra principalmente en la obtención y transformación de un conjunto de datos que represente el censo de la población española con la distribución de la población por edades y municipios. Los requisitos principales han sido:
-- Que la fuente de datos fuese una institución pública, por asegurar la calidad de los datos. También se priorizaba que ésta fuese la generadora y propietaria de los datos.
+- Que la fuente de datos fuese una institución pública, por asegurar la calidad y veracidad de los datos. También se priorizaba que ésta fuese la generadora y propietaria de los datos.
 - Que los datos estuviesen lo más actualizados posible.
 - Que los datos estuviesen disponibles y bien estructurados. 
 
-Así, se ha seleccionado como conjunto de datos el censo anual de población a nivel municipal, desagregado por sexo y edad (año a año) elaborado y publicado por el Instituto Nacional de Estadística (INE) el 19 de diciembre de 2024. El censo anual de población es una operación estadística que se publica siempre a finales de cada año ofreciendo las cifras oficiales y características demográficas de la población española a 1 de enero del mismo año. Así, los datos escogidos recogen información de la población residente en España a 1 de enero de cada año censado y se actualizan anualmente. Se pueden obtener los datos desde el siguiente enlace: [Censo anual, resultados por municipios](https://www.ine.es/dynt3/inebase/es/index.htm?padre=11555&capsel=11532). 
+Así, se ha seleccionado como conjunto de datos el censo anual de población a nivel municipal, desagregado por sexo y edad (año a año) elaborado y publicado por el Instituto Nacional de Estadística (INE) el 19 de diciembre de 2024. El censo anual de población es una operación estadística que se publica siempre a finales de cada año ofreciendo las cifras oficiales y características demográficas de la población española a 1 de enero del mismo año. Por tanto, los datos escogidos recogen información de la población residente en España a 1 de enero de cada año censado y se actualizan anualmente. Se pueden obtener los datos desde el siguiente enlace: [Censo anual, resultados por municipios](https://www.ine.es/dynt3/inebase/es/index.htm?padre=11555&capsel=11532). 
 
 En particular, los datos provienen de la tabla [68542 - Población por sexo y edad (año a año)](https://www.ine.es/jaxiT3/dlgExport.htm?t=68542&L=0), la cual se descarga automáticamente en formato csv. Se comprueba que los datos descargados están bien estructurados y contienen la información mínima exigida: población censada por municipio y edad.
 
@@ -38,9 +38,9 @@ Respecto a este último punto, el INE también indica lo siguiente:
 
 Debido a que la transformación de los datos no va a suponer una agregación de valor sustancial al conjunto de datos original, se mantiene la misma licencia para cumplir con la licencia de los datos originales. 
 
-#### 2.1.3. Análisis de datos
+#### 2.1.3. Análisis de los datos obtenidos
 
-A continuación, se muestra el proceso seguido para el análisis y procesamiento de los datos en [OpenRefine](https://openrefine.org/). 
+A continuación, se muestra el proceso seguido para el análisis y procesamiento previo de los datos en [OpenRefine](https://openrefine.org/). 
 
 Para cargar los datos en OpenRefine, se ha tenido que aumentar la memoria RAM dedidaca al software que venía por defecto a 8 GBs, debido al tamaño del conjunto de datos (716.4 MBs). Una vez cargado el proyecto, los datos tienen la siguiente apariencia:
 ![Previsualización de los datos](figs/swld_view_data.png)
@@ -56,14 +56,16 @@ Existen 10.018.440 filas, indicando los valores de población censada dependiend
 ![Facetas](figs/facets.png)
 No se encuentran valores fuera de rango o erróneos.
 
-#### 2.1.4. Transformación de los datos
+#### 2.1.4. Transformación previa de los datos
 
-Se han transformado ligeramente los datos para una presentación más clara y con menor opción a cometer errores. Sin embargo, este proceso no ha sido posible realizarlo en OpenRefine: tras varios intentos, la memoria RAM era insuficiente para gestionar los datos. Por tanto, este paso se realiza en Python. 
+Antes de continuar con el proyecto, se han transformado los datos para una presentación más clara y con menor opción a cometer errores. Sin embargo, este proceso no ha sido posible realizarlo en OpenRefine: tras varios intentos, la memoria RAM era insuficiente para gestionar los datos. Por tanto, este paso se realiza en Python. Por esta misma razón, además, finalmente se ha optado por restringir el estudio a los municipios de la provincia de Madrid.
 
 Los pasos que se han seguido han sido:
 - Se ha sustituido el valor "Total Nacional" por "España" y se ha renombrado dicha columna a "País", de tal manera que existe una jerarquía entre las columnas País, Provincia y Municipio. También se han modificado los nombres de estas columnas para que aparezcan en singular.
 - Se han eliminado todas las filas en las cuales la columna Municipio estaba vacía. Los valores totales, mostrados en estas filas eliminadas, son cifras duplicadas con respecto a la suma total de los municipios y por tanto puede llevar a error de interpretación en las cifras.
 - Por la misma razón, se han eliminado las filas con "Total" en la columna de Sexo, y de "Todas las edades" en la columna Edad. De esta manera, no existe ninguna duplicidad de datos poblacionales en nuestro conjunto de datos.
+- Se han separado los códigos de las provincias y de los municipios de su nombre y creado dos nuevas columnas para estos códigos.
+- Se han filtrado los municipios pertenecientes a la provincia de Madrid.
 
 
 ```python
@@ -96,20 +98,20 @@ data[['Código provincial', 'Provincia']] = data['Provincia'].str.split(' ', n=1
 # Separar la columna "Municipio" en "Código municipal" y "Municipio"
 data[['Código municipal', 'Municipio']] = data['Municipio'].str.split(' ', n=1, expand=True)
 
+# Filtrar municipios madrileños
+data = data[data['Provincia'].str.contains('Madrid', na=False)]
+
 # Guardar el archivo modificado
 data.to_csv('68542_modificado.csv', index=False)
 ```
 
-Tras estas modificaciones, podemos cargar de nuevo nuestros datos en OpenRefine. 
+Tras estas modificaciones, podemos cargar de nuevo nuestros datos en OpenRefine. Finalmente tenemos 144.632 filas con 9 variables. Debido a que no existe ninguna columna que nos sirva como identificador único, se ha creado una nueva columna llamada "ID" que se compone del código del municipio, el sexo, la edad y el periodo de referencia, de tal manera que nuestra tabla muestra la siguiente estructura:
 
-### 2.2. Estrategia de nombrado
-
-Nos planteamos nuestro problema desde el punto de vista de los siguientes requisitos funcionales:
-- Mostrar el valor de personas censadas en un municipio en un año determinado, pudiendo seleccionar sexo y edad.
-- Mostrar la evolución del valor del censo con el tiempo.
-- Mostrar valores totales según el país o la provincia.
+![ID_Column](figs/open_refine_ID_column.PNG)
   
-Lo primero que se debe elegir, es el uso de # o /. Debido a que tenemos muchos datos y son modulares, se usará / para nuestros datos. Por otro lado, se usará # para la ontología, ya que se puede acceder a todos los términos del vocabulario de una sola vez. 
+### 2.2. Estrategia de nombrado
+  
+Lo primero que se debe elegir, es el uso de # o /. Siguiendo las recomendaciones del curso, se usará / para nuestros datos y # para la ontología, ya que se puede acceder a todos los términos del vocabulario de una sola vez. 
 
 Asumiendo que tenemos control sobre el dominio datos.ine.es, tendríamos la siguiente estructura:
 - Dominio: http://datos.ine.es/
@@ -118,5 +120,43 @@ Asumiendo que tenemos control sobre el dominio datos.ine.es, tendríamos la sigu
 - Ruta para los individuos: http://datos.ine.es/resources/
   - Patrón para individuos:  http://datos.ine.es/resources/<resource>
 
-Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Existen también ontologías muy completas de censos de otros países como en [Canadá](https://ijpds.org/article/view/2378), pero los censos no siguen la misma estructura ni finalidad. Por otro lado, esos autores mencionan también un trabajo realizado con el censo español por Fernández et al. (2011). Sin embargo, no se ha encontrado la ontología publicada. Por ello, se ha optado por generar una propia enlazando cada elemento con ontologías ampliamente conocidas y usadas. 
+### 2.3. Desarrollo de la ontología
+#### 2.3.1. Requisitos
+Nos planteamos nuestro problema desde el punto de vista de los siguientes requisitos funcionales:
+- Mostrar el valor de personas censadas en un municipio clasificando por año, sexo y edad.
+- Mostrar la evolución del valor del censo con el tiempo.
+- Mostrar valores totales según el país o la provincia.
+- Comparación de valores entre dos o más municipios.
+
+Como requisitos no funcionales, se han tenido en cuenta los siguientes:
+- Capacidad de procesamiento con un ordenador con memoria RAM limitada (8-16 GBs).
+- Uso de OpenRefine y de extensiones que permitan trabajar con el esqueleto RDF.
+- Reutilizar al máximo ontologías ya existentes.
+- Que sea fácil de reutilizar para todo el dataset nacional en el futuro.
+  
+#### 2.3.2. Glosario de términos
+Se puede definir el siguiente glosario de términos:
+| Término | Definición |
+| País | País de referencia del valor de censo observado al cual pertenece una provincia y municipio |
+| Provincia | Provincia de referencia del valor de censo observado al cual pertenece un municipio |
+| Municipio | Municipio de referencia del valor de censo observado |
+| Sexo | Sexo de la población censada |
+| Edad | Edad de la población censada |
+| Periodo | Periodo de referencia del valor de censo observado |
+| Código provincial | Código INE de la provincia |
+| Código municipal | Código INE del municipio |
+| Total | Valor observado de la población censada |
+| ID | Valor único identificativo de cada valor censal observado |
+
+#### 2.3.3. Conceptualización
+Identificar dominios generales, conceptos claves y definiremos el modelo en detalle con jerarquías y relaciones 
+#### 2.3.4. Búsqueda de ontologías
+Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Existen también ontologías muy completas de censos de otros países como en [Canadá](https://ijpds.org/article/view/2378), pero los censos no siguen la misma estructura ni finalidad. Por otro lado, esos autores mencionan también un trabajo realizado con el censo español por Fernández et al. (2011). Sin embargo, no se ha encontrado la ontología publicada. Por ello, se ha optado por utilizar otras ontologías más generales.
+
+#### 2.3.5. Implementación de la ontología
+
+#### 2.3.6. Evaluación
+
+
+
 
