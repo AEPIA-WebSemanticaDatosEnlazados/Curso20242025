@@ -174,11 +174,21 @@ Se ha optado por la siguiente estructura:
 | Código municipal | http://schema.org/postalCode |
 
 #### 2.3.5. Implementación de la ontología
-Para implementar la ontología y la transformación de los datos al formato adecuado, se ha utilizado la herramienta OpenRefine, apoyado por la extensión [RDF Transform](https://github.com/AtesComp/rdf-transform). Se intentó también usar la extensión [RDF extension](https://github.com/stkenny/grefine-rdf-extension). Sin embargo, está desactualizada y daba errores de compatibilidad a la hora de exportar los datos. 
+Para implementar la ontología y la transformación de los datos al formato adecuado, se ha utilizado la herramienta OpenRefine, apoyado por la extensión [RDF Transform](https://github.com/AtesComp/rdf-transform). Se intentó también usar la extensión [RDF extension](https://github.com/stkenny/grefine-rdf-extension). Sin embargo, está desactualizada y daba errores de compatibilidad a la hora de exportar los datos. Las versiones utilizadas son:
+- Open Refine 3.8.7
+- RDF Transform 2.2.4
 
-El proceso de transformación ha sido el siguiente:
-1. 
+Se ha seguido el siguiente esquema:
+![RDFSkeleton](figs/RDF_skeleton_esquema.PNG)
 
+Para evitar errores y tener mayor generalización, se ha tenido especial cuidado con la presencia de espacios vacíos o caracteres especiales como la ñ o acentos a la hora de definir URIs. Esto era de especial relevancia a la hora de declarar la edad o los municipios:
+![transformacion1](figs/transformacion_enlaces.PNG)
+![transformacion2](figs/transformacion_enlaces_edad.PNG)
+
+Una vez generado todo el esquema, también se ha probado la reconciliación de servicios ofrecida por OpenRefine con Wikidata. Se ha conseguido la reconciliación de algunas de las columnas (País, Provincia, Municipio y Sexo) tal como se muestra en la imagen:
+![reconciliacion](figs/reconciliacion.PNG)
+
+El archivo RDF final se puede encontrar aquí: 
 #### 2.3.6. Evaluación
 
 
