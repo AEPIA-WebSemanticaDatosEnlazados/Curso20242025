@@ -179,10 +179,12 @@ Para implementar la ontología y la transformación de los datos al formato adec
 - RDF Transform 2.2.4
 
 Para evitar errores y tener mayor generalización, se ha tenido especial cuidado con la presencia de espacios vacíos o caracteres especiales como la ñ o acentos a la hora de definir URIs. Esto era de especial relevancia a la hora de declarar la edad o los municipios:
+
 ![transformacion1](figs/transformacion_enlaces.PNG)
 ![transformacion2](figs/transformacion_enlaces_edad.PNG)
 
 Una vez generado todo el esquema, también se ha procedido al *enlazado de los datos* usando el servicio de OpenRefine con Wikidata. Se ha conseguido la reconciliación de algunas de las columnas (País, Provincia, Municipio y Sexo) tal como se muestra en la imagen:
+
 ![reconciliacion](figs/reconciliacion.PNG)
 
 Para los municipios, se han tenido que revisar algunos de ellos ya que no conseguía enlazarlos correctamente de manera automática.
@@ -197,9 +199,10 @@ Desafortunadamente no se ha conseguido enlazar las columnas de los códigos LAU 
 | Sexo | Grupo de [hombres](https://www.wikidata.org/wiki/Q109288828)/[mujeres](https://www.wikidata.org/wiki/Q109288863) |
 
 Finalmente, el esqueleto del rdf contiene la siguiente estructura: 
+
 ![RDFSkeleton](figs/RDF_skeleton_esquema.PNG)
 
-El archivo final, en formato rdf y ttl se puede encontrar aquí: ![RDF](Ana_Chacon_Tanarro/rdf/)
+El archivo final, en formato rdf y ttl, así como el proyecto de OpenRefine, se puede encontrar aquí: ![RDF](Ana_Chacon_Tanarro/rdf/)
 
 #### 2.3.6. Evaluación
 
@@ -219,6 +222,17 @@ También se definieron las clases que faltaban, teniendo entonces en el rdf lín
 ```
 Una vez realizadas las modificaciones, se procedió a comprobar que ya no salían las advertencias:
 ![Oops](figs/evaluacion_final.PNG)
+
+El archivo con sus mejoras ya implementadas es el que se puede encontrar en este repositorio.
+
+#### 2.4. Publicación
+No se ha podido proceder a su publicación. No se dispone de dominio. 
+
+## 3. Aplicación y explotación
+
+## 4. Conclusiones
+
+## 5. Bibliografía
 
 
 
