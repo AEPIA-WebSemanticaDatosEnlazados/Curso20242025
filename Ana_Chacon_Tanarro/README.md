@@ -4,9 +4,13 @@ Nota: trabajo en proceso y no finalizado
 ## Ana Chacón Tanarro. Curso 2024-2025
 - [1. Introducción](#1-introducción)
 - [2. Proceso de transformación](#2-proceso-de-transformación)
-  - [2.1. Selección de la fuente de datos](#21-selección-de-la-fuente-de-datos)
-  - [2.2. Licencia](#22-licencia)
-  - [2.3. Análisis de datos](#22-análisis-de-datos)
+  - [2.1. Preparación y análisis de datos](#21-preparación-y-análisis-de-datos)
+  - [2.2. Estrategia de nombrado](#22-estrategia-de-nombrado)
+  - [2.3. Desarrollo de la ontología](#23-desarrollo-de-la-ontología)
+  - [2.4. Publicación](#24-publicación)
+- [3. Aplicación y explotación](#3-aplicación-y-explotación)
+- [4. Conclusiones](#4-conclusiones)
+- [5. Bibliografía](#5-bibliografía)
 
 ## 1. Introducción
 
@@ -230,15 +234,36 @@ El archivo con sus mejoras ya implementadas es el que se puede encontrar en este
 No se ha podido proceder a su publicación. No se dispone de dominio. 
 
 ## 3. Aplicación y explotación
-Finalmente ya podemos proceder a hacer uso de los datos y explotarlos. Para ello vamos a hacer uso de la herramienta [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) que nos permite realizar consultas SPARQL sobre nuestros datos.
+Finalmente ya podemos proceder a hacer uso de los datos y explotarlos. Para ello vamos a hacer uso de la herramienta [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/), versión 5.3.0, que nos permite realizar consultas SPARQL sobre nuestros datos.
 
-Se hacen las siguientes consultas:
-1. 
+Se hacen las siguientes consultas para comprobar que se han cubierto los requisitos funcionales:
+1. Se comprueba que se puede obtener el número de personas censadas en un municipio para un determinado año, sexo y edad:
+   ![alcobendas_1](figs/Alcobendas_2anos_mujeres_2024.PNG)
+2. Se comprueba que se puede obtener el valor de personas censadas para distintos años:
+   ![alcobendas_2](figs/Alcobendas_2anos_mujeres_evolucion.PNG)
+3. Se puede obtener la suma de los valores de censo cuando se selecciona el país:
+   ![espana](figs/suma_espana_2024.PNG)
+4. Se obtienen correctamente los valores de dos municipios simultáneamente:
+   ![alcobendas_3](figs/alcobendas_acebeda.PNG)
+
+Se puede observar que hemos cubierto todos los requisitos funcionales y que las consultas SPARQL devuelven información satisfactoriamente. 
 
 ## 4. Conclusiones
+En este trabajo hemos visto el proceso necesario para generar datos enlazados a partir de un CSV descargado del Instituto Nacional de Estadística con información básica de los habitantes censados en la Comunidad de Madrid, debido a restricciones computacionales.
+
+Se han afrontado diferentes retos: transformación de los datos para aumentar su facilidad de uso y eficiencia, elección del vocabulario y creación de la ontología, con su respectiva creación del esqueleto RDF y muestra de explotación de los datos. Este proceso ha mostrado ser mucho más minucioso de lo que puede parecer al principio. Pequeños detalles pueden provocar que las consultas a la base de datos no funcionen. Por ejemplo, el INE refleja las cifras de población con separador de miles, y este detalle ha generado problemas en la creación del dataset final, ya que no conseguía leer bien las cifras. 
+
+Sin embargo, hemos cubierto los requisitos que nos habíamos planteado al principio del trabajo: podemos consultar la información básica de personas censadas por cada municipio y generar consultas algo más complejas alrededor de este concepto, cubriendo también los requisitos no funcionales que nos habíamos planteado. 
 
 ## 5. Bibliografía
 
-
+- [Oops!](https://oops.linkeddata.es/)
+- [Wikidata](https://www.wikidata.org/)
+- [RDF Transform](https://github.com/AtesComp/rdf-transform)
+- [RDF extension](https://github.com/stkenny/grefine-rdf-extension)
+- [Canadá](https://ijpds.org/article/view/2378)
+- [OpenRefine](https://openrefine.org/)
+- [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
+- [Instituto Nacional de Estadística](https://www.ine.es/) 
 
 
