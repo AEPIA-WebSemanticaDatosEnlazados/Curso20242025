@@ -206,10 +206,10 @@ El archivo final, en formato rdf y ttl, así como el proyecto de OpenRefine, se 
 
 #### 2.3.6. Evaluación
 
-Para la evaluación se han estudiado 2 métodos distintos: las herramientas de evaluación que vienen implementadas dentro del software de Protege y
+Para la evaluación se han estudiado 2 métodos distintos: los razonadores que vienen implementados dentro del software de Protege y
 el servicio de [Oops!](https://oops.linkeddata.es/). Sin embargo, para hacerlo más eficiente, se ha hecho con los archivos rdf con solo 4 instancias de ejemplo. Así, se han elegido las primeras 4 filas en OpenRefine y se ha exportado el rdf que posteriormente sería evaluado.
 
-En Protégé no salieron errores ni advertencias importantes. Sin embargo, Oops! sí generó sugerencias de mejoras. En la primera iteracción nos salieron los siguientes Pitfalls:
+En Protégé no salieron errores ni advertencias. Sin embargo, Oops! sí generó sugerencias de mejoras. En la primera iteracción nos salieron los siguientes Pitfalls:
 ![Oops](figs/evaluation_primera.PNG)
 
 Los errores menores se consideraron suficientemente menores como para no preocuparnos por ellos. Sin embargo, los etiquetados como importantes se consideraron para la mejora del rdf. De este modo, fue como se crearon las relaciones de owl:disjoingWith que se muestran en la imagen como ejemplo:
