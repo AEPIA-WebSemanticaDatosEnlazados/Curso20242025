@@ -213,7 +213,8 @@ En Protégé no salieron errores ni advertencias. Sin embargo, Oops! sí generó
 ![Oops](figs/evaluation_primera.PNG)
 
 Los errores menores se consideraron suficientemente menores como para no preocuparnos por ellos. Sin embargo, los etiquetados como importantes se consideraron para la mejora del rdf. De este modo, fue como se crearon las relaciones de owl:disjoingWith que se muestran en la imagen como ejemplo:
-![disjoint](figs/RDF_skeleton_esquela_evaluation_improvements.PNG)
+
+![disjoint](figs/RDF_skeleton_esquema_evaluation_improvements.PNG)
 
 También se definieron las clases que faltaban, teniendo entonces en el rdf líneas como:
 ```
@@ -229,6 +230,10 @@ El archivo con sus mejoras ya implementadas es el que se puede encontrar en este
 No se ha podido proceder a su publicación. No se dispone de dominio. 
 
 ## 3. Aplicación y explotación
+Finalmente ya podemos proceder a hacer uso de los datos y explotarlos. Para ello vamos a hacer uso de la herramienta [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/) que nos permite realizar consultas SPARQL sobre nuestros datos.
+
+Se hacen las siguientes consultas:
+1. 
 
 ## 4. Conclusiones
 
