@@ -156,6 +156,7 @@ Se puede definir el siguiente glosario de términos:
 #### 2.3.3. Conceptualización
 La representación de los términos definidos anteriormente y la base inicial de su representación sigue:
 
+![esquema](figs/estructura.PNG)
 
 #### 2.3.4. Búsqueda de ontologías
 Se han buscado ontologías publicadas relativas a censo de población o población empadronada. Se han encontrado ejemplos como https://lov.linkeddata.es/dataset/lov/vocabs/idemo o https://vocab.ciudadesabiertas.es/def/demografia/padron-municipal/index-es.html, pero en ningún caso han terminado de encajar con el esquema o resultaban muy difíciles de reutilizar. Existen también ontologías muy completas de censos de otros países como en [Canadá](https://ijpds.org/article/view/2378), pero los censos no siguen la misma estructura ni finalidad. Por otro lado, esos autores mencionan también un trabajo realizado con el censo español por Fernández et al. (2011). Sin embargo, no se ha encontrado la ontología publicada. Por ello, se ha optado por utilizar otras ontologías más generales. En particular se ha hecho mucho uso de las clases y propiedades de:
@@ -243,8 +244,9 @@ Se hacen las siguientes consultas para comprobar que se han cubierto los requisi
    ![alcobendas_2](figs/Alcobendas_2anos_mujeres_evolucion.PNG)
 3. Se puede obtener la suma de los valores de censo cuando se selecciona el país:
    ![espana](figs/suma_espana_2024.PNG)
-4. Se obtienen correctamente los valores de dos municipios simultáneamente:
+4. Se obtienen correctamente los valores de dos municipios simultáneamente, incluyendo propiedades de los municipios:
    ![alcobendas_3](figs/alcobendas_acebeda.PNG)
+   ![alcobendas_4](figs/alcobendas_acebeda_branchcode.PNG)
 
 Se puede observar que hemos cubierto todos los requisitos funcionales y que las consultas SPARQL devuelven información satisfactoriamente. 
 
