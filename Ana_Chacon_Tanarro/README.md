@@ -1,5 +1,3 @@
-Nota: trabajo en proceso y no finalizado
-
 # Trabajo final Web semántica y datos enlazados
 ## Ana Chacón Tanarro. Curso 2024-2025
 - [1. Introducción](#1-introducción)
