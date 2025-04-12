@@ -102,7 +102,7 @@ Ejemplos de URIs generadas:
 ### 2.4. Desarrollo del vocabulario
 Se han definido requisitos funcionales y no funcionales mediante preguntas de competencia:
 
-Requisitos Funcionales:
+**Requisitos Funcionales**:
 *	Pregunta de competencia 1:
     *	Pregunta: ¿Cómo puede un usuario obtener información detallada de un vehículo específico?
     *	Respuesta: El usuario puede utilizar la matrícula (VIN) para obtener un vehículo específico, y toda su información asociada.
@@ -110,8 +110,28 @@ Requisitos Funcionales:
     * Pregunta: ¿Por qué campos se puede filtrar los vehículos eléctricos?
     * Respuesta: Se puede filtrar los vehículos por fabricante, modelo, tipo de vehículo, año del modelo, rango eléctrico, precio base, distrito legislativo, ID del vehículo, eligibilidad CAFV, estado, ciudad, condado, código postal, ubicación, empresa de electricidad y tramo censal.
 
-Requisitos no Funcionales:
+**Requisitos no Funcionales**:
 * Pregunta de competencia 1:
   * Pregunta: ¿Qué herramientas y extensiones se utilizarán para trabajar con el esqueleto RDF?
   * Respuesta: Utilizar OpenRefine y extensiones que permitan trabajar con el esqueleto RDF, facilitando la transformación y limpieza de datos.
 
+**Extracción de términos**:
+*	VIN: Número de Identificación del Vehículo, una matrícula única para cada vehículo.
+*	County: Condado donde se ubica el vehículo.
+*	City: Ciudad donde se ubica el vehículo.
+*	State: Estado donde se ubica el vehículo.
+*	Postal Code: Código postal del área donde se ubica el vehículo.
+*	Model Year: Año del modelo del vehículo.
+*	Make: Fabricante del vehículo.
+*	Model: Modelo del vehículo.
+*	Electric Vehicle Type: Tipo de vehículo eléctrico (BEV o PHEV).
+*	CAFV Eligibility: Eligibilidad del vehículo para combustible alternativo limpio.
+*	Electric Range: Rango eléctrico del vehículo.
+*	Base MSRP: Precio base del vehículo.
+*	Legislative District: Distrito legislativo donde se ubica el vehículo.
+*	DOL Vehicle ID: Identificación del vehículo en el Departamento de Licencias.
+*	Vehicle Location (coordinate x, coordinate y): Localización geográfica.
+*	Electric Utility: Empresa de electricidad que suministra energía al vehículo.
+*	2020 Census Tract: Tramo censal del año 2020.
+
+**Conceptualización**:
