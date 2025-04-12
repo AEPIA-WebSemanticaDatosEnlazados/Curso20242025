@@ -103,7 +103,6 @@ Ejemplos de URIs generadas:
 Se han definido requisitos funcionales y no funcionales mediante preguntas de competencia:
 
 Requisitos Funcionales:
-
 *	Pregunta de competencia 1:
   *	Pregunta: ¿Cómo puede un usuario obtener información detallada de un vehículo específico?
   *	Respuesta: El usuario puede utilizar la matrícula (VIN) para obtener un vehículo específico, y toda su información asociada.
