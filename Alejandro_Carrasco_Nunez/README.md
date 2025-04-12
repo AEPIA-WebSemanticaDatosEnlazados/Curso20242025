@@ -104,11 +104,11 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 
 Requisitos Funcionales:
 *	Pregunta de competencia 1:
-  *	Pregunta: ¿Cómo puede un usuario obtener información detallada de un vehículo específico?
-  *	Respuesta: El usuario puede utilizar la matrícula (VIN) para obtener un vehículo específico, y toda su información asociada.
+    *	Pregunta: ¿Cómo puede un usuario obtener información detallada de un vehículo específico?
+    *	Respuesta: El usuario puede utilizar la matrícula (VIN) para obtener un vehículo específico, y toda su información asociada.
 *	Pregunta de competencia 2:
-  * Pregunta: ¿Por qué campos se puede filtrar los vehículos eléctricos?
-  * Respuesta: Se puede filtrar los vehículos por fabricante, modelo, tipo de vehículo, año del modelo, rango eléctrico, precio base, distrito legislativo, ID del vehículo, eligibilidad CAFV, estado, ciudad, condado, código postal, ubicación, empresa de electricidad y tramo censal.
+    * Pregunta: ¿Por qué campos se puede filtrar los vehículos eléctricos?
+    * Respuesta: Se puede filtrar los vehículos por fabricante, modelo, tipo de vehículo, año del modelo, rango eléctrico, precio base, distrito legislativo, ID del vehículo, eligibilidad CAFV, estado, ciudad, condado, código postal, ubicación, empresa de electricidad y tramo censal.
 
 Requisitos no Funcionales:
 * Pregunta de competencia 1:
