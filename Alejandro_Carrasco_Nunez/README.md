@@ -98,3 +98,21 @@ Se considera el dominio **http://catalog.data.gov/** para la consulta de los dat
 Ejemplos de URIs generadas:
 *	Términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#electricVehicleType**
 *	Individuos (por ejemplo vehículos): **http://catalog.data.gov/resource/Vehicle/5YJ3E1EBXK**
+
+### 2.4. Desarrollo del vocabulario
+Se han definido requisitos funcionales y no funcionales mediante preguntas de competencia:
+
+Requisitos Funcionales:
+
+*	Pregunta de competencia 1:
+  *	Pregunta: ¿Cómo puede un usuario obtener información detallada de un vehículo específico?
+  *	Respuesta: El usuario puede utilizar la matrícula (VIN) para obtener un vehículo específico, y toda su información asociada.
+*	Pregunta de competencia 2:
+  * Pregunta: ¿Por qué campos se puede filtrar los vehículos eléctricos?
+  * Respuesta: Se puede filtrar los vehículos por fabricante, modelo, tipo de vehículo, año del modelo, rango eléctrico, precio base, distrito legislativo, ID del vehículo, eligibilidad CAFV, estado, ciudad, condado, código postal, ubicación, empresa de electricidad y tramo censal.
+
+Requisitos no Funcionales:
+* Pregunta de competencia 1:
+  * Pregunta: ¿Qué herramientas y extensiones se utilizarán para trabajar con el esqueleto RDF?
+  * Respuesta: Utilizar OpenRefine y extensiones que permitan trabajar con el esqueleto RDF, facilitando la transformación y limpieza de datos.
+
