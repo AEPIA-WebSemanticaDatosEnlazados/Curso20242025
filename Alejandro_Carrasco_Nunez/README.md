@@ -11,6 +11,8 @@
 - [2. Proceso de transformación](#2-proceso-de-transformación)
   - [2.1. Selección de la fuente de datos](#21-selección-de-la-fuente-de-datos)
   - [2.2. Análisis de los datos](#22-análisis-de-los-datos)
+  - [2.3. Estrategia de nombrado](#23-estrategia-de-nombrado)
+  - [2.4. Desarrollo del vocabulario](#24-desarrollo-del-vocabulario)
 
 
 ## 1. Introducción
