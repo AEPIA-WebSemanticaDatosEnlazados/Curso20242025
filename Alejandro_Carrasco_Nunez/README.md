@@ -134,4 +134,6 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 *	Electric Utility: Empresa de electricidad que suministra energía al vehículo.
 *	2020 Census Tract: Tramo censal del año 2020.
 
-**Conceptualización**:
+**Conceptualización**: La representación de las clases con sus atributos y las relaciones entre ellas, se muestra en el siguiente diagrama conceptual (realizado mediante la herramienta draw.io).
+
+![Diagrama Conceptual](./images/conceptualizacion.png)
