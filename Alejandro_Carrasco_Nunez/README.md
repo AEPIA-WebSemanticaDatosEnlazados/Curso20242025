@@ -139,3 +139,5 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 **Conceptualización**: La representación de las clases con sus atributos y las relaciones entre ellas, se muestra en el siguiente diagrama conceptual (realizado mediante la herramienta draw.io).
 
 ![Diagrama Conceptual](./images/conceptualizacion.png)
+
+**Búsqueda de ontologías**: Se ha hecho una búsqueda de ontologías publicadas relativas al dominio de vehículos eléctricos o en su defecto, se ha generalizado a vehículos. Algunas ontologías encontradas han sido: https://schema.org/Vehicle (mediante la herramienta de búsqueda LOV https://lov.linkeddata.es/dataset/lov/terms?q=electric+vehicle).
