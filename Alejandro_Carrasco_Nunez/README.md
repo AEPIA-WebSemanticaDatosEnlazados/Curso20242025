@@ -140,4 +140,10 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 
 ![Diagrama Conceptual](./images/conceptualizacion.png)
 
-**Búsqueda de ontologías**: Se ha hecho una búsqueda de ontologías publicadas relativas al dominio de vehículos eléctricos o en su defecto, se ha generalizado a vehículos. Algunas ontologías encontradas han sido: https://schema.org/Vehicle (mediante la herramienta de búsqueda LOV https://lov.linkeddata.es/dataset/lov/terms?q=electric+vehicle).
+**Búsqueda de ontologías**: Se ha hecho una búsqueda de ontologías publicadas relativas al dominio de vehículos eléctricos o en su defecto, se ha generalizado a vehículos. Se ha empleado la herramienta de búsqueda **[LOV](https://lov.linkeddata.es/dataset/lov/)**. Algunas ontologías encontradas han sido:
+
+* **[Ontología Schema de vehículo](https://schema.org/Vehicle)**: Ofrece muchas propiedades adecuadas a las clases y atributos definidos en el modelado.
+* **[Ontología foaf](http://xmlns.com/foaf/spec/)**: Empleada para propiedades no encontradas en la ontología anterior.
+* **[Ontología geo](http://www.w3.org/2003/01/geo/)**: Empleada para la propiedad de localización geográfica (representa coordenadas).
+
+Como resultado se muestra la siguiente tabla. En ella se asocia una ontología a cada elemento del glosario de términos, y se añade el concepto que se usará en la implementación.  
