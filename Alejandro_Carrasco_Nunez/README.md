@@ -147,3 +147,23 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 * **[Ontología geo](http://www.w3.org/2003/01/geo/)**: Empleada para la propiedad de localización geográfica (representa coordenadas).
 
 Como resultado se muestra la siguiente tabla. En ella se asocia una ontología a cada elemento del glosario de términos, y se añade el concepto que se usará en la implementación.  
+
+| Término | Ontología | Concepto |
+|--------------|--------------|--------------|
+| VIN | https://schema.org/vehicleIdentificationNumber | schema:vehicleIdentificationNumber |
+| County | https://schema.org/Place | schema:Place |
+| City | https://schema.org/City | schema:City |
+| State | https://schema.org/State | schema:State |
+| Postal Code | https://schema.org/postalCode | schema:postalCode |
+| Model Year | https://schema.org/vehicleModelDate | schema:vehicleModelDate |
+| Make | http://xmlns.com/foaf/spec/#term_maker | foaf:term_maker |
+| Model | https://schema.org/model | schema:model |
+| Electric Vehicle Type | https://schema.org/vehicleTransmission | schema:vehicleTransmission |
+| CAFV Eligibility | https://schema.org/fuelType | schema:fuelType |
+| Electric Range | https://schema.org/fuelCapacity | schema:fuelCapacity |
+| Base MSRP | https://schema.org/price | schema:price |
+| Legislative District | https://schema.org/Observation | schema:Observation |
+| DOL Vehicle ID | https://schema.org/productID | schema:productID |
+| Vehicle Location | http://www.w3.org/2003/01/geo/wgs84_pos#Point | geo:Point |
+| Electric Utility | https://schema.org/Place | schema:Place |
+| 2020 Census Tract | https://schema.org/Observation | schema:Observation |
