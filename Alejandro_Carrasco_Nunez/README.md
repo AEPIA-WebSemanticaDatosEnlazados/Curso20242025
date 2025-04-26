@@ -13,7 +13,7 @@
   - [2.2. Análisis de los datos](#22-análisis-de-los-datos)
   - [2.3. Estrategia de nombrado](#23-estrategia-de-nombrado)
   - [2.4. Desarrollo del vocabulario](#24-desarrollo-del-vocabulario)
-  - [2.5. Desarrollo de la ontología](#24-desarrollo-de-la-ontología)
+  - [2.5. Desarrollo de la ontología](#25-desarrollo-de-la-ontología)
 
 
 ## 1. Introducción
