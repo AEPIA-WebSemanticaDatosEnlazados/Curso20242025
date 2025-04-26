@@ -178,6 +178,12 @@ Se ha definido el esqueleto rdf siguiendo lo aprendido en los vídeos téoricos 
 
 La raíz del esquema rdf será la clase **Vehicle** identificada con su **VIN** y a partir de la cual, se han creado tanto propiedades individuales como referencias a otras clases (por ej. **County**, **City**,...).
 
+![openrefinefirstRootNodeVIN expression](./images/openrefinefirstRootNodeVIN2.PNG)
+
+![openrefinefirstRootNodeVIN column transformed](./images/openrefinefirstRootNodeVIN.PNG)
+
+![openrefineCountyRootNodeVIN](./images/openrefineCountyRootNodeVIN.PNG)
+
 Se han transformado algunos datos, creando nuevas columnas o directamente mediante una expresión en el nodo RDF.
 
 A partir de la columna "Clean Alternative ..." se ha creado "**CAFV Eligibilit**", que se tratará como una columna **Boolean**. Sus valores se han transformado: "Clean Alternative Fuel Vehicle Eligible" es **true**, "Eligibility unknown as battery range has not been researched" es **null**, y "Not eligible due to ow battery range" es **false**.
