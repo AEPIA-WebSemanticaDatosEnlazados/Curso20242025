@@ -172,6 +172,8 @@ Como resultado se muestra la siguiente tabla. En ella se asocia una ontología a
 ### 2.5. Desarrollo de la ontología
 Para implementar la ontología se ha empleado la herramienta OpenRefine (al igual que en los apartados anteriores), y la extensión **rdf-transform**. Dado que la versión más actualizada de OpenRefine no dispone de esa extensión, se ha descargado por separado de un [repositorio](https://github.com/AtesComp/rdf-transform) disponible desde la documentación de OpenRefine.
 
-Se ha definido el esqueleto rdf siguiendo lo aprendido en los vídeos téoricos de la asignatura y teniendo como base el modelo conceptual implementado.
+Se ha definido el esqueleto rdf siguiendo lo aprendido en los vídeos téoricos de la asignatura y teniendo como base el modelo conceptual implementado. En la URI base de RDF se ha definido la ruta para individuos indicada en la estrategia de nombrado.
+
+![RDF Header](./images/uriresourcesopenrefine.PNG)
 
 La raíz del esquema rdf será la clase **Vehicle** identificada con su **VIN** y a partir de la cual, se han creado tanto propiedades individuales como referencias a otras clases (por ej. **County**, **City**,...).
