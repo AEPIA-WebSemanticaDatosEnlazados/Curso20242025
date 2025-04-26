@@ -192,3 +192,10 @@ A partir de la columna "Clean Alternative ..." se ha creado "**CAFV Eligibilit**
 
 ![New column](./images/openrefinetransformedCAFV.PNG)
 
+Al definir algunas clases (recursos) o atributos en el esqueleto rdf, se han usado expresiones para transformar su rango de valores. Por ejemplo, el recurso "**Electric Vehicle Type**" que toma dos valores posibles y se han simplificado sus etiquetas.
+
+![Recurso transformado](./images/openrefineElectricVehicleTypeRoot.PNG)
+
+Otro caso es el atributo "**geo:Point**" que representa las coordenadas y toma los valores del atributo "**Vehicle Localtion**". Aunque ya se había hecho una transformación previa y se habían creado dos columnas para cada coordenada, se ha considerado mejor un formato donde las dos coordenadas estén juntas.
+
+![Atributo valores transformado](./images/openrefinecoordinates.PNG)
