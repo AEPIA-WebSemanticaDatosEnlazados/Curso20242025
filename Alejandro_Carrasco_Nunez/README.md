@@ -196,6 +196,14 @@ Al definir algunas clases (recursos) o atributos en el esqueleto rdf, se han usa
 
 ![Recurso transformado](./images/openrefineElectricVehicleTypeRoot.PNG)
 
-Otro caso es el atributo "**geo:Point**" que representa las coordenadas y toma los valores del atributo "**Vehicle Localtion**". Aunque ya se había hecho una transformación previa y se habían creado dos columnas para cada coordenada, se ha considerado mejor un formato donde las dos coordenadas estén juntas.
+Otro caso es el atributo "**geo:Point**" que representa las coordenadas y toma los valores del atributo "**Vehicle Location**". Aunque ya se había hecho una transformación previa y se habían creado dos columnas para cada coordenada, se ha considerado mejor un formato donde las dos coordenadas estén juntas.
 
 ![Atributo valores transformado](./images/openrefinecoordinates.PNG)
+
+El esquema rdf realizado es el siguiente:
+
+![Esquema rdf 1](./images/rdftemplate1.PNG)
+
+![Esquema rdf 2](./images/rdftemplate2.PNG)
+
+
