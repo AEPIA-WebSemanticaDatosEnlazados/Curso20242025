@@ -13,6 +13,7 @@
   - [2.2. Análisis de los datos](#22-análisis-de-los-datos)
   - [2.3. Estrategia de nombrado](#23-estrategia-de-nombrado)
   - [2.4. Desarrollo del vocabulario](#24-desarrollo-del-vocabulario)
+  - [2.5. Desarrollo de la ontología](#24-desarrollo-de-la-ontología)
 
 
 ## 1. Introducción
@@ -167,3 +168,10 @@ Como resultado se muestra la siguiente tabla. En ella se asocia una ontología a
 | Vehicle Location | http://www.w3.org/2003/01/geo/wgs84_pos#Point | geo:Point |
 | Electric Utility | https://schema.org/Place | schema:Place |
 | 2020 Census Tract | https://schema.org/Observation | schema:Observation |
+
+### 2.5. Desarrollo de la ontología
+Para implementar la ontología se ha empleado la herramienta OpenRefine (al igual que en los apartados anteriores), y la extensión **rdf-transform**. Dado que la versión más actualizada de OpenRefine no dispone de esa extensión, se ha descargado por separado de un [repositorio](https://github.com/AtesComp/rdf-transform) disponible desde la documentación de OpenRefine.
+
+Se ha definido el esqueleto rdf siguiendo lo aprendido en los vídeos téoricos de la asignatura y teniendo como base el modelo conceptual implementado.
+
+La raíz del esquema rdf será la clase **Vehicle** identificada con su **VIN** y a partir de la cual, se han creado tanto propiedades individuales como referencias a otras clases (por ej. **County**, **City**,...).
