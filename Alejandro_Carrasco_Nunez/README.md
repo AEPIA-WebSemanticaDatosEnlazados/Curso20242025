@@ -206,4 +206,4 @@ El esquema rdf realizado es el siguiente:
 
 ![Esquema rdf 2](./images/rdftemplate2.PNG)
 
-
+El archivo JSON con el template del esquema se encuentra en la carpeta "**rdf_schema_template**".
