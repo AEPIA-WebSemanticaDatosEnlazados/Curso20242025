@@ -228,3 +228,13 @@ Al principio se intentó hacer de todas las columnas, por ejemplo, de la columna
 ![Reconciliacion VIN](./images/reconciliacionVIN.PNG)
 
 Sin embargo, solo se ha hecho de cuatro columnas que representan recursos: **City**, **State**, **Make** y **Model**.
+
+Cada columna se enlazó con una uri de Wikidata como se muestra aquí:
+
+![Reconciliacion 1](./images/reconciliacion1.PNG)
+
+![Reconciliacion 2](./images/reconciliacion2.PNG)
+
+![Reconciliacion 3](./images/reconciliacion3.PNG)
+
+![Reconciliacion 4](./images/reconciliacion4.PNG)
