@@ -243,3 +243,8 @@ Para las cuatro columnas reconciliadas, se crearon **cuatro nuevas columnas** cu
 
 ![Reconciliacion Expresion](./images/reconciliacion1nuevacolumna.PNG)
 
+En las siguientes imágenes se muestra cada columna reconciliada seguida de la nueva columna creada (para algunos valores no se ha encontrado equivalencia).
+
+![Reconciliacion Tabla 1](./images/reconciliacion1Tabla.PNG)
+
+![Reconciliacion Tabla 2](./images/reconciliacion2Tabla.PNG)
