@@ -7,6 +7,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odc:    <https://opendatacommons.org/licenses/odbl/1-0/> .
 
 <http://catalog.data.gov/resource> {
     <http://catalog.data.gov/resource/State/WA>
