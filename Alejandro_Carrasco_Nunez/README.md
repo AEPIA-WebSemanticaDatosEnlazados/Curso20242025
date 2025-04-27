@@ -45,7 +45,7 @@ En las siguientes imágenes se pueden ver una parte de los registros y sus valor
 
 En total para cada registro hay **18 columnas** (atributos), que son las siguientes:
 
-*	**VIN (1-10)**: Campo de tipo texto que representa la matrícula del vehículo. Es única para cada vehículo, por ejemplo, 5YJ3E1EBXK.
+*	**VIN (1-10)**: Campo de tipo texto que representa la matrícula del vehículo, como, 5YJ3E1EBXK. Sin embargo, no es única para cada vehículo, hay repeticiones en el CSV.
 *	**County**: Campo de tipo texto que representa el condado donde se ubica el vehículo. Hay 212 valores, por ejemplo, King.
 *	**City**: Campo de tipo texto que representa la ciudad donde se ubica el vehículo. Hay 788 valores, por ejemplo, Seattle.
 *	**Stat**e: Campo de tipo texto que representa el estado donde se ubica el vehículo. Hay 48 valores, por ejemplo, WA.
@@ -100,7 +100,7 @@ Se considera el dominio **http://catalog.data.gov/** para la consulta de los dat
 
 Ejemplos de URIs generadas:
 *	Términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#electricVehicleType**
-*	Individuos (por ejemplo vehículos): **http://catalog.data.gov/resource/Vehicle/5YJ3E1EBXK**
+*	Individuos (por ejemplo vehículos): **http://catalog.data.gov/resource/Vehicle/477309682**
 
 ### 2.4. Desarrollo del vocabulario
 Se han definido requisitos funcionales y no funcionales mediante preguntas de competencia:
@@ -119,7 +119,7 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
   * Respuesta: Utilizar OpenRefine y extensiones que permitan trabajar con el esqueleto RDF, facilitando la transformación y limpieza de datos.
 
 **Extracción de términos**:
-*	VIN: Número de Identificación del Vehículo, una matrícula única para cada vehículo.
+*	VIN: Matrícula del vehículo.
 *	County: Condado donde se ubica el vehículo.
 *	City: Ciudad donde se ubica el vehículo.
 *	State: Estado donde se ubica el vehículo.
@@ -132,7 +132,7 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 *	Electric Range: Rango eléctrico del vehículo.
 *	Base MSRP: Precio base del vehículo.
 *	Legislative District: Distrito legislativo donde se ubica el vehículo.
-*	DOL Vehicle ID: Identificación del vehículo en el Departamento de Licencias.
+*	DOL Vehicle ID: Identificación del vehículo en el Departamento de Licencias, única para cada vehículo.
 *	Vehicle Location (coordinate x, coordinate y): Localización geográfica.
 *	Electric Utility: Empresa de electricidad que suministra energía al vehículo.
 *	2020 Census Tract: Tramo censal del año 2020.
@@ -176,11 +176,11 @@ Se ha definido el esqueleto rdf siguiendo lo aprendido en los vídeos téoricos 
 
 ![RDF Header](./images/uriresourcesopenrefine.PNG)
 
-La raíz del esquema rdf será la clase **Vehicle** identificada con su **VIN** y a partir de la cual, se han creado tanto propiedades individuales como referencias a otras clases (por ej. **County**, **City**,...).
+La raíz del esquema rdf será la clase **Vehicle** identificada con su **DOL Vehicle ID** y a partir de la cual, se han creado tanto propiedades individuales como referencias a otras clases (por ej. **County**, **City**,...).
 
-![openrefinefirstRootNodeVIN expression](./images/openrefinefirstRootNodeVIN2.PNG)
+![openrefinefirstRootNodeVIN expression](./images/openrefinefirstRootNodeID.PNG)
 
-![openrefinefirstRootNodeVIN column transformed](./images/openrefinefirstRootNodeVIN.PNG)
+![openrefinefirstRootNodeVIN column transformed](./images/openrefinefirstRootNodeIDExpression.PNG)
 
 ![openrefineCountyRootNodeVIN](./images/openrefineCountyRootNodeVIN.PNG)
 
