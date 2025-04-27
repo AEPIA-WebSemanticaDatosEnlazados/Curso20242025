@@ -220,3 +220,11 @@ En el apartado de evaluación de la ontología se ha empleado la herramienta **O
 ![Oops 2](./images/evaluacion2.PNG)
 
 ### 2.6. Enlazado
+
+Se ha realizado el enlazado de los datos de algunas columnas. Para esto se ha usado el servicio de **Wikidata** disponible en el propio OpenRefine, y que realiza la reconciliación por columna.
+
+Al principio se intentó hacer de todas las columnas, por ejemplo, de la columna VIN como se muestra a continuación.
+
+![Reconciliacion VIN](./images/reconciliacionVIN.PNG)
+
+Sin embargo, solo se ha hecho de cuatro columnas que representan recursos: **City**, **State**, **Make** y **Model**.
