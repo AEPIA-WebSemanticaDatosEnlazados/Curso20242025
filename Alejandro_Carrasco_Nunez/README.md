@@ -254,3 +254,7 @@ Por último, en el esquema RDF se ha definido el enlazado mediante la propiedad 
 ![Reconciliacion RDF 1](./images/esquemardfreconciliado1.PNG)
 
 ![Reconciliacion RDF 2](./images/esquemardfreconciliado2.PNG)
+
+El esquema reconciliado se ha guardado en la carpeta "**rdf_schema_template**", mientras que la ontología en formato ttl reconciliada se ha guardado en "**ontology_open_refine**".
+
+## 3. Aplicación y explotación
