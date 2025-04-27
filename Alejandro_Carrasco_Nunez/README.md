@@ -14,6 +14,7 @@
   - [2.3. Estrategia de nombrado](#23-estrategia-de-nombrado)
   - [2.4. Desarrollo del vocabulario](#24-desarrollo-del-vocabulario)
   - [2.5. Desarrollo de la ontología](#25-desarrollo-de-la-ontología)
+  - [2.6. Enlazado](#26-enlazado)
 
 
 ## 1. Introducción
@@ -209,3 +210,13 @@ El esquema rdf realizado es el siguiente:
 ![Esquema rdf 2](./images/rdftemplate2.PNG)
 
 El archivo JSON con el template del esquema se encuentra en la carpeta "**rdf_schema_template**". Por otro lado, se ha exportado la ontología en formato **ttl** en Turtle (Stream). Dado que el volumen del ttl con todos los registros es demasiado grande y ha supuesto problemas tanto en su descarga como en la subida al repositorio, se ha exportado el archivo pero filtrandolo para sacar solo 10 vehículos. Dicho ttl se puede encontrar en la carpeta "**ontology_open_refine**". También se ha generado la misma ontología en formato **RDF**, mediante Protege (OpenRefine no lo permite).
+
+**Evaluación de la ontología**
+
+En el apartado de evaluación de la ontología se ha empleado la herramienta **OOPS!**. Se ha introducido un archivo RDF con sólo una instancia de los datos. Las **Pitfalls** detectadas fueron las siguientes:
+
+![Oops 1](./images/evaluacion1.PNG)
+
+![Oops 2](./images/evaluacion2.PNG)
+
+### 2.6. Enlazado
