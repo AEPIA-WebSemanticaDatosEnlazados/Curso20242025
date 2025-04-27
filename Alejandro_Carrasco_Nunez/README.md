@@ -238,3 +238,8 @@ Cada columna se enlazó con una uri de Wikidata como se muestra aquí:
 ![Reconciliacion 3](./images/reconciliacion3.PNG)
 
 ![Reconciliacion 4](./images/reconciliacion4.PNG)
+
+Para las cuatro columnas reconciliadas, se crearon **cuatro nuevas columnas** cuyos valores serán las uris de Wikidata. La expresión empleada fue la misma para las cuatro, tal y como se muestra en esta imagen:
+
+![Reconciliacion Expresion](./images/reconciliacion1nuevacolumna.PNG)
+
