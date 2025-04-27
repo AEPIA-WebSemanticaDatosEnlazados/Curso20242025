@@ -1,0 +1,1892 @@
+@prefix : <http://catalog.data.gov/resource/> .
+@prefix schema: <https://schema.org/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odc: <https://opendatacommons.org/licenses/odbl/1-0/> .
+
+<http://catalog.data.gov/resource> {
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Seabeck>
+            schema:name  "Seabeck" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/EletricVehicleType/PHEV>
+            schema:name  "Plug-in Hybrid Electric Vehicle (PHEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/35>
+            schema:name  "35"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Make/BMW>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q796364" ;
+            foaf:name   "BMW" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/267929112>
+            schema:postalCode           "98380" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/35> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seabeck> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:ElectricRange        "30"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/X5> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:vehicleIdentificationNumber  "5UXTA6C0XM" ;
+            schema:vehicleModelDate     "2021"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "267929112" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:Observation          "53035091301"^^xsd:int ;
+            geo:Point                   "(-122.81585, 47.64509)" .
+    <http://catalog.data.gov/resource/Model/X5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796778" ;
+            schema:name  "X5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Seabeck>
+            schema:name  "Seabeck" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/2>
+            schema:name  "2"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/EletricVehicleType/PHEV>
+            schema:name  "Plug-in Hybrid Electric Vehicle (PHEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Vehicle/236505139>
+            schema:model                <http://catalog.data.gov/resource/Model/RAV4PRIME> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            geo:Point                   "(-122.68993, 46.88897)" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Rainier> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:postalCode           "98576" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:Observation          "53067012530"^^xsd:int ;
+            schema:ElectricRange        "42"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:vehicleIdentificationNumber  "JTMAB3FV7P" ;
+            schema:productId            "236505139" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/2> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TOYOTA> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/City/Rainier>
+            schema:name  "Rainier" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/35>
+            schema:name  "35"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Make/TOYOTA>
+            foaf:name  "TOYOTA" ;
+            rdf:type   foaf:term_maker .
+    <http://catalog.data.gov/resource/Model/RAV4PRIME>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q97594498" ;
+            schema:name  "RAV4 PRIME" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/Thurston>
+            schema:name  "Thurston" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/BMW>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q796364" ;
+            foaf:name   "BMW" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/267929112>
+            schema:postalCode           "98380" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/35> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seabeck> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:ElectricRange        "30"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/X5> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:vehicleIdentificationNumber  "5UXTA6C0XM" ;
+            schema:vehicleModelDate     "2021"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "267929112" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:Observation          "53035091301"^^xsd:int ;
+            geo:Point                   "(-122.81585, 47.64509)" .
+    <http://catalog.data.gov/resource/Model/X5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796778" ;
+            schema:name  "X5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/22>
+            schema:name  "22"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Seabeck>
+            schema:name  "Seabeck" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/2>
+            schema:name  "2"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/EletricVehicleType/PHEV>
+            schema:name  "Plug-in Hybrid Electric Vehicle (PHEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Vehicle/236505139>
+            schema:model                <http://catalog.data.gov/resource/Model/RAV4PRIME> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            geo:Point                   "(-122.68993, 46.88897)" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Rainier> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:postalCode           "98576" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:Observation          "53067012530"^^xsd:int ;
+            schema:ElectricRange        "42"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:vehicleIdentificationNumber  "JTMAB3FV7P" ;
+            schema:productId            "236505139" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/2> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TOYOTA> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/City/Rainier>
+            schema:name  "Rainier" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/35>
+            schema:name  "35"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Make/TOYOTA>
+            foaf:name  "TOYOTA" ;
+            rdf:type   foaf:term_maker .
+    <http://catalog.data.gov/resource/Model/RAV4PRIME>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q97594498" ;
+            schema:name  "RAV4 PRIME" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/MODELS>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1463050" ;
+            schema:name  "MODEL S" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/County/Thurston>
+            schema:name  "Thurston" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/BMW>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q796364" ;
+            foaf:name   "BMW" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/186637195>
+            schema:vehicleModelDate     "2012"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.92333, 47.03779)" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:baseMSRP             "59900"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:postalCode           "98502" ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/22> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricRange        "265"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJSA1DN0C" ;
+            schema:Observation          "53067010600"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olympia> ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELS> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:productId            "186637195" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/267929112>
+            schema:postalCode           "98380" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/35> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seabeck> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:ElectricRange        "30"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/X5> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:vehicleIdentificationNumber  "5UXTA6C0XM" ;
+            schema:vehicleModelDate     "2021"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "267929112" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:Observation          "53035091301"^^xsd:int ;
+            geo:Point                   "(-122.81585, 47.64509)" .
+    <http://catalog.data.gov/resource/Model/X5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796778" ;
+            schema:name  "X5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Olympia>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42735" ;
+            schema:name  "Olympia" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Bellevue>
+            schema:name  "Bellevue" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/22>
+            schema:name  "22"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Model/I3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796785" ;
+            schema:name  "I3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/LegislativeDistrict/48>
+            schema:name  "48"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Seabeck>
+            schema:name  "Seabeck" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/2>
+            schema:name  "2"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/EletricVehicleType/PHEV>
+            schema:name  "Plug-in Hybrid Electric Vehicle (PHEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Vehicle/196789610>
+            schema:productId            "196789610" ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Bellevue> ;
+            schema:vehicleModelDate     "2017"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:ElectricRange        "81"^^xsd:int ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/48> ;
+            schema:postalCode           "98004" ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)" ;
+            schema:vehicleIdentificationNumber  "WBY1Z6C30H" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            schema:fuelType             true ;
+            schema:model                <http://catalog.data.gov/resource/Model/I3> ;
+            geo:Point                   "(-122.1872, 47.61001)" ;
+            schema:Observation          "53033024001"^^xsd:int .
+    <http://catalog.data.gov/resource/Vehicle/236505139>
+            schema:model                <http://catalog.data.gov/resource/Model/RAV4PRIME> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            geo:Point                   "(-122.68993, 46.88897)" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Rainier> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:postalCode           "98576" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:Observation          "53067012530"^^xsd:int ;
+            schema:ElectricRange        "42"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:vehicleIdentificationNumber  "JTMAB3FV7P" ;
+            schema:productId            "236505139" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/2> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TOYOTA> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/City/Rainier>
+            schema:name  "Rainier" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/35>
+            schema:name  "35"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Make/TOYOTA>
+            foaf:name  "TOYOTA" ;
+            rdf:type   foaf:term_maker .
+    <http://catalog.data.gov/resource/Model/RAV4PRIME>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q97594498" ;
+            schema:name  "RAV4 PRIME" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/MODELS>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1463050" ;
+            schema:name  "MODEL S" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/County/Thurston>
+            schema:name  "Thurston" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/BMW>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q796364" ;
+            foaf:name   "BMW" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/186637195>
+            schema:vehicleModelDate     "2012"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.92333, 47.03779)" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:baseMSRP             "59900"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:postalCode           "98502" ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/22> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricRange        "265"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJSA1DN0C" ;
+            schema:Observation          "53067010600"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olympia> ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELS> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:productId            "186637195" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/267929112>
+            schema:postalCode           "98380" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/35> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seabeck> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:ElectricRange        "30"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/X5> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:vehicleIdentificationNumber  "5UXTA6C0XM" ;
+            schema:vehicleModelDate     "2021"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "267929112" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:Observation          "53035091301"^^xsd:int ;
+            geo:Point                   "(-122.81585, 47.64509)" .
+    <http://catalog.data.gov/resource/Model/X5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796778" ;
+            schema:name  "X5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Olympia>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42735" ;
+            schema:name  "Olympia" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/48>
+            schema:name  "48"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/LegislativeDistrict/35>
+            schema:name  "35"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/22>
+            schema:name  "22"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/BMW>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q796364" ;
+            foaf:name   "BMW" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/City/Bellevue>
+            schema:name  "Bellevue" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Olympia>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42735" ;
+            schema:name  "Olympia" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/2>
+            schema:name  "2"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/RAV4PRIME>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q97594498" ;
+            schema:name  "RAV4 PRIME" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/186637195>
+            schema:vehicleModelDate     "2012"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.92333, 47.03779)" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:baseMSRP             "59900"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:postalCode           "98502" ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/22> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricRange        "265"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJSA1DN0C" ;
+            schema:Observation          "53067010600"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olympia> ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELS> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:productId            "186637195" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> .
+    <http://catalog.data.gov/resource/County/Snohomish>
+            schema:name  "Snohomish" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Model/330E>
+            schema:name  "330E" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Make/TOYOTA>
+            foaf:name  "TOYOTA" ;
+            rdf:type   foaf:term_maker .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/236505139>
+            schema:model                <http://catalog.data.gov/resource/Model/RAV4PRIME> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            geo:Point                   "(-122.68993, 46.88897)" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Rainier> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:postalCode           "98576" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:Observation          "53067012530"^^xsd:int ;
+            schema:ElectricRange        "42"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:vehicleIdentificationNumber  "JTMAB3FV7P" ;
+            schema:productId            "236505139" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/2> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TOYOTA> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/EletricVehicleType/PHEV>
+            schema:name  "Plug-in Hybrid Electric Vehicle (PHEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/Vehicle/196789610>
+            schema:productId            "196789610" ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Bellevue> ;
+            schema:vehicleModelDate     "2017"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:ElectricRange        "81"^^xsd:int ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/48> ;
+            schema:postalCode           "98004" ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)" ;
+            schema:vehicleIdentificationNumber  "WBY1Z6C30H" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            schema:fuelType             true ;
+            schema:model                <http://catalog.data.gov/resource/Model/I3> ;
+            geo:Point                   "(-122.1872, 47.61001)" ;
+            schema:Observation          "53033024001"^^xsd:int .
+    <http://catalog.data.gov/resource/Vehicle/267929112>
+            schema:postalCode           "98380" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/35> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seabeck> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:ElectricRange        "30"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/X5> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:vehicleIdentificationNumber  "5UXTA6C0XM" ;
+            schema:vehicleModelDate     "2021"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "267929112" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:Observation          "53035091301"^^xsd:int ;
+            geo:Point                   "(-122.81585, 47.64509)" .
+    <http://catalog.data.gov/resource/Model/I3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796785" ;
+            schema:name  "I3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/204822761>
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/39> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:County               <http://catalog.data.gov/resource/County/Snohomish> ;
+            schema:Observation          "53061052808"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.1677, 48.11026)" ;
+            schema:productId            "204822761" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            schema:vehicleIdentificationNumber  "3MW5P9J0XN" ;
+            schema:fuelType             false ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:vehicleModelDate     "2022"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:postalCode           "98271" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Marysville> ;
+            schema:ElectricRange        "22"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/330E> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> .
+    <http://catalog.data.gov/resource/County/Thurston>
+            schema:name  "Thurston" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/LegislativeDistrict/39>
+            schema:name  "39"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Marysville>
+            schema:name  "Marysville" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/X5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796778" ;
+            schema:name  "X5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/City/Seabeck>
+            schema:name  "Seabeck" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/City/Rainier>
+            schema:name  "Rainier" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODELS>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1463050" ;
+            schema:name  "MODEL S" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/48>
+            schema:name  "48"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/LegislativeDistrict/35>
+            schema:name  "35"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/22>
+            schema:name  "22"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/BMW>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q796364" ;
+            foaf:name   "BMW" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/City/Bellevue>
+            schema:name  "Bellevue" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Olympia>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42735" ;
+            schema:name  "Olympia" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/2>
+            schema:name  "2"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/RAV4PRIME>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q97594498" ;
+            schema:name  "RAV4 PRIME" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/186637195>
+            schema:vehicleModelDate     "2012"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.92333, 47.03779)" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:baseMSRP             "59900"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:postalCode           "98502" ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/22> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricRange        "265"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJSA1DN0C" ;
+            schema:Observation          "53067010600"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olympia> ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELS> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:productId            "186637195" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> .
+    <http://catalog.data.gov/resource/County/Snohomish>
+            schema:name  "Snohomish" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Model/330E>
+            schema:name  "330E" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Make/TOYOTA>
+            foaf:name  "TOYOTA" ;
+            rdf:type   foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/2039222>
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/45> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)" ;
+            schema:productId            "2039222" ;
+            schema:Observation          "53033022205"^^xsd:int ;
+            schema:ElectricRange        "215"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Kirkland> ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:postalCode           "98034" ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleModelDate     "2018"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EA6J" ;
+            geo:Point                   "(-122.22901, 47.72201)" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/45>
+            schema:name  "45"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/236505139>
+            schema:model                <http://catalog.data.gov/resource/Model/RAV4PRIME> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            geo:Point                   "(-122.68993, 46.88897)" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Rainier> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:postalCode           "98576" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:Observation          "53067012530"^^xsd:int ;
+            schema:ElectricRange        "42"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:vehicleIdentificationNumber  "JTMAB3FV7P" ;
+            schema:productId            "236505139" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/2> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TOYOTA> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/EletricVehicleType/PHEV>
+            schema:name  "Plug-in Hybrid Electric Vehicle (PHEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/City/Kirkland>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q936768" ;
+            schema:name  "Kirkland" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/196789610>
+            schema:productId            "196789610" ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Bellevue> ;
+            schema:vehicleModelDate     "2017"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:ElectricRange        "81"^^xsd:int ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/48> ;
+            schema:postalCode           "98004" ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)" ;
+            schema:vehicleIdentificationNumber  "WBY1Z6C30H" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            schema:fuelType             true ;
+            schema:model                <http://catalog.data.gov/resource/Model/I3> ;
+            geo:Point                   "(-122.1872, 47.61001)" ;
+            schema:Observation          "53033024001"^^xsd:int .
+    <http://catalog.data.gov/resource/Vehicle/267929112>
+            schema:postalCode           "98380" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/35> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seabeck> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:ElectricRange        "30"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/X5> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:vehicleIdentificationNumber  "5UXTA6C0XM" ;
+            schema:vehicleModelDate     "2021"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "267929112" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:Observation          "53035091301"^^xsd:int ;
+            geo:Point                   "(-122.81585, 47.64509)" .
+    <http://catalog.data.gov/resource/Model/I3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796785" ;
+            schema:name  "I3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/204822761>
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/39> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:County               <http://catalog.data.gov/resource/County/Snohomish> ;
+            schema:Observation          "53061052808"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.1677, 48.11026)" ;
+            schema:productId            "204822761" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            schema:vehicleIdentificationNumber  "3MW5P9J0XN" ;
+            schema:fuelType             false ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:vehicleModelDate     "2022"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:postalCode           "98271" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Marysville> ;
+            schema:ElectricRange        "22"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/330E> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> .
+    <http://catalog.data.gov/resource/County/Thurston>
+            schema:name  "Thurston" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/LegislativeDistrict/39>
+            schema:name  "39"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Marysville>
+            schema:name  "Marysville" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/X5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796778" ;
+            schema:name  "X5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/City/Seabeck>
+            schema:name  "Seabeck" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/City/Rainier>
+            schema:name  "Rainier" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODELS>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1463050" ;
+            schema:name  "MODEL S" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/48>
+            schema:name  "48"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/LegislativeDistrict/35>
+            schema:name  "35"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/MODELY>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42298250" ;
+            schema:name  "MODEL Y" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/22>
+            schema:name  "22"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/Kitsap>
+            schema:name  "Kitsap" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Vehicle/230390492>
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "230390492" ;
+            geo:Point                   "(-122.54729, 47.42602)" ;
+            schema:ElectricRange        "0"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/26> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:Observation          "53035092802"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/HYUNDAI> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            schema:postalCode           "98359" ;
+            schema:vehicleIdentificationNumber  "KM8KRDAF5P" ;
+            schema:model                <http://catalog.data.gov/resource/Model/IONIQ5> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olalla> .
+    <http://catalog.data.gov/resource/City/Seattle>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q5083" ;
+            schema:name  "Seattle" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/BMW>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q796364" ;
+            foaf:name   "BMW" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/109705683>
+            schema:postalCode           "98370" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Poulsbo> ;
+            schema:ElectricRange        "291"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJYGDEE3L" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/23> ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            schema:vehicleModelDate     "2020"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            geo:Point                   "(-122.64681, 47.73689)" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELY> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:Observation          "53035091100"^^xsd:int ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:productId            "109705683" .
+    <http://catalog.data.gov/resource/City/Bellevue>
+            schema:name  "Bellevue" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Olympia>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q42735" ;
+            schema:name  "Olympia" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/2>
+            schema:name  "2"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/County/King>
+            schema:name  "King" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/LegislativeDistrict/23>
+            schema:name  "23"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Model/RAV4PRIME>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q97594498" ;
+            schema:name  "RAV4 PRIME" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/186637195>
+            schema:vehicleModelDate     "2012"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.92333, 47.03779)" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:baseMSRP             "59900"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:postalCode           "98502" ;
+            rdf:type                    schema:Vehicle ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/22> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricRange        "265"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJSA1DN0C" ;
+            schema:Observation          "53067010600"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Olympia> ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODELS> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:productId            "186637195" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> .
+    <http://catalog.data.gov/resource/Vehicle/474817283>
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)" ;
+            schema:productId            "474817283" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:ElectricRange        "215"^^xsd:int ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:vehicleModelDate     "2018"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Redmond> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/45> ;
+            schema:postalCode           "98052" ;
+            schema:Observation          "53033032321"^^xsd:int ;
+            geo:Point                   "(-122.13158, 47.67858)" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            rdf:type                    schema:Vehicle ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EA2J" .
+    <http://catalog.data.gov/resource/County/Snohomish>
+            schema:name  "Snohomish" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/Model/IONIQ5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q99342695" ;
+            schema:name  "IONIQ 5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Model/MODEL3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q7705507" ;
+            schema:name  "MODEL 3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Model/330E>
+            schema:name  "330E" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/37>
+            schema:name  "37"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Make/HYUNDAI>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q125054811" ;
+            foaf:name   "HYUNDAI" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/Make/TOYOTA>
+            foaf:name  "TOYOTA" ;
+            rdf:type   foaf:term_maker .
+    <http://catalog.data.gov/resource/Vehicle/2039222>
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/45> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)" ;
+            schema:productId            "2039222" ;
+            schema:Observation          "53033022205"^^xsd:int ;
+            schema:ElectricRange        "215"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Kirkland> ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:postalCode           "98034" ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleModelDate     "2018"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EA6J" ;
+            geo:Point                   "(-122.22901, 47.72201)" ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> .
+    <http://catalog.data.gov/resource/City/Redmond>
+            schema:name  "Redmond" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Olalla>
+            schema:name  "Olalla" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/LegislativeDistrict/45>
+            schema:name  "45"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/236505139>
+            schema:model                <http://catalog.data.gov/resource/Model/RAV4PRIME> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            geo:Point                   "(-122.68993, 46.88897)" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Rainier> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:postalCode           "98576" ;
+            schema:County               <http://catalog.data.gov/resource/County/Thurston> ;
+            schema:Observation          "53067012530"^^xsd:int ;
+            schema:ElectricRange        "42"^^xsd:int ;
+            schema:fuelType             true ;
+            schema:vehicleIdentificationNumber  "JTMAB3FV7P" ;
+            schema:productId            "236505139" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/2> ;
+            schema:vehicleModelDate     "2023"^^xsd:int ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TOYOTA> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" .
+    <http://catalog.data.gov/resource/State/WA>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1223" ;
+            schema:name  "WA" ;
+            rdf:type     schema:State .
+    <http://catalog.data.gov/resource/EletricVehicleType/PHEV>
+            schema:name  "Plug-in Hybrid Electric Vehicle (PHEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/City/Kirkland>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q936768" ;
+            schema:name  "Kirkland" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Vehicle/196789610>
+            schema:productId            "196789610" ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:City                 <http://catalog.data.gov/resource/City/Bellevue> ;
+            schema:vehicleModelDate     "2017"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:ElectricRange        "81"^^xsd:int ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/48> ;
+            schema:postalCode           "98004" ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)" ;
+            schema:vehicleIdentificationNumber  "WBY1Z6C30H" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            schema:fuelType             true ;
+            schema:model                <http://catalog.data.gov/resource/Model/I3> ;
+            geo:Point                   "(-122.1872, 47.61001)" ;
+            schema:Observation          "53033024001"^^xsd:int .
+    <http://catalog.data.gov/resource/Vehicle/267929112>
+            schema:postalCode           "98380" ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/35> ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seabeck> ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:ElectricRange        "30"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/X5> ;
+            schema:fuelType             true ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            schema:vehicleIdentificationNumber  "5UXTA6C0XM" ;
+            schema:vehicleModelDate     "2021"^^xsd:int ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:productId            "267929112" ;
+            schema:County               <http://catalog.data.gov/resource/County/Kitsap> ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            rdf:type                    schema:Vehicle ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:Observation          "53035091301"^^xsd:int ;
+            geo:Point                   "(-122.81585, 47.64509)" .
+    <http://catalog.data.gov/resource/Model/I3>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796785" ;
+            schema:name  "I3" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/Vehicle/204822761>
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/39> ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/PHEV> ;
+            schema:County               <http://catalog.data.gov/resource/County/Snohomish> ;
+            schema:Observation          "53061052808"^^xsd:int ;
+            schema:ElectricUtility      "PUGET SOUND ENERGY INC" ;
+            geo:Point                   "(-122.1677, 48.11026)" ;
+            schema:productId            "204822761" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/BMW> ;
+            schema:vehicleIdentificationNumber  "3MW5P9J0XN" ;
+            schema:fuelType             false ;
+            schema:baseMSRP             "0"^^xsd:int ;
+            schema:vehicleModelDate     "2022"^^xsd:int ;
+            rdf:type                    schema:Vehicle ;
+            schema:postalCode           "98271" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Marysville> ;
+            schema:ElectricRange        "22"^^xsd:int ;
+            schema:model                <http://catalog.data.gov/resource/Model/330E> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> .
+    <http://catalog.data.gov/resource/County/Thurston>
+            schema:name  "Thurston" ;
+            rdf:type     schema:Place .
+    <http://catalog.data.gov/resource/EletricVehicleType/BEV>
+            schema:name  "Battery Electric Vehicle (BEV)" ;
+            rdf:type     schema:vehicleTransmission .
+    <http://catalog.data.gov/resource/LegislativeDistrict/39>
+            schema:name  "39"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/City/Marysville>
+            schema:name  "Marysville" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/X5>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q796778" ;
+            schema:name  "X5" ;
+            rdf:type     schema:model .
+    <http://catalog.data.gov/resource/LegislativeDistrict/26>
+            schema:name  "26"^^xsd:int ;
+            rdf:type     schema:Observation .
+    <http://catalog.data.gov/resource/Vehicle/477309682>
+            schema:vehicleModelDate     "2019"^^xsd:int ;
+            geo:Point                   "(-122.23825, 47.49461)" ;
+            schema:County               <http://catalog.data.gov/resource/County/King> ;
+            schema:Observation          "53033011902"^^xsd:int ;
+            schema:vehicleIdentificationNumber  "5YJ3E1EBXK" ;
+            foaf:term_maker             <http://catalog.data.gov/resource/Make/TESLA> ;
+            schema:productId            "477309682" ;
+            schema:City                 <http://catalog.data.gov/resource/City/Seattle> ;
+            schema:ElectricRange        "220"^^xsd:int ;
+            schema:vehicleTransmission  <http://catalog.data.gov/resource/EletricVehicleType/BEV> ;
+            schema:ElectricUtility      "CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)" ;
+            schema:postalCode           "98178" ;
+            schema:model                <http://catalog.data.gov/resource/Model/MODEL3> ;
+            schema:legislativeDistrict  <http://catalog.data.gov/resource/LegislativeDistrict/37> ;
+            schema:State                <http://catalog.data.gov/resource/State/WA> ;
+            schema:fuelType             true ;
+            rdf:type                    schema:Vehicle ;
+            schema:baseMSRP             "0"^^xsd:int .
+    <http://catalog.data.gov/resource/City/Seabeck>
+            schema:name  "Seabeck" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/City/Poulsbo>
+            schema:name  "Poulsbo" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Make/TESLA>
+            owl:sameAs  "https://www.wikidata.org/wiki/Q124981765" ;
+            foaf:name   "TESLA" ;
+            rdf:type    foaf:term_maker .
+    <http://catalog.data.gov/resource/City/Rainier>
+            schema:name  "Rainier" ;
+            rdf:type     schema:City .
+    <http://catalog.data.gov/resource/Model/MODELS>
+            owl:sameAs   "https://www.wikidata.org/wiki/Q1463050" ;
+            schema:name  "MODEL S" ;
+            rdf:type     schema:model .
+}
