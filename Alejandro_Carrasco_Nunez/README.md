@@ -208,4 +208,4 @@ El esquema rdf realizado es el siguiente:
 
 ![Esquema rdf 2](./images/rdftemplate2.PNG)
 
-El archivo JSON con el template del esquema se encuentra en la carpeta "**rdf_schema_template**". Por otro lado, se ha exportado la ontología en formato **ttl** en Turtle (Stream). Dado que el volumen del ttl con todos los registros es demasiado grande y ha supuesto problemas tanto en su descarga como en la subida al repositorio, se ha exportado el archivo pero filtrandolo para sacar solo 10 vehículos. Dicho ttl se puede encontrar en la carpeta "**ontology_open_refine**".
+El archivo JSON con el template del esquema se encuentra en la carpeta "**rdf_schema_template**". Por otro lado, se ha exportado la ontología en formato **ttl** en Turtle (Stream). Dado que el volumen del ttl con todos los registros es demasiado grande y ha supuesto problemas tanto en su descarga como en la subida al repositorio, se ha exportado el archivo pero filtrandolo para sacar solo 10 vehículos. Dicho ttl se puede encontrar en la carpeta "**ontology_open_refine**". También se ha generado la misma ontología en formato **RDF**, mediante Protege (OpenRefine no lo permite).
