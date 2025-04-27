@@ -15,6 +15,7 @@
   - [2.4. Desarrollo del vocabulario](#24-desarrollo-del-vocabulario)
   - [2.5. Desarrollo de la ontología](#25-desarrollo-de-la-ontología)
   - [2.6. Enlazado](#26-enlazado)
+- [3. Aplicación y explotación](#3-aplicación-y-explotación)
 
 
 ## 1. Introducción
