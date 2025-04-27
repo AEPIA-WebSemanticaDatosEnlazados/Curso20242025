@@ -248,3 +248,9 @@ En las siguientes imágenes se muestra cada columna reconciliada seguida de la n
 ![Reconciliacion Tabla 1](./images/reconciliacion1Tabla.PNG)
 
 ![Reconciliacion Tabla 2](./images/reconciliacion2Tabla.PNG)
+
+Por último, en el esquema RDF se ha definido el enlazado mediante la propiedad **owl:sameAs**. Se ha enlazado el recurso (propiedad del vehículo) con la columna creada correspondiente.
+
+![Reconciliacion RDF 1](./images/esquemardfreconciliado1.PNG)
+
+![Reconciliacion RDF 2](./images/esquemardfreconciliado2.PNG)
