@@ -147,6 +147,8 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 * **[Ontología foaf](http://xmlns.com/foaf/spec/)**: Empleada para propiedades no encontradas en la ontología anterior.
 * **[Ontología geo](http://www.w3.org/2003/01/geo/)**: Empleada para la propiedad de localización geográfica (representa coordenadas).
 
+Además se incluirá la licencia original de los datos a través del prefijo añadido [odc](https://opendatacommons.org/licenses/odbl/1-0/).
+
 Como resultado se muestra la siguiente tabla. En ella se asocia una ontología a cada elemento del glosario de términos, y se añade el concepto que se usará en la implementación.  
 
 | Término | Ontología | Concepto |
@@ -186,7 +188,7 @@ La raíz del esquema rdf será la clase **Vehicle** identificada con su **DOL Ve
 
 Se han transformado algunos datos, creando nuevas columnas o directamente mediante una expresión en el nodo RDF.
 
-A partir de la columna "Clean Alternative ..." se ha creado "**CAFV Eligibilit**", que se tratará como una columna **Boolean**. Sus valores se han transformado: "Clean Alternative Fuel Vehicle Eligible" es **true**, "Eligibility unknown as battery range has not been researched" es **null**, y "Not eligible due to ow battery range" es **false**.
+A partir de la columna "Clean Alternative ..." se ha creado "**CAFV Eligibility**", que se tratará como una columna **Boolean**. Sus valores se han transformado: "Clean Alternative Fuel Vehicle Eligible" es **true**, "Eligibility unknown as battery range has not been researched" es **null**, y "Not eligible due to ow battery range" es **false**.
 
 ![New column expression](./images/openrefineCAFVcolumn.PNG)
 
