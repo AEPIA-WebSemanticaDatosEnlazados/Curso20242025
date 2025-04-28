@@ -13,6 +13,9 @@
   - [2.2. Análisis de los datos](#22-análisis-de-los-datos)
   - [2.3. Estrategia de nombrado](#23-estrategia-de-nombrado)
   - [2.4. Desarrollo del vocabulario](#24-desarrollo-del-vocabulario)
+  - [2.5. Desarrollo de la ontología](#25-desarrollo-de-la-ontología)
+  - [2.6. Enlazado](#26-enlazado)
+- [3. Aplicación y explotación](#3-aplicación-y-explotación)
 
 
 ## 1. Introducción
@@ -44,7 +47,7 @@ En las siguientes imágenes se pueden ver una parte de los registros y sus valor
 
 En total para cada registro hay **18 columnas** (atributos), que son las siguientes:
 
-*	**VIN (1-10)**: Campo de tipo texto que representa la matrícula del vehículo. Es única para cada vehículo, por ejemplo, 5YJ3E1EBXK.
+*	**VIN (1-10)**: Campo de tipo texto que representa la matrícula del vehículo, como, 5YJ3E1EBXK. Sin embargo, no es única para cada vehículo, hay repeticiones en el CSV.
 *	**County**: Campo de tipo texto que representa el condado donde se ubica el vehículo. Hay 212 valores, por ejemplo, King.
 *	**City**: Campo de tipo texto que representa la ciudad donde se ubica el vehículo. Hay 788 valores, por ejemplo, Seattle.
 *	**Stat**e: Campo de tipo texto que representa el estado donde se ubica el vehículo. Hay 48 valores, por ejemplo, WA.
@@ -99,7 +102,7 @@ Se considera el dominio **http://catalog.data.gov/** para la consulta de los dat
 
 Ejemplos de URIs generadas:
 *	Términos ontológicos: **http://catalog.data.gov/ontology/ElectricVehicle#electricVehicleType**
-*	Individuos (por ejemplo vehículos): **http://catalog.data.gov/resource/Vehicle/5YJ3E1EBXK**
+*	Individuos (por ejemplo vehículos): **http://catalog.data.gov/resource/Vehicle/477309682**
 
 ### 2.4. Desarrollo del vocabulario
 Se han definido requisitos funcionales y no funcionales mediante preguntas de competencia:
@@ -118,7 +121,7 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
   * Respuesta: Utilizar OpenRefine y extensiones que permitan trabajar con el esqueleto RDF, facilitando la transformación y limpieza de datos.
 
 **Extracción de términos**:
-*	VIN: Número de Identificación del Vehículo, una matrícula única para cada vehículo.
+*	VIN: Matrícula del vehículo.
 *	County: Condado donde se ubica el vehículo.
 *	City: Ciudad donde se ubica el vehículo.
 *	State: Estado donde se ubica el vehículo.
@@ -131,7 +134,7 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 *	Electric Range: Rango eléctrico del vehículo.
 *	Base MSRP: Precio base del vehículo.
 *	Legislative District: Distrito legislativo donde se ubica el vehículo.
-*	DOL Vehicle ID: Identificación del vehículo en el Departamento de Licencias.
+*	DOL Vehicle ID: Identificación del vehículo en el Departamento de Licencias, única para cada vehículo.
 *	Vehicle Location (coordinate x, coordinate y): Localización geográfica.
 *	Electric Utility: Empresa de electricidad que suministra energía al vehículo.
 *	2020 Census Tract: Tramo censal del año 2020.
@@ -145,6 +148,8 @@ Se han definido requisitos funcionales y no funcionales mediante preguntas de co
 * **[Ontología Schema de vehículo](https://schema.org/Vehicle)**: Ofrece muchas propiedades adecuadas a las clases y atributos definidos en el modelado.
 * **[Ontología foaf](http://xmlns.com/foaf/spec/)**: Empleada para propiedades no encontradas en la ontología anterior.
 * **[Ontología geo](http://www.w3.org/2003/01/geo/)**: Empleada para la propiedad de localización geográfica (representa coordenadas).
+
+Además se incluirá la licencia original de los datos a través del prefijo añadido [odc](https://opendatacommons.org/licenses/odbl/1-0/).
 
 Como resultado se muestra la siguiente tabla. En ella se asocia una ontología a cada elemento del glosario de términos, y se añade el concepto que se usará en la implementación.  
 
@@ -167,3 +172,90 @@ Como resultado se muestra la siguiente tabla. En ella se asocia una ontología a
 | Vehicle Location | http://www.w3.org/2003/01/geo/wgs84_pos#Point | geo:Point |
 | Electric Utility | https://schema.org/Place | schema:Place |
 | 2020 Census Tract | https://schema.org/Observation | schema:Observation |
+
+### 2.5. Desarrollo de la ontología
+Para implementar la ontología se ha empleado la herramienta OpenRefine (al igual que en los apartados anteriores), y la extensión **rdf-transform**. Dado que la versión más actualizada de OpenRefine no dispone de esa extensión, se ha descargado por separado de un [repositorio](https://github.com/AtesComp/rdf-transform) disponible desde la documentación de OpenRefine.
+
+Se ha definido el esqueleto rdf siguiendo lo aprendido en los vídeos téoricos de la asignatura y teniendo como base el modelo conceptual implementado. En la URI base de RDF se ha definido la ruta para individuos indicada en la estrategia de nombrado.
+
+![RDF Header](./images/uriresourcesopenrefine.PNG)
+
+La raíz del esquema rdf será la clase **Vehicle** identificada con su **DOL Vehicle ID** y a partir de la cual, se han creado tanto propiedades individuales como referencias a otras clases (por ej. **County**, **City**,...).
+
+![openrefinefirstRootNodeVIN expression](./images/openrefinefirstRootNodeID.PNG)
+
+![openrefinefirstRootNodeVIN column transformed](./images/openrefinefirstRootNodeIDExpression.PNG)
+
+![openrefineCountyRootNodeVIN](./images/openrefineCountyRootNodeVIN.PNG)
+
+Se han transformado algunos datos, creando nuevas columnas o directamente mediante una expresión en el nodo RDF.
+
+A partir de la columna "Clean Alternative ..." se ha creado "**CAFV Eligibility**", que se tratará como una columna **Boolean**. Sus valores se han transformado: "Clean Alternative Fuel Vehicle Eligible" es **true**, "Eligibility unknown as battery range has not been researched" es **null**, y "Not eligible due to ow battery range" es **false**.
+
+![New column expression](./images/openrefineCAFVcolumn.PNG)
+
+![New column](./images/openrefinetransformedCAFV.PNG)
+
+Al definir algunas clases (recursos) o atributos en el esqueleto rdf, se han usado expresiones para transformar su rango de valores. Por ejemplo, el recurso "**Electric Vehicle Type**" que toma dos valores posibles y se han simplificado sus etiquetas.
+
+![Recurso transformado](./images/openrefineElectricVehicleTypeRoot.PNG)
+
+Otro caso es el atributo "**geo:Point**" que representa las coordenadas y toma los valores del atributo "**Vehicle Location**". Aunque ya se había hecho una transformación previa y se habían creado dos columnas para cada coordenada, se ha considerado mejor un formato donde las dos coordenadas estén juntas.
+
+![Atributo valores transformado](./images/openrefinecoordinates.PNG)
+
+El esquema rdf realizado es el siguiente:
+
+![Esquema rdf 1](./images/rdftemplate1.PNG)
+
+![Esquema rdf 2](./images/rdftemplate2.PNG)
+
+El archivo JSON con el template del esquema se encuentra en la carpeta "**rdf_schema_template**". Por otro lado, se ha exportado la ontología en formato **ttl** en Turtle (Stream). Dado que el volumen del ttl con todos los registros es demasiado grande y ha supuesto problemas tanto en su descarga como en la subida al repositorio, se ha exportado el archivo pero filtrandolo para sacar solo 10 vehículos. Dicho ttl se puede encontrar en la carpeta "**ontology_open_refine**". También se ha generado la misma ontología en formato **RDF**, mediante Protege (OpenRefine no lo permite).
+
+**Evaluación de la ontología**
+
+En el apartado de evaluación de la ontología se ha empleado la herramienta **OOPS!**. Se ha introducido un archivo RDF con sólo una instancia de los datos. Las **Pitfalls** detectadas fueron las siguientes:
+
+![Oops 1](./images/evaluacion1.PNG)
+
+![Oops 2](./images/evaluacion2.PNG)
+
+### 2.6. Enlazado
+
+Se ha realizado el enlazado de los datos de algunas columnas. Para esto se ha usado el servicio de **Wikidata** disponible en el propio OpenRefine, y que realiza la reconciliación por columna.
+
+Al principio se intentó hacer de todas las columnas, por ejemplo, de la columna VIN como se muestra a continuación.
+
+![Reconciliacion VIN](./images/reconciliacionVIN.PNG)
+
+Sin embargo, solo se ha hecho de cuatro columnas que representan recursos: **City**, **State**, **Make** y **Model**.
+
+Cada columna se enlazó con una uri de Wikidata como se muestra aquí:
+
+![Reconciliacion 1](./images/reconciliacion1.PNG)
+
+![Reconciliacion 2](./images/reconciliacion2.PNG)
+
+![Reconciliacion 3](./images/reconciliacion3.PNG)
+
+![Reconciliacion 4](./images/reconciliacion4.PNG)
+
+Para las cuatro columnas reconciliadas, se crearon **cuatro nuevas columnas** cuyos valores serán las uris de Wikidata. La expresión empleada fue la misma para las cuatro, tal y como se muestra en esta imagen:
+
+![Reconciliacion Expresion](./images/reconciliacion1nuevacolumna.PNG)
+
+En las siguientes imágenes se muestra cada columna reconciliada seguida de la nueva columna creada (para algunos valores no se ha encontrado equivalencia).
+
+![Reconciliacion Tabla 1](./images/reconciliacion1Tabla.PNG)
+
+![Reconciliacion Tabla 2](./images/reconciliacion2Tabla.PNG)
+
+Por último, en el esquema RDF se ha definido el enlazado mediante la propiedad **owl:sameAs**. Se ha enlazado el recurso (propiedad del vehículo) con la columna creada correspondiente.
+
+![Reconciliacion RDF 1](./images/esquemardfreconciliado1.PNG)
+
+![Reconciliacion RDF 2](./images/esquemardfreconciliado2.PNG)
+
+El esquema reconciliado se ha guardado en la carpeta "**rdf_schema_template**", mientras que la ontología en formato ttl reconciliada se ha guardado en "**ontology_open_refine**".
+
+## 3. Aplicación y explotación

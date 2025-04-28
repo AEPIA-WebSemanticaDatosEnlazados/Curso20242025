@@ -1,0 +1,806 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://catalog.data.gov/resource/"
+     xml:base="http://catalog.data.gov/resource/"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:odc="https://opendatacommons.org/licenses/odbl/1-0/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#Point -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/term_maker -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/term_maker"/>
+    
+
+
+    <!-- https://schema.org/City -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/City"/>
+    
+
+
+    <!-- https://schema.org/County -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/County"/>
+    
+
+
+    <!-- https://schema.org/ElectricRange -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/ElectricRange"/>
+    
+
+
+    <!-- https://schema.org/ElectricUtility -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/ElectricUtility"/>
+    
+
+
+    <!-- https://schema.org/Observation -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/Observation"/>
+    
+
+
+    <!-- https://schema.org/State -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/State"/>
+    
+
+
+    <!-- https://schema.org/baseMSRP -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/baseMSRP"/>
+    
+
+
+    <!-- https://schema.org/fuelType -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/fuelType"/>
+    
+
+
+    <!-- https://schema.org/legislativeDistrict -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/legislativeDistrict"/>
+    
+
+
+    <!-- https://schema.org/model -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/model"/>
+    
+
+
+    <!-- https://schema.org/name -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/name"/>
+    
+
+
+    <!-- https://schema.org/postalCode -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/postalCode"/>
+    
+
+
+    <!-- https://schema.org/productId -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/productId"/>
+    
+
+
+    <!-- https://schema.org/vehicleIdentificationNumber -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/vehicleIdentificationNumber"/>
+    
+
+
+    <!-- https://schema.org/vehicleModelDate -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/vehicleModelDate"/>
+    
+
+
+    <!-- https://schema.org/vehicleTransmission -->
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/vehicleTransmission"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/term_maker -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/term_maker"/>
+    
+
+
+    <!-- https://schema.org/City -->
+
+    <owl:Class rdf:about="https://schema.org/City"/>
+    
+
+
+    <!-- https://schema.org/Observation -->
+
+    <owl:Class rdf:about="https://schema.org/Observation"/>
+    
+
+
+    <!-- https://schema.org/Place -->
+
+    <owl:Class rdf:about="https://schema.org/Place"/>
+    
+
+
+    <!-- https://schema.org/State -->
+
+    <owl:Class rdf:about="https://schema.org/State"/>
+    
+
+
+    <!-- https://schema.org/Vehicle -->
+
+    <owl:Class rdf:about="https://schema.org/Vehicle"/>
+    
+
+
+    <!-- https://schema.org/model -->
+
+    <owl:Class rdf:about="https://schema.org/model"/>
+    
+
+
+    <!-- https://schema.org/vehicleTransmission -->
+
+    <owl:Class rdf:about="https://schema.org/vehicleTransmission"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Bellevue -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Bellevue">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Bellevue</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Kirkland -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Kirkland">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Kirkland</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Marysville -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Marysville">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Marysville</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Olalla -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Olalla">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Olalla</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Olympia -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Olympia">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Olympia</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Poulsbo -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Poulsbo">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Poulsbo</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Rainier -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Rainier">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Rainier</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Redmond -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Redmond">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Redmond</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Seabeck -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Seabeck">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Seabeck</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/City/Seattle -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/City/Seattle">
+        <rdf:type rdf:resource="https://schema.org/City"/>
+        <schema:name>Seattle</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/County/King -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/County/King">
+        <rdf:type rdf:resource="https://schema.org/Place"/>
+        <schema:name>King</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/County/Kitsap -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/County/Kitsap">
+        <rdf:type rdf:resource="https://schema.org/Place"/>
+        <schema:name>Kitsap</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/County/Snohomish -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/County/Snohomish">
+        <rdf:type rdf:resource="https://schema.org/Place"/>
+        <schema:name>Snohomish</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/County/Thurston -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/County/Thurston">
+        <rdf:type rdf:resource="https://schema.org/Place"/>
+        <schema:name>Thurston</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/EletricVehicleType/BEV -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/EletricVehicleType/BEV">
+        <rdf:type rdf:resource="https://schema.org/vehicleTransmission"/>
+        <schema:name>Battery Electric Vehicle (BEV)</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/EletricVehicleType/PHEV -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/EletricVehicleType/PHEV">
+        <rdf:type rdf:resource="https://schema.org/vehicleTransmission"/>
+        <schema:name>Plug-in Hybrid Electric Vehicle (PHEV)</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/2 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/2">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/22 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/22">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/23 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/23">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/26 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/26">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">26</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/35 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/35">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">35</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/37 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/37">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">37</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/39 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/39">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">39</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/45 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/45">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">45</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/LegislativeDistrict/48 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/LegislativeDistrict/48">
+        <rdf:type rdf:resource="https://schema.org/Observation"/>
+        <schema:name rdf:datatype="http://www.w3.org/2001/XMLSchema#int">48</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Make/BMW -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Make/BMW">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/term_maker"/>
+        <foaf:name>BMW</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Make/HYUNDAI -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Make/HYUNDAI">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/term_maker"/>
+        <foaf:name>HYUNDAI</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Make/TESLA -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Make/TESLA">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/term_maker"/>
+        <foaf:name>TESLA</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Make/TOYOTA -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Make/TOYOTA">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/term_maker"/>
+        <foaf:name>TOYOTA</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/I3 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/I3">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>I3</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/IONIQ5 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/IONIQ5">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>IONIQ 5</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/MODEL3 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/MODEL3">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>MODEL 3</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/MODELS -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/MODELS">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>MODEL S</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/MODELY -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/MODELY">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>MODEL Y</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/RAV4PRIME -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/RAV4PRIME">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>RAV4 PRIME</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/X5 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/X5">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>X5</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Model/330E -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Model/330E">
+        <rdf:type rdf:resource="https://schema.org/model"/>
+        <schema:name>330E</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/State/WA -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/State/WA">
+        <rdf:type rdf:resource="https://schema.org/State"/>
+        <schema:name>WA</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/109705683 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/109705683">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.64681, 47.73689)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/TESLA"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Poulsbo"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/Kitsap"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">291</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53035091100</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/23"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/MODELY"/>
+        <schema:postalCode>98370</schema:postalCode>
+        <schema:productId>109705683</schema:productId>
+        <schema:vehicleIdentificationNumber>5YJYGDEE3L</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2020</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/BEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/186637195 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/186637195">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.92333, 47.03779)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/TESLA"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Olympia"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/Thurston"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">265</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53067010600</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">59900</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/22"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/MODELS"/>
+        <schema:postalCode>98502</schema:postalCode>
+        <schema:productId>186637195</schema:productId>
+        <schema:vehicleIdentificationNumber>5YJSA1DN0C</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2012</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/BEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/196789610 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/196789610">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.1872, 47.61001)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/BMW"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Bellevue"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/King"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">81</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53033024001</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/48"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/I3"/>
+        <schema:postalCode>98004</schema:postalCode>
+        <schema:productId>196789610</schema:productId>
+        <schema:vehicleIdentificationNumber>WBY1Z6C30H</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2017</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/BEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/2039222 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/2039222">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.22901, 47.72201)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/TESLA"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Kirkland"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/King"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">215</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53033022205</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/45"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/MODEL3"/>
+        <schema:postalCode>98034</schema:postalCode>
+        <schema:productId>2039222</schema:productId>
+        <schema:vehicleIdentificationNumber>5YJ3E1EA6J</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2018</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/BEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/204822761 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/204822761">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.1677, 48.11026)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/BMW"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Marysville"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/Snohomish"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53061052808</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/39"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/330E"/>
+        <schema:postalCode>98271</schema:postalCode>
+        <schema:productId>204822761</schema:productId>
+        <schema:vehicleIdentificationNumber>3MW5P9J0XN</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2022</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/PHEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/230390492 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/230390492">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.54729, 47.42602)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/HYUNDAI"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Olalla"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/Kitsap"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53035092802</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/26"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/IONIQ5"/>
+        <schema:postalCode>98359</schema:postalCode>
+        <schema:productId>230390492</schema:productId>
+        <schema:vehicleIdentificationNumber>KM8KRDAF5P</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2023</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/BEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/236505139 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/236505139">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.68993, 46.88897)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/TOYOTA"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Rainier"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/Thurston"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">42</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53067012530</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/2"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/RAV4PRIME"/>
+        <schema:postalCode>98576</schema:postalCode>
+        <schema:productId>236505139</schema:productId>
+        <schema:vehicleIdentificationNumber>JTMAB3FV7P</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2023</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/PHEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/267929112 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/267929112">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.81585, 47.64509)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/BMW"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Seabeck"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/Kitsap"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53035091301</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/35"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/X5"/>
+        <schema:postalCode>98380</schema:postalCode>
+        <schema:productId>267929112</schema:productId>
+        <schema:vehicleIdentificationNumber>5UXTA6C0XM</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2021</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/PHEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/474817283 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/474817283">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.13158, 47.67858)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/TESLA"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Redmond"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/King"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">215</schema:ElectricRange>
+        <schema:ElectricUtility>PUGET SOUND ENERGY INC||CITY OF TACOMA - (WA)</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53033032321</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/45"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/MODEL3"/>
+        <schema:postalCode>98052</schema:postalCode>
+        <schema:productId>474817283</schema:productId>
+        <schema:vehicleIdentificationNumber>5YJ3E1EA2J</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2018</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/BEV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://catalog.data.gov/resource/Vehicle/477309682 -->
+
+    <owl:NamedIndividual rdf:about="http://catalog.data.gov/resource/Vehicle/477309682">
+        <rdf:type rdf:resource="https://schema.org/Vehicle"/>
+        <geo:Point>(-122.23825, 47.49461)</geo:Point>
+        <foaf:term_maker rdf:resource="http://catalog.data.gov/resource/Make/TESLA"/>
+        <schema:City rdf:resource="http://catalog.data.gov/resource/City/Seattle"/>
+        <schema:County rdf:resource="http://catalog.data.gov/resource/County/King"/>
+        <schema:ElectricRange rdf:datatype="http://www.w3.org/2001/XMLSchema#int">220</schema:ElectricRange>
+        <schema:ElectricUtility>CITY OF SEATTLE - (WA)|CITY OF TACOMA - (WA)</schema:ElectricUtility>
+        <schema:Observation rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53033011902</schema:Observation>
+        <schema:State rdf:resource="http://catalog.data.gov/resource/State/WA"/>
+        <schema:baseMSRP rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</schema:baseMSRP>
+        <schema:fuelType rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:fuelType>
+        <schema:legislativeDistrict rdf:resource="http://catalog.data.gov/resource/LegislativeDistrict/37"/>
+        <schema:model rdf:resource="http://catalog.data.gov/resource/Model/MODEL3"/>
+        <schema:postalCode>98178</schema:postalCode>
+        <schema:productId>477309682</schema:productId>
+        <schema:vehicleIdentificationNumber>5YJ3E1EBXK</schema:vehicleIdentificationNumber>
+        <schema:vehicleModelDate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2019</schema:vehicleModelDate>
+        <schema:vehicleTransmission rdf:resource="http://catalog.data.gov/resource/EletricVehicleType/BEV"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
