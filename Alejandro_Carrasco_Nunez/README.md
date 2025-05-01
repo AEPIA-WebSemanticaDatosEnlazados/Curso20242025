@@ -4,6 +4,7 @@
 - **Asignatura:** Web Semántica y Datos Enlazados
 - **Máster:** MÁSTER UNIVERSITARIO EN INVESTIGACIÓN EN INTELIGENCIA ARTIFICIAL
 - **Autor:** Alejandro Carrasco Núñez
+- **Curso:** 2024/2025
 
 ## Índice
 
@@ -17,6 +18,7 @@
   - [2.6. Enlazado](#26-enlazado)
 - [3. Aplicación y explotación](#3-aplicación-y-explotación)
 - [4. Conclusión](#4-conclusión)
+- [5. Bibliografía](#5-bibliografía)
 
 
 ## 1. Introducción
@@ -38,7 +40,7 @@ El dataset fue descargado en formato CSV, desde la página web. Dicho archivo ti
 ### 2.2. Análisis de los datos
 Mediante la herramienta **OpenRefine**, aprendida durante el curso, se han analizado los datos contenidos en el archivo CSV.
 
-Se creó un proyecto de nombre “**Electric Vehicle Population Data Proyect**” y se importó el CSV. El resultado fue una tabla de datos compuesta por 235.692 filas, siendo cada fila el registro de un vehículo eléctrico.
+Se creó un proyecto de nombre "**Electric Vehicle Population Data Proyect**" y se importó el CSV. El resultado fue una tabla de datos compuesta por 235.692 filas, siendo cada fila el registro de un vehículo eléctrico.
 
 En las siguientes imágenes se pueden ver una parte de los registros y sus valores para cada columna.
 
@@ -289,3 +291,14 @@ Se podrían haber realizado las siguientes **mejoras**:
 * **Conceptualización del problema**: Se podría haber definido con mayor precisión qué clases y atributos incluir, basándose en la naturaleza del CSV. El modelo conceptual sufrió modificaciones durante la transformación de los datos, ya que se ajustaron clases y atributos para simplificar los procesos de transformación.
 * **Evaluación**: Durante la evaluación de la ontología implementada, se podrían haber realizado cambios del esqueleto RDF para resolver algunos de los **pitfalls** indicados.
 * **Enlazado**: No se ha realizado un enlazado de todas las columnas de datos.
+
+## 5. Bibliografía
+
+Se han empleado las siguientes fuentes:
+
+* [Portal de datos abiertos del gobierno de EE.UU. (Data.gov)](https://catalog.data.gov/dataset/electric-vehicle-population-data)
+* [Open Data Commons Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/)
+* [LOV](https://lov.linkeddata.es/dataset/lov/)
+* [OpenRefine y sus extensiones](https://openrefine.org/extensions)
+* Material proporcionado en la asignatura de **Web Semántica y Datos Enlazados**
+* Material proporcionado en la asignatura de **Tecnologías Semánticas Avanzadas**
