@@ -273,3 +273,19 @@ Se han hecho las siguientes consultas:
 ![Aplicacion 2](./images/aplicacion2.PNG)
 
 ## 4. Conclusión
+
+En este trabajo se ha logrado transformar y explotar un dataset utilizando herramientas como OpenRefine y Apache Jena. Los resultados obtenidos incluyen:
+
+* **Limpiar** y **estructura**r un conjunto de datos CSV y **transformarlos** a un conjunto de **datos enlazados**.
+* Consultas **SPARQL** sobre los datos transformados.
+
+Se han aprendido varias **lecciones**:
+
+* Uso de **herramientas** como OpenRefine, Oops y Apache Jena, que, aunque se habían usado durante las clases teóricas, en este proyecto se ha profundizado más.
+* Se ha aprendido a manejar y solucionar **errores técnicos** en la transformación de datos, implementación de la ontología y explotación de los datos. Se han buscado alternativas cuando las soluciones iniciales no salían.
+
+Se podrían haber realizado las siguientes **mejoras**:
+
+* **Conceptualización del problema**: Se podría haber definido con mayor precisión qué clases y atributos incluir, basándose en la naturaleza del CSV. El modelo conceptual sufrió modificaciones durante la transformación de los datos, ya que se ajustaron clases y atributos para simplificar los procesos de transformación.
+* **Evaluación**: Durante la evaluación de la ontología implementada, se podrían haber realizado cambios del esqueleto RDF para resolver algunos de los **pitfalls** indicados.
+* **Enlazado**: No se ha realizado un enlazado de todas las columnas de datos.
