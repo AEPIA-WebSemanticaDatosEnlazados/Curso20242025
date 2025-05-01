@@ -259,3 +259,15 @@ Por último, en el esquema RDF se ha definido el enlazado mediante la propiedad 
 El esquema reconciliado se ha guardado en la carpeta "**rdf_schema_template**", mientras que la ontología en formato ttl reconciliada se ha guardado en "**ontology_open_refine**".
 
 ## 3. Aplicación y explotación
+
+Se va a hacer uso del archivo RDF con los datos. Para ello se ha empleado **Apache Jena Fuseki 5.4.0** que dispone de interfaz gráfica para lanzar queries en **SPARQL**.
+Se han hecho las siguientes consultas:
+
+* Búsqueda sobre la ciudad "**Seattle**" filtrando por los atributos correspondientes de ese recurso. En la tabla se muestra el sujeto de la consulta (el recurso) y su nombre (atributo schema:name).
+
+![Aplicacion 1](./images/aplicacion1.PNG)
+
+* Búsqueda sobre los vehículos eléctricos de combustible alternativo limpio elegible, es decir, que el atributo **schema:fuelType** esté a **true**. En la tabla se ha mostrado el VIN del vehículo, acompañado de la marca (atributo foaf:term_maker) y la ciudad (atributo schema:city).
+
+![Aplicacion 2](./images/aplicacion2.PNG)
+
