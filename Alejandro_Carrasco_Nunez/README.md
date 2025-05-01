@@ -16,6 +16,7 @@
   - [2.5. Desarrollo de la ontología](#25-desarrollo-de-la-ontología)
   - [2.6. Enlazado](#26-enlazado)
 - [3. Aplicación y explotación](#3-aplicación-y-explotación)
+- [4. Conclusión](#4-conclusión)
 
 
 ## 1. Introducción
@@ -260,7 +261,7 @@ El esquema reconciliado se ha guardado en la carpeta "**rdf_schema_template**", 
 
 ## 3. Aplicación y explotación
 
-Se va a hacer uso del archivo RDF con los datos. Para ello se ha empleado **Apache Jena Fuseki 5.4.0** que dispone de interfaz gráfica para lanzar queries en **SPARQL**.
+Se va a hacer uso del archivo RDF con los datos para su explotación. Para ello se ha empleado **Apache Jena Fuseki 5.4.0** que dispone de interfaz gráfica para lanzar queries en **SPARQL**.
 Se han hecho las siguientes consultas:
 
 * Búsqueda sobre la ciudad "**Seattle**" filtrando por los atributos correspondientes de ese recurso. En la tabla se muestra el sujeto de la consulta (el recurso) y su nombre (atributo schema:name).
@@ -271,3 +272,4 @@ Se han hecho las siguientes consultas:
 
 ![Aplicacion 2](./images/aplicacion2.PNG)
 
+## 4. Conclusión
