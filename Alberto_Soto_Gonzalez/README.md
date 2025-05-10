@@ -378,10 +378,104 @@ Se ha exportado, además, en formato Turtle
 
 ## 3. Evaluación de la ontología
 
+Para evaluar la calidad de la ontología desarrollada, se ha utilizado la herramienta OOPS! (OntOlogy Pitfall Scanner!), que permite identificar posibles errores de diseño o implementación.
 
+### 3.1. Primera evaluación
+
+La primera evaluación identificó cuatro errores principales:
+
+1. **P39: Ambiguous namespace (Crítico)** - La ontología carece de una declaración URI clara o un espacio de nombres xml:base, lo que significa que el espacio de nombres se vincula automáticamente a la ubicación del archivo. Esto es problemático porque si la ubicación del archivo cambia, el espacio de nombres también cambiará, mientras que idealmente la ontología debería mantenerse estable independientemente de su ubicación.
+
+2. **P38: No OWL ontology declaration (Importante)** - Falta la etiqueta owl:Ontology que proporciona los metadatos fundamentales de la ontología. Esta etiqueta es crucial para incluir información como versión, licencia, procedencia y fecha de creación, así como para declarar la inclusión de otras ontologías.
+
+3. **P34: Untyped class (Importante, 2 casos)** - Se están utilizando elementos como clases sin haberlos declarado explícitamente como tales mediante owl:Class o rdfs:Class. Esto puede causar problemas de interpretación y procesamiento de la ontología.
+
+4. **P41: No license declared (Importante)** - Los metadatos de la ontología no incluyen información sobre la licencia aplicable, lo que puede generar incertidumbre sobre las condiciones de uso y distribución.
+
+Estos errores son fundamentales y deben corregirse para garantizar que nuestra ontología cumpla con los estándares de la Web Semántica. La ausencia de declaraciones adecuadas puede afectar la interoperabilidad, reutilización y estabilidad a largo plazo de nuestra ontología.
+
+![Primera evaluación OOPS!](./img/oops-1.png)
+
+### 3.2. Segunda evaluación
+
+Tras aplicar algunas correcciones iniciales, se realizó una segunda evaluación que reveló los siguientes problemas:
+
+1. **P04: Creating unconnected ontology elements (Menor, 2 casos)** - Se detectaron elementos en la ontología que no están conectados con el resto de la estructura. Estos elementos aislados reducen la cohesión de la ontología y podrían indicar un diseño incompleto o fragmentado.
+
+2. **P10: Missing disjointness (Importante, Ontología)** - La ontología carece de axiomas de disyunción entre clases o propiedades que deberían definirse como disjuntas. Esta carencia puede permitir inconsistencias lógicas cuando se realizan inferencias sobre los datos.
+
+3. **P30: Equivalent classes not explicitly declared (Importante, 1 caso)** - No se han declarado explícitamente clases equivalentes para conceptos duplicados. En concreto, se identificó que `http://schema.org/Movie` y `http://dbpedia.org/ontology/Film` podrían ser equivalentes. Al reutilizar términos de otras ontologías, las clases con el mismo significado deberían definirse como equivalentes para mejorar la interoperabilidad.
+
+4. **P41: No license declared (Importante, Ontología)** - Persiste el problema de la falta de declaración de licencia en los metadatos de la ontología, lo que sigue generando incertidumbre sobre las condiciones de uso y distribución.
+
+Estos resultados indican que, aunque se avanzó en la corrección de algunos problemas fundamentales detectados en la primera evaluación, aún quedan aspectos importantes por mejorar, especialmente en lo relacionado con la interconexión de elementos, la definición de relaciones de disyunción y equivalencia, y la inclusión de información de licencia.
+
+
+
+![Segunda evaluación OOPS!](./img/oops-2.png)
+
+### 3.3. Evaluación final
+
+Tras implementar todas las correcciones identificadas en las evaluaciones anteriores, se realizó una evaluación final que mostró una mejora significativa en la calidad de la ontología. Los únicos errores que persistieron fueron de carácter menor:
+
+1. **P04: Creating unconnected ontology elements (Menor, 5 casos)** - Se mantuvieron algunos elementos aislados en la ontología:
+   - `https://www.imdb.com/resource/movies/actor`
+   - `http://schema.org/Movie`
+   - `https://www.imdb.com/resource/movies/director`
+   - `http://dbpedia.org/ontology/Film`
+   - `https://www.imdb.com/resource/movies/genre`
+   
+   Estos elementos, aunque aparecen como aislados en la estructura formal de la ontología, están funcionalmente conectados a través de las instancias de datos enlazados, por lo que no representan un problema crítico para el funcionamiento del sistema.
+
+2. **P22: Using different naming conventions in the ontology (Menor, Ontología)** - Se detectó que no todos los elementos de la ontología siguen la misma convención de nomenclatura (como CamelCase o el uso de delimitadores como "-" o "_"). No afecta a la funcionalidad de la ontología.
+
+Es importante destacar que ninguno de estos errores restantes se considera crítico o importante, lo que indica que la ontología desarrollada cumple con los estándares fundamentales y está lista para su implementación y uso en aplicaciones reales.
+
+![Evaluación final OOPS!](./img/oops-3.png)
+
+El fichero RDF final se puede encontrar [aquí](./data/movies.rdf). Se tuvo que reducir el tamaño del dataset por problemas de cómputo y memoria, tanto en el servidor local como en [Oops!](https://oops.linkeddata.es/index.jsp)
 
 ## 4. Conclusiones
+
+Durante el proyecto se ha mostrado la viabilidad de transformar datos cinematográficos convencionales, obteniéndolos como un CSV en la plataforma Kaggle, a un conjunto de datos enlazados.
+
+### 4.1. Logros Técnicos
+
+La transformación de los datos de IMDB a formato RDF ha permitido:
+
+1. **Enriquecimiento semántico**: Los datos originales, limitados a una estructura tabular, han sido transformados en una red rica de relaciones semánticas que capturan de manera más precisa la naturaleza interconectada del dominio cinematográfico.
+
+2. **Interoperabilidad mejorada**: La integración con vocabularios estándar como Schema.org y DBpedia ha potenciado la capacidad de estos datos para interoperar con otros conjuntos de datos, ampliando su utilidad.
+
+3. **Resolución de errores ontológicos**: A través de un proceso iterativo de evaluación con OOPS!, se han identificado y corregido problemas de diseño, mejorando la calidad general de la ontología hasta alcanzar un nivel donde solo persisten errores menores no críticos.
+
+### 4.2. Aprendizaje y Desafíos
+
+El desarrollo de este proyecto ha permitido identificar varios desafíos clave:
+
+1. **Estrategia de nombrado**: El diseño de URIs persistentes y significativas es fundamental para la estabilidad a largo plazo del conjunto de datos. La estructura jerárquica implementada facilita tanto la organización como el acceso a los recursos.
+
+2. **Conversión de datos**: La transformación de datos estructurados a RDF implica decisiones importantes sobre cómo representar relaciones complejas. Las expresiones GREL de OpenRefine demostraron ser una herramienta poderosa para esta tarea.
+
+4. **Calidad ontológica**: La evaluación sistemática de la ontología con herramientas especializadas es esencial para garantizar su interoperabilidad y consistencia. El proceso iterativo de mejora permitió resolver problemas críticos e importantes.
 
 
 ## 5. Bibliografía
 
+1. OntOlogy Pitfall Scanner! (OOPS!). (2024). Herramienta de evaluación de ontologías. Recuperado de https://oops.linkeddata.es/index.jsp
+
+2. Kaggle. (2024). Plataforma de ciencia de datos y aprendizaje automático. Recuperado de https://www.kaggle.com/
+
+3. AtesComp. (2023). RDF Transform: Extensión para OpenRefine. GitHub. Recuperado de https://github.com/AtesComp/rdf-transform
+
+4. Kenny, S. (2023). grefine-rdf-extension: Extensión RDF para OpenRefine. GitHub. Recuperado de https://github.com/stkenny/grefine-rdf-extension
+
+5. World Wide Web Consortium (W3C). (2024). Organización de estándares para la web. Recuperado de https://www.w3.org/
+
+6. Schema.org. (2024). Vocabulario estructurado colaborativo para marcado semántico. Recuperado de https://schema.org
+
+7. Creative Commons. (2024). Organización sin fines de lucro que facilita el intercambio y uso de la creatividad y el conocimiento. Recuperado de https://creativecommons.org
+
+8. Harshit Shankhdhar. (2020). IMDB Top 1000 Movies and TV Shows [Conjunto de datos]. Kaggle. Recuperado de https://www.kaggle.com/datasets/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows
+
+9. OpenRefine. (2024). General Refine Expression Language (GREL). Documentación oficial. Recuperado de https://openrefine.org/docs/manual/grel

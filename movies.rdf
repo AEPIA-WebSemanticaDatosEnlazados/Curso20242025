@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:schema="http://schema.org/"
+         xmlns:tmdb="https://www.themoviedb.org/movie/"
+         xmlns:dbpedia-owl="http://dbpedia.org/ontology/"
+         xmlns:movie="https://www.imdb.com/resource/movies/"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dbpedia="http://dbpedia.org/resource/"
+         xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+         xmlns:dct="http://purl.org/dc/terms/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xml:base="https://www.imdb.com/resource/movies/"
+         xmlns="https://www.imdb.com/resource/movies/">
+
+  <owl:Ontology rdf:about="https://www.imdb.com/resource/movies/">
+    <rdfs:label>IMDB Movies Ontology</rdfs:label>
+    <rdfs:comment>An ontology describing movies and their properties</rdfs:comment>
+    <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    <dct:rights>Copyright (c) 2024 IMDB Movies Ontology</dct:rights>
+  </owl:Ontology>
+
+  <!-- Class Declarations -->
+  <owl:Class rdf:about="http://schema.org/Movie">
+    <rdfs:label>Movie</rdfs:label>
+    <rdfs:comment>A class representing a movie in the schema.org vocabulary</rdfs:comment>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://dbpedia.org/ontology/Film">
+    <rdfs:label>Film</rdfs:label>
+    <rdfs:comment>A class representing a film in the DBpedia ontology</rdfs:comment>
+  </owl:Class>
+
+  <!-- The Shawshank Redemption -->
+  <rdf:Description rdf:about="https://www.imdb.com/resource/movies/0">
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <rdf:type rdf:resource="http://schema.org/Movie"/>
+    <schema:director rdf:resource="https://www.imdb.com/resource/movies/director/FrankDarabont"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/TimRobbins"/>
+    <schema:actor>Morgan Freeman</schema:actor>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/WilliamSadler"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/BobGunton"/>
+    <schema:boxOffice>28341469</schema:boxOffice>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/MorganFreeman"/>
+    <schema:actor>William Sadler</schema:actor>
+    <schema:director>Frank Darabont</schema:director>
+    <schema:alternateName>The Shawshank Redemption (1994)</schema:alternateName>
+    <schema:actor>Bob Gunton</schema:actor>
+    <schema:contentRating>A</schema:contentRating>
+    <schema:duration>PT142</schema:duration>
+    <schema:name>The Shawshank Redemption</schema:name>
+    <schema:datePublished>1994</schema:datePublished>
+    <schema:ratingCount>2343110</schema:ratingCount>
+    <schema:inLanguage>en</schema:inLanguage>
+    <schema:identifier rdf:resource="https://www.themoviedb.org/movie/the-shawshank-redemption"/>
+    <schema:aggregateRating>9.3</schema:aggregateRating>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/The_Shawshank_Redemption"/>
+    <schema:metascore>80</schema:metascore>
+    <schema:description>A 1994 Drama film directed by Frank Darabont. Starring Tim Robbins, Morgan Freeman, Bob Gunton, and William Sadler.</schema:description>
+    <schema:genre>Drama</schema:genre>
+    <schema:actor>Tim Robbins</schema:actor>
+    <schema:countryOfOrigin rdf:resource="http://dbpedia.org/resource/United_States"/>
+  </rdf:Description>
+
+  <!-- The Godfather -->
+  <rdf:Description rdf:about="https://www.imdb.com/resource/movies/1">
+    <schema:duration>PT175</schema:duration>
+    <rdf:type rdf:resource="http://schema.org/Movie"/>
+    <schema:actor>Marlon Brando</schema:actor>
+    <schema:alternateName>The Godfather (1972)</schema:alternateName>
+    <schema:boxOffice>134966411</schema:boxOffice>
+    <schema:countryOfOrigin rdf:resource="http://dbpedia.org/resource/United_States"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/DianeKeaton"/>
+    <schema:genre>Crime, Drama</schema:genre>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/MarlonBrando"/>
+    <schema:aggregateRating>9.2</schema:aggregateRating>
+    <schema:ratingCount>1620367</schema:ratingCount>
+    <schema:metascore>100</schema:metascore>
+    <schema:actor>Al Pacino</schema:actor>
+    <schema:datePublished>1972</schema:datePublished>
+    <schema:actor>Diane Keaton</schema:actor>
+    <schema:description>A 1972 Crime, Drama film directed by Francis Ford Coppola. Starring Marlon Brando, Al Pacino, James Caan, and Diane Keaton.</schema:description>
+    <schema:director>Francis Ford Coppola</schema:director>
+    <schema:contentRating>A</schema:contentRating>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/The_Godfather"/>
+    <schema:actor>James Caan</schema:actor>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/JamesCaan"/>
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <schema:name>The Godfather</schema:name>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/AlPacino"/>
+    <schema:identifier rdf:resource="https://www.themoviedb.org/movie/the-godfather"/>
+    <schema:director rdf:resource="https://www.imdb.com/resource/movies/director/FrancisFordCoppola"/>
+    <schema:inLanguage>en</schema:inLanguage>
+  </rdf:Description>
+
+  <!-- The Dark Knight -->
+  <rdf:Description rdf:about="https://www.imdb.com/resource/movies/2">
+    <schema:inLanguage>en</schema:inLanguage>
+    <schema:duration>PT152</schema:duration>
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <schema:actor>Michael Caine</schema:actor>
+    <schema:name>The Dark Knight</schema:name>
+    <schema:director>Christopher Nolan</schema:director>
+    <schema:ratingCount>2303232</schema:ratingCount>
+    <schema:aggregateRating>9</schema:aggregateRating>
+    <schema:countryOfOrigin rdf:resource="http://dbpedia.org/resource/United_States"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/AaronEckhart"/>
+    <schema:director rdf:resource="https://www.imdb.com/resource/movies/director/ChristopherNolan"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/HeathLedger"/>
+    <schema:boxOffice>534858444</schema:boxOffice>
+    <schema:contentRating>UA</schema:contentRating>
+    <schema:datePublished>2008</schema:datePublished>
+    <schema:identifier rdf:resource="https://www.themoviedb.org/movie/the-dark-knight"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/ChristianBale"/>
+    <schema:genre>Action, Crime, Drama</schema:genre>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/MichaelCaine"/>
+    <schema:actor>Christian Bale</schema:actor>
+    <schema:alternateName>The Dark Knight (2008)</schema:alternateName>
+    <rdf:type rdf:resource="http://schema.org/Movie"/>
+    <schema:actor>Heath Ledger</schema:actor>
+    <schema:description>A 2008 Action, Crime, Drama film directed by Christopher Nolan. Starring Christian Bale, Heath Ledger, Aaron Eckhart, and Michael Caine.</schema:description>
+    <schema:metascore>84</schema:metascore>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/The_Dark_Knight"/>
+    <schema:actor>Aaron Eckhart</schema:actor>
+  </rdf:Description>
+
+  <!-- The Godfather: Part II -->
+  <rdf:Description rdf:about="https://www.imdb.com/resource/movies/3">
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/DianeKeaton"/>
+    <schema:genre>Crime, Drama</schema:genre>
+    <rdf:type rdf:resource="http://schema.org/Movie"/>
+    <schema:actor>Al Pacino</schema:actor>
+    <schema:actor>Robert Duvall</schema:actor>
+    <schema:actor>Robert De Niro</schema:actor>
+    <schema:identifier rdf:resource="https://www.themoviedb.org/movie/the-godfather:-part-ii"/>
+    <schema:description>A 1974 Crime, Drama film directed by Francis Ford Coppola. Starring Al Pacino, Robert De Niro, Robert Duvall, and Diane Keaton.</schema:description>
+    <schema:alternateName>The Godfather: Part II (1974)</schema:alternateName>
+    <schema:aggregateRating>9</schema:aggregateRating>
+    <schema:actor>Diane Keaton</schema:actor>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/RobertDeNiro"/>
+    <schema:boxOffice>57300000</schema:boxOffice>
+    <schema:name>The Godfather: Part II</schema:name>
+    <schema:datePublished>1974</schema:datePublished>
+    <schema:duration>PT202</schema:duration>
+    <schema:inLanguage>en</schema:inLanguage>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/AlPacino"/>
+    <schema:director>Francis Ford Coppola</schema:director>
+    <schema:contentRating>A</schema:contentRating>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/RobertDuvall"/>
+    <schema:metascore>90</schema:metascore>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/The_Godfather:_Part_II"/>
+    <schema:ratingCount>1129952</schema:ratingCount>
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <schema:director rdf:resource="https://www.imdb.com/resource/movies/director/FrancisFordCoppola"/>
+    <schema:countryOfOrigin rdf:resource="http://dbpedia.org/resource/United_States"/>
+  </rdf:Description>
+
+  <!-- 12 Angry Men -->
+  <rdf:Description rdf:about="https://www.imdb.com/resource/movies/4">
+    <schema:metascore>96</schema:metascore>
+    <schema:actor>Lee J. Cobb</schema:actor>
+    <schema:director>Sidney Lumet</schema:director>
+    <schema:ratingCount>689845</schema:ratingCount>
+    <schema:duration>PT96</schema:duration>
+    <schema:boxOffice>4360000</schema:boxOffice>
+    <schema:aggregateRating>9</schema:aggregateRating>
+    <schema:actor>Martin Balsam</schema:actor>
+    <schema:director rdf:resource="https://www.imdb.com/resource/movies/director/SidneyLumet"/>
+    <schema:actor>John Fiedler</schema:actor>
+    <schema:name>12 Angry Men</schema:name>
+    <schema:alternateName>12 Angry Men (1957)</schema:alternateName>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/LeeJ.Cobb"/>
+    <schema:countryOfOrigin rdf:resource="http://dbpedia.org/resource/United_States"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/MartinBalsam"/>
+    <schema:datePublished>1957</schema:datePublished>
+    <rdf:type rdf:resource="http://schema.org/Movie"/>
+    <schema:genre>Crime, Drama</schema:genre>
+    <schema:sameAs rdf:resource="http://dbpedia.org/resource/12_Angry_Men"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/HenryFonda"/>
+    <schema:contentRating>U</schema:contentRating>
+    <schema:actor>Henry Fonda</schema:actor>
+    <rdf:type rdf:resource="http://dbpedia.org/ontology/Film"/>
+    <schema:actor rdf:resource="https://www.imdb.com/resource/movies/actor/JohnFiedler"/>
+    <schema:inLanguage>en</schema:inLanguage>
+    <schema:identifier rdf:resource="https://www.themoviedb.org/movie/12-angry-men"/>
+    <schema:description>A 1957 Crime, Drama film directed by Sidney Lumet. Starring Henry Fonda, Lee J. Cobb, Martin Balsam, and John Fiedler</schema:description>
+  </rdf:Description>
+
+</rdf:RDF> 
