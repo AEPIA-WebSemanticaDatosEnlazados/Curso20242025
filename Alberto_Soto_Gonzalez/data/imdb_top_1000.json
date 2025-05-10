@@ -1,0 +1,313 @@
+{
+  "extension": "RDFTransform",
+  "version": "2.3.2",
+  "baseIRI": "https://www.imdb.com/resource/movies/",
+  "namespaces": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "schema": "http://schema.org/",
+    "dct": "http://purl.org/dc/terms/",
+    "movie": "https://www.imdb.com/resource/movies/",
+    "dbpedia": "http://dbpedia.org/resource/",
+    "dbpedia-owl": "http://dbpedia.org/ontology/",
+    "tmdb": "https://www.themoviedb.org/movie/"
+  },
+  "subjectMappings": [
+    {
+      "valueSource": {"source": "row_index"},
+      "expression": {"language": "grel", "code": "row.index"},
+      "propertyMappings": [
+        {
+          "prefix": "rdf",
+          "valueSource": {"source": "constant", "constant": "type"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "constant", "constant": "schema:Movie"}
+            },
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "constant", "constant": "dbpedia-owl:Film"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "name"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Series_Title"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "alternateName"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Series_Title"},
+              "expression": {
+                "language": "grel",
+                "code": "value + \" (\" + cells[\"Released_Year\"].value + \")\""
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "datePublished"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal", "datatype": "xsd:gYear"},
+              "valueSource": {"source": "column", "columnName": "Released_Year"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "contentRating"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Certificate"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "duration"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal", "datatype": "xsd:duration"},
+              "valueSource": {"source": "column", "columnName": "Runtime"},
+              "expression": {
+                "language": "grel",
+                "code": "\"PT\" + value.replace(\" min\", \"M\")"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "genre"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Genre"}
+            },
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Genre"},
+              "expression": {
+                "language": "grel",
+                "code": "forEach(\n  value.split(\",\"),\n  g,\n  \"movie:genre/\" + g.trim().toLowercase().replace(\" \", \"-\")\n)"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "aggregateRating"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal", "datatype": "xsd:decimal"},
+              "valueSource": {"source": "column", "columnName": "IMDB_Rating"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "metascore"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal", "datatype": "xsd:integer"},
+              "valueSource": {"source": "column", "columnName": "Meta_score"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "director"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Director"}
+            },
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Director"},
+              "expression": {
+                "language": "grel",
+                "code": "\"movie:director/\"+value"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "actor"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Star1"}
+            },
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Star1"},
+              "expression": {
+                "language": "grel",
+                "code": "\"movie:actor/\"+value"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "actor"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Star2"}
+            },
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Star2"},
+              "expression": {
+                "language": "grel",
+                "code": "\"movie:actor/\"+value"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "actor"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Star3"}
+            },
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Star3"},
+              "expression": {
+                "language": "grel",
+                "code": "\"movie:actor/\"+value"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "actor"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Star4"}
+            },
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Star4"},
+              "expression": {
+                "language": "grel",
+                "code": "\"movie:actor/\"+value"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "ratingCount"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal", "datatype": "xsd:integer"},
+              "valueSource": {"source": "column", "columnName": "No_of_Votes"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "boxOffice"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal", "datatype": "xsd:decimal"},
+              "valueSource": {"source": "column", "columnName": "Gross"},
+              "expression": {
+                "language": "grel",
+                "code": "value.replace(\"$\", \"\").replace(\",\", \"\")"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "sameAs"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Series_Title"},
+              "expression": {
+                "language": "grel",
+                "code": "\"dbpedia:\" + value.replace(\" \", \"_\")"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "identifier"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "column", "columnName": "Series_Title"},
+              "expression": {
+                "language": "grel",
+                "code": "\"tmdb:\" + value.replace(\" \", \"-\").toLowercase()"
+              }
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "inLanguage"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "constant", "constant": "en"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "countryOfOrigin"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "iri"},
+              "valueSource": {"source": "constant", "constant": "dbpedia:United_States"}
+            }
+          ]
+        },
+        {
+          "prefix": "schema",
+          "valueSource": {"source": "constant", "constant": "description"},
+          "objectMappings": [
+            {
+              "valueType": {"type": "literal"},
+              "valueSource": {"source": "column", "columnName": "Series_Title"},
+              "expression": {
+                "language": "grel",
+                "code": "\"A \" + cells[\"Released_Year\"].value + \" \" + cells[\"Genre\"].value + \" film directed by \" + cells[\"Director\"].value + \". Starring \" + cells[\"Star1\"].value + \", \" + cells[\"Star2\"].value + \", \" + cells[\"Star3\"].value + \", and \" + cells[\"Star4\"].value + \".\""
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
