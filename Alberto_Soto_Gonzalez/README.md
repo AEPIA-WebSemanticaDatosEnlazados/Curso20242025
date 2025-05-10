@@ -15,10 +15,16 @@
   - [2.1. Selección de la fuente de datos](#21-selección-de-la-fuente-de-datos)
   - [2.2. Análisis de los datos](#22-análisis-de-los-datos)
   - [2.3. Estrategia de nombrado](#23-estrategia-de-nombrado)
-  - [2.4. Desarrollo del vocabulario](#24-desarrollo-del-vocabulario)
-  - [2.5. Desarrollo de la ontología](#25-desarrollo-de-la-ontología)
-  - [2.6. Enlazado](#26-enlazado)
-- [3. Aplicación y explotación](#3-aplicación-y-explotación)
+  - [2.4. Desarrollo de la ontología](#24-desarrollo-de-la-ontología)
+  - [2.5. Enlazado](#25-enlazado)
+- [3. Evaluación de la ontología](#3-evaluación-de-la-ontología)
+  - [3.1. Primera evaluación](#31-primera-evaluación)
+  - [3.2. Segunda evaluación](#32-segunda-evaluación)
+  - [3.3. Evaluación final](#33-evaluación-final)
+- [4. Conclusiones](#4-conclusiones)
+  - [4.1. Logros Técnicos](#41-logros-técnicos)
+  - [4.2. Aprendizaje y Desafíos](#42-aprendizaje-y-desafíos)
+- [5. Bibliografía](#5-bibliografía)
 
 ## 1. Introducción
 
@@ -139,7 +145,7 @@ Donde `<id>` será un identificador único generado a partir del título de la p
 
 Esta estructura de nombrado está diseñada para satisfacer los requisitos funcionales FR1 (información detallada de películas), FR2 (listados filtrados) y FR3 (métricas de evaluación), permitiendo una organización clara y accesible de los datos cinematográficos.
 
-## 2.5. Desarrollo de la ontología
+## 2.4. Desarrollo de la ontología
 
 Para la construcción de la ontología y la generación de URIs semánticas a partir de los datos originales, se ha utilizado OpenRefine junto con expresiones GREL y la extensión [RDF Transform](https://github.com/AtesComp/rdf-transform?tab=readme-ov-file). Estas expresiones permiten transformar y normalizar los valores de las columnas para ajustarse a la estrategia de nombrado definida en este proyecto, y con ayuda de la extensión será sumamente sencillo poder realizar la exportación directa de los datos transformados a formatos RDF estándar (como Turtle o RDF/XML).
 
@@ -187,11 +193,11 @@ forEach(
 
 Estas transformaciones han permitido estructurar los datos de manera semántica y conforme a los estándares de la Web de Datos. Las imágenes incluidas documentan el proceso y sirven como referencia para futuras implementaciones o ampliaciones del proyecto.
 
-## 2.6. Enlazado
+## 2.5. Enlazado
 
 El desarrollo de la plantilla RDF se ha realizado siguiendo las mejores prácticas de la Web Semántica y reutilizando vocabularios existentes. A continuación se detallan los aspectos fundamentales de la implementación:
 
-### 2.6.1. Namespaces
+### 2.5.1. Namespaces
 La selección de namespaces se ha realizado considerando la interoperabilidad y el enlazado con otras fuentes de datos:
 
 - `dbpedia` y `dbpedia-owl`: Para integración con [DBpedia](https://es.dbpedia.org/), permitiendo enlazar nuestras películas con una base de conocimiento más amplia.
@@ -211,7 +217,7 @@ Ejemplo de uso de namespaces:
     schema:identifier tmdb:278 .
 ```
 
-### 2.6.2. Tipos y Clases
+### 2.5.2. Tipos y Clases
 La estructura de tipos y clases se ha diseñado para maximizar la interoperabilidad:
 
 - Cada película se define como `schema:Movie` y `dbpedia-owl:Film`, permitiendo una doble clasificación que facilita la interoperabilidad
@@ -225,7 +231,7 @@ Ejemplo de tipificación múltiple:
     schema:datePublished "1972"^^xsd:gYear .
 ```
 
-### 2.6.3. Propiedades Semánticas
+### 2.5.3. Propiedades Semánticas
 Se ha implementado un conjunto de propiedades semánticas que enriquecen los datos:
 
 - `alternateName`: Nombre alternativo que incluye el año de lanzamiento, útil para búsquedas y referencias
@@ -258,7 +264,7 @@ Se ha implementado un conjunto de propiedades semánticas que enriquecen los dat
   schema:description "A 1972 Crime, Drama film directed by Francis Ford Coppola. Starring Marlon Brando, Al Pacino, James Caan, and Robert Duvall." .
   ```
 
-### 2.6.4. Tipos de Datos
+### 2.5.4. Tipos de Datos
 La implementación de tipos de datos sigue los estándares XSD para garantizar la precisión y consistencia:
 
 - `duration`: Implementación de `xsd:duration` con formato ISO 8601
@@ -287,7 +293,7 @@ La implementación de tipos de datos sigue los estándares XSD para garantizar l
   schema:ratingCount "2500000"^^xsd:integer .
   ```
 
-### 2.6.5. Relaciones Semánticas
+### 2.5.5. Relaciones Semánticas
 La estructura de relaciones se ha diseñado para crear una red semántica coherente:
 
 - Géneros: Implementación de URIs normalizadas para géneros
@@ -308,7 +314,7 @@ La estructura de relaciones se ha diseñado para crear una red semántica cohere
   schema:description "A 1972 Crime, Drama film directed by Francis Ford Coppola. Starring Marlon Brando, Al Pacino, James Caan, and Robert Duvall." .
   ```
 
-### 2.6.6. Características de la Implementación
+### 2.5.6. Características de la Implementación
 La implementación proporciona las siguientes características:
 
 - Interoperabilidad con otros conjuntos de datos:
@@ -336,7 +342,7 @@ La implementación proporciona las siguientes características:
   - Enlaces bidireccionales
   - Vocabularios estándar
 
-### 2.6.7. Ejemplo de Implementación
+### 2.5.7. Ejemplo de Implementación
 A continuación se muestra un ejemplo completo de una película:
 
 ```turtle
