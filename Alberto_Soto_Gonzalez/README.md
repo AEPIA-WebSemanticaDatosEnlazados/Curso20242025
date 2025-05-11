@@ -398,7 +398,7 @@ La primera evaluación identificó cuatro errores principales:
 
 4. **P41: No license declared (Importante)** - Los metadatos de la ontología no incluyen información sobre la licencia aplicable, lo que puede generar incertidumbre sobre las condiciones de uso y distribución.
 
-Estos errores son fundamentales y deben corregirse para garantizar que nuestra ontología cumpla con los estándares de la Web Semántica. La ausencia de declaraciones adecuadas puede afectar la interoperabilidad, reutilización y estabilidad a largo plazo de nuestra ontología.
+Estos errores son fundamentales y deben corregirse para garantizar que la ontología cumpla con los estándares de calidad. La ausencia de declaraciones adecuadas puede afectar la interoperabilidad, reutilización y estabilidad a largo plazo de la ontología.
 
 ![Primera evaluación OOPS!](./img/oops-1.png)
 
@@ -415,8 +415,6 @@ Tras aplicar algunas correcciones iniciales, se realizó una segunda evaluación
 4. **P41: No license declared (Importante, Ontología)** - Persiste el problema de la falta de declaración de licencia en los metadatos de la ontología, lo que sigue generando incertidumbre sobre las condiciones de uso y distribución.
 
 Estos resultados indican que, aunque se avanzó en la corrección de algunos problemas fundamentales detectados en la primera evaluación, aún quedan aspectos importantes por mejorar, especialmente en lo relacionado con la interconexión de elementos, la definición de relaciones de disyunción y equivalencia, y la inclusión de información de licencia.
-
-
 
 ![Segunda evaluación OOPS!](./img/oops-2.png)
 
