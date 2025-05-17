@@ -4,6 +4,7 @@
 - **Asignatura:** Web Semántica y Datos Enlazados
 - **Máster:** MÁSTER UNIVERSITARIO EN INVESTIGACIÓN EN INTELIGENCIA ARTIFICIAL
 - **Autor:** Alejandro Carrasco Núñez
+- **Curso:** 2024/2025
 
 ## Índice
 
@@ -16,6 +17,8 @@
   - [2.5. Desarrollo de la ontología](#25-desarrollo-de-la-ontología)
   - [2.6. Enlazado](#26-enlazado)
 - [3. Aplicación y explotación](#3-aplicación-y-explotación)
+- [4. Conclusión](#4-conclusión)
+- [5. Bibliografía](#5-bibliografía)
 
 
 ## 1. Introducción
@@ -37,7 +40,7 @@ El dataset fue descargado en formato CSV, desde la página web. Dicho archivo ti
 ### 2.2. Análisis de los datos
 Mediante la herramienta **OpenRefine**, aprendida durante el curso, se han analizado los datos contenidos en el archivo CSV.
 
-Se creó un proyecto de nombre “**Electric Vehicle Population Data Proyect**” y se importó el CSV. El resultado fue una tabla de datos compuesta por 235.692 filas, siendo cada fila el registro de un vehículo eléctrico.
+Se creó un proyecto de nombre "**Electric Vehicle Population Data Proyect**" y se importó el CSV. El resultado fue una tabla de datos compuesta por 235.692 filas, siendo cada fila el registro de un vehículo eléctrico.
 
 En las siguientes imágenes se pueden ver una parte de los registros y sus valores para cada columna.
 
@@ -259,3 +262,43 @@ Por último, en el esquema RDF se ha definido el enlazado mediante la propiedad 
 El esquema reconciliado se ha guardado en la carpeta "**rdf_schema_template**", mientras que la ontología en formato ttl reconciliada se ha guardado en "**ontology_open_refine**".
 
 ## 3. Aplicación y explotación
+
+Se va a hacer uso del archivo RDF con los datos para su explotación. Para ello se ha empleado **Apache Jena Fuseki 5.4.0** que dispone de interfaz gráfica para lanzar queries en **SPARQL**.
+Se han hecho las siguientes consultas:
+
+* Búsqueda sobre la ciudad "**Seattle**" filtrando por los atributos correspondientes de ese recurso. En la tabla se muestra el sujeto de la consulta (el recurso) y su nombre (atributo schema:name).
+
+![Aplicacion 1](./images/aplicacion1.PNG)
+
+* Búsqueda sobre los vehículos eléctricos de combustible alternativo limpio elegible, es decir, que el atributo **schema:fuelType** esté a **true**. En la tabla se ha mostrado el VIN del vehículo, acompañado de la marca (atributo foaf:term_maker) y la ciudad (atributo schema:city).
+
+![Aplicacion 2](./images/aplicacion2.PNG)
+
+## 4. Conclusión
+
+En este trabajo se ha logrado transformar y explotar un dataset utilizando herramientas como OpenRefine y Apache Jena. Los resultados obtenidos incluyen:
+
+* **Limpiar** y **estructura**r un conjunto de datos CSV y **transformarlos** a un conjunto de **datos enlazados**.
+* Consultas **SPARQL** sobre los datos transformados.
+
+Se han aprendido varias **lecciones**:
+
+* Uso de **herramientas** como OpenRefine, Oops y Apache Jena, que, aunque se habían usado durante las clases teóricas, en este proyecto se ha profundizado más.
+* Se ha aprendido a manejar y solucionar **errores técnicos** en la transformación de datos, implementación de la ontología y explotación de los datos. Se han buscado alternativas cuando las soluciones iniciales no salían.
+
+Se podrían haber realizado las siguientes **mejoras**:
+
+* **Conceptualización del problema**: Se podría haber definido con mayor precisión qué clases y atributos incluir, basándose en la naturaleza del CSV. El modelo conceptual sufrió modificaciones durante la transformación de los datos, ya que se ajustaron clases y atributos para simplificar los procesos de transformación.
+* **Evaluación**: Durante la evaluación de la ontología implementada, se podrían haber realizado cambios del esqueleto RDF para resolver algunos de los **pitfalls** indicados.
+* **Enlazado**: No se ha realizado un enlazado de todas las columnas de datos.
+
+## 5. Bibliografía
+
+Se han empleado las siguientes fuentes:
+
+* [Portal de datos abiertos del gobierno de EE.UU. (Data.gov)](https://catalog.data.gov/dataset/electric-vehicle-population-data)
+* [Open Data Commons Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/)
+* [LOV](https://lov.linkeddata.es/dataset/lov/)
+* [OpenRefine y sus extensiones](https://openrefine.org/extensions)
+* Material proporcionado en la asignatura de **Web Semántica y Datos Enlazados**
+* Material proporcionado en la asignatura de **Tecnologías Semánticas Avanzadas**
