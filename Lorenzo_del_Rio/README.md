@@ -10,8 +10,9 @@
 ## Table of contents
 
 - [1. Introduction](#1-introduction)
-  - [1.1. Input/outputs](#21-input-outputs)
-  - [1.2. Process outline](#22-process-outline)
+  - [1.1. Input/outputs](#11-input-outputs)
+  - [1.2. Process outline](#12-process-outline)
+  - [1.3. Requirements](#13-requirements)
 - [2. Transformation process](#2-transformation-process)
   - [2.1. Selection of the data set](#21-selection-of-the-data-set)
   - [2.2. Analysis of the data set](#22-analysis-of-the-data-set)
@@ -56,6 +57,14 @@ To get the results the following steps have been followed:
 - Publish GraphDB
 - Creation of the python script with SPARQLwrapper to query the data
 
+### 1.3. Requirements
+### 1.3.1 Functional requirements
+
+### 1.3.2 Non Functional requirements
+- NFR1 Use of linked data/semantic web tools
+- NFR2 Maximize reuse of existing ontologies.
+- NFR3 Ensure the ontology is easy to reuse and extend.
+
 ## 2. Transformation process
 
 ### 2.1. Selection of the data set and additional info on it
@@ -69,7 +78,7 @@ and can be found in this repository at [./data/statlog+german+credit+data.zip](/
 
 The zip file includes two datasets, an index document and a word document with the description of the fields. The two datasets are equivalent, one is the original (german.data) and the other is derived, replacing non-numeric fields with numeric fields (german.data-numeric) for use in classification algorithms that do not support non-numeric data.
 
-This dataset is made available under the Creative Commons Attribution 4.0 International License, so the user is free to share the material, including adapt and transform it. However, the user must give appropriate credit to the publisher of the data set, provide a link to the license and indicate if changes were made. All these info can be found in the archive LICENSE in the root folder of this repository. This job is licensed under the terms in the ./LICENSE file in the repo.
+This dataset is made available under the Creative Commons Attribution 4.0 International License, so the user is free to share the material, including adapt and transform it. However, the user must give appropriate credit to the publisher of the data set, provide a link to the license and indicate if changes were made. All these info can be found in the archive LICENSE in the root folder of this repository. This work is licensed under the terms in the ./LICENSE file that can be found in the repo.
 
 
 ### 2.2. Analysis of the data set
@@ -699,7 +708,7 @@ Together with the 'pitfalls' a warning is issued:
 SUGGESTION: symmetric or transitive object properties  6 cases
 This suggestion only affects imported ontologies.
 
-#### 2.4.1. General approach/tools
+#### 2.4.8. Ontology deliverables
 The ontology in rdf/xml and Turtle format is delivered in the folder ./ontology of the repo (ccf.* files)
 
 
@@ -724,18 +733,56 @@ Protégé was used to validate the output file (german_data_rdf.rdf)
 <pending to decide if this section will be present as there is other info about OpenRefine>
 
 ## 3. Publication & access
-<pending>
+The course materials recommend datahub.io as a good plaform for publication of the data. The problem is that currently this web is no longer working with rdf/linked data, now its oriented to markdown documents published in git.
+So my option to emulate the publication of the data has been to use GraphDB. Then it's queried with Python SPARQL.
 
 ### 3.1. GraphDB
+GraphDB free edition is readily available from https://www.ontotext.com/products/graphdb/, I downloaded the version for Windows.
+With the ontology and the dataset imported in GrapDB the resources can be accessed using URLs in this format:
+http://localhost:7200/resource?uri=<resource URI>
+for instance:
+http://localhost:7200/resource?uri=http://data.creditclassification.biz/ontology/ccf/credit_evaluation/E102
+![E102 image ](./images/E102_credit_evaluation.png)
+
+The tool allows to visualize graphs that include also the ontology and allows for navigation in the graphs. For instance we can put in the center of the graph a property and GraphDb will show all the individuals that have this property.
+
+Get to visualize the items is very easy thanks to the autocomplete feature:
+![GraphDB autocomplete ](./images/GraphDB_autocomplete.png)
+
+Once a given item is chosen it will display  in the center:
+![GraphDB initial property ](./images/GraphDBInitialProperty.png)
+
+A frame can be displayed with the details about any entity in the graph:
+![GraphDB GraphRequestor ](./images/GraphDBGraphRequestor.png)
+
+Items can be expanded to navigate through the information:
+![GraphDB navigation ](./images/GraphDBINavigation.png)
+
+Among other features there is a SPARQL editor where queries can be run:
+![GraphDB basicQuery ](./images/GraphDB_basicQuery.png)
+
+GraphDB also provides summaries of the imported data:
+![GraphDB class relationship ](./images/class_relationships.png)
+
+
+
 
 ### 3.2. Python/SPARQLWrapper Interface
 
 ## 4. Conclusions
-<pending>
-#### License 
-
-#### other 
+### 4.1. Functional requirements
+### 4.2. Non functional requirements
+The non functional requirements have been met: 
+- NFR1 Use of linked data/semantic web tools -> Protégé, Openrefine and GraphDB among others have been used
+- NFR2 Maximize reuse of existing ontologies. -> Several ontologies included, FIBO, schema.org, FOAF
+- NFR3 Ensure the ontology is easy to reuse and extend. -> Codes have been represented with nested URI, each input record has been split in credit_requestor and credit_evaluation info to allow for easy extension, for instance adding credit_evaluation individuals for existing credit_requestor individuals.
 
 ## 5. Bibliography
-<pending>
+- [Oops!](https://oops.linkeddata.es/)
+- [Wikidata](https://www.wikidata.org/)
+- [OpenRefine](https://openrefine.org/)
+- [GraphDB](https://graphdb.ontotext.com/documentation/11.0/index.html)
+
+
+
 
