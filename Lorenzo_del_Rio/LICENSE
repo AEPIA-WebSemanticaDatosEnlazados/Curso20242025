@@ -1,0 +1,11 @@
+Copyright 2025 Lorenzo del Río Trujillo, lorenzo_del_rio@hotmail.com
+
+This work is licensed under CC BY-NC-SA 4.0 (Attribution-NonCommercial 4.0 International)
+To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+This work makes use of the dataset about German Credit Data created/owned by Professor Dr. Hans Hofmann. 
+(https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data)
+He has licensed the daaseset under Creative Commons Attribution 4.0 International (CC BY 4.0) License. To view a copy of this license visit:
+https://creativecommons.org/licenses/by/4.0/
+
+An ontology is created upon it and also a rdf version of the same, with some transformation (creation of derived columns). Besides the original dataset is also distributed within this work.
