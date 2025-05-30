@@ -20,7 +20,6 @@
   - [2.4. Ontology development](#24-ontology-development)
   - [2.5. External links](#25-external-links)
   - [2.6. Data mapping from csv to rdf/xml](#26-data-mapping-from-csv-to-rdf-xml)
-  - [2.7. OpenRefine project](#27-openrefine-project)
 - [3. Publication & access ](#3-publication-and-access)
   - [3.1. GraphDB](#31-graph-db)
   - [3.2. Python/SPARQLWrapper Interface](#32-python-sparql-wrapper-interface)
@@ -59,6 +58,10 @@ To get the results the following steps have been followed:
 
 ### 1.3. Requirements
 ### 1.3.1 Functional requirements
+- FR1 Allow for any SPARQL query to be executed on the ontology/dataset once loaded in GraphDB
+- FR2 Provide a query about the number of credits by credit risk evaluation (class) and purpose
+- FR3 Provide a query that returns the loan term, credit risk evaluation (class) and employment status of credit requestor/credit evaluations for credits about an amount, foreing worker status and housing provided as input by the user
+- FR4 Provide a query by purpose of the credit evaluation that return the number of credit evaluations for this purpose and retrieves info from the external links (if available) about the meaning of this specific purpose
 
 ### 1.3.2 Non Functional requirements
 - NFR1 Use of linked data/semantic web tools
@@ -729,8 +732,6 @@ They can be found in the folder ./transform of the repo
 
 Protégé was used to validate the output file (german_data_rdf.rdf)
 
-### 2.7. OpenRefine project
-<pending to decide if this section will be present as there is other info about OpenRefine>
 
 ## 3. Publication & access
 The course materials recommend datahub.io as a good plaform for publication of the data. The problem is that currently this web is no longer working with rdf/linked data, now its oriented to markdown documents published in git.
@@ -738,7 +739,7 @@ So my option to emulate the publication of the data has been to use GraphDB. The
 
 ### 3.1. GraphDB
 GraphDB free edition is readily available from https://www.ontotext.com/products/graphdb/, I downloaded the version for Windows.
-With the ontology and the dataset imported in GrapDB the resources can be accessed using URLs in this format:
+With both  the ontology and the dataset imported in GrapDB the resources can be accessed using URLs in this format:
 http://localhost:7200/resource?uri=<resource URI>
 for instance:
 http://localhost:7200/resource?uri=http://data.creditclassification.biz/ontology/ccf/credit_evaluation/E102
@@ -765,24 +766,259 @@ GraphDB also provides summaries of the imported data:
 ![GraphDB class relationship ](./images/class_relationships.png)
 
 
+### 3.2. Python/SPARQLWrapper queries
+To demonstrate how queries to GraphDB can be done a python script has been developed. It can be found, together with some query examples in the repo at ./queries. The python script is in the file QueriesCreditData.py. 
+To execute the script you need the following modules:
+SPARQLWrapper
+requests
+Both are readily available and can be installed using pip.
+The ontology (ccf.rdf) and the dataset (german_data_rdf.rdf) were imported in GraphDB under the repository "CreditEvaluationData" so the endpoint for the SPARQL queries was:
+http://localhost:7200/repositories/CreditEvaluationData
+
+When calling the script you can pass as parameter any filenname or no parameter. If you pass a filename then it tries to execute the content as an SPARQL query. If there are no parameters a menu is shown with 3 options (+ exit option), each option is a different query as explained below.
+
+#### 3.2.1. Execution of any SPARQL query
+The script is designed to met:
+- FR1 Allow for any SPARQL query to be executed on the ontology/dataset once loaded in GraphDB
+It does it using the function execute_query_from_file, that reads a file with an SPARQL query and executes it using the setQuery method of SPARQLWrapper. The file name (full path or relative path) needs to be passed as parameter when calling the script.
+The method does not allow for the use of parameters when querying, the query from the file is read as text and executed as it is.
+The results are presented without changes, as the SPARQLWrapper method returns them.
+The files ./queries/QuerySPARQL_1.txt and ./queries/QuerySPARQL_2.txt 
+were used to demonstrate this capability. 
+- QuerySPARQL_1.txt is a basic generic query to show labels:
+
+Lorenzo_del_Rio\queries>python QueriesCreditData.py QuerySPARQL_1.txt
+Results:
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_sex', 'label': 'has sex'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_credit_history', 'label': 'has credit history'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_foreign_worker', 'label': 'has foreign worker status'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_housing', 'label': 'has housing'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_job', 'label': 'has job'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_other_debtors_guarantors', 'label': 'has other debtors or guarantors'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_other_installment_plans', 'label': 'has other installment plans'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_personal_status_sex', 'label': 'has personal status and sex'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_present_employment', 'label': 'has present employment info'}
+{'subject': 'http://data.creditclassification.biz/ontology/ccf#has_property', 'label': 'has property info'}
 
 
-### 3.2. Python/SPARQLWrapper Interface
+- QuerySPARQL_2.txt is specific to this ontology/dataset and will return age (ISO format) link of the requestor, number of dependents of the requestor, sex of the requestor (without the full URI), and description of the credit evaluation, for credits evaluation where age > 40, sex contains 'Female' and the purpose of the credit evaluated is education or retraining:
+Lorenzo_del_Rio\queries>python QueriesCreditData.py QuerySPARQL_2.txt
+Results:
+{'age': 'P61Y', 'requestor': 'http://data.creditclassification.biz/ontology/ccf/credit_requestor/R97', 'number_of_dependents': '1', 'sexText': 'Female', 'class_desc': 'Good credit risk (will repay as agreed)'}
+{'age': 'P57Y', 'requestor': 'http://data.creditclassification.biz/ontology/ccf/credit_requestor/R264', 'number_of_dependents': '1', 'sexText': 'Female', 'class_desc': 'Good credit risk (will repay as agreed)'}
+{'age': 'P41Y', 'requestor': 'http://data.creditclassification.biz/ontology/ccf/credit_requestor/R446', 'number_of_dependents': '1', 'sexText': 'Female', 'class_desc': 'Good credit risk (will repay as agreed)'}
+{'age': 'P67Y', 'requestor': 'http://data.creditclassification.biz/ontology/ccf/credit_requestor/R555', 'number_of_dependents': '1', 'sexText': 'Female', 'class_desc': 'Good credit risk (will repay as agreed)'}
+{'age': 'P50Y', 'requestor': 'http://data.creditclassification.biz/ontology/ccf/credit_requestor/R665', 'number_of_dependents': '1', 'sexText': 'Female', 'class_desc': 'Good credit risk (will repay as agreed)'}
+{'age': 'P56Y', 'requestor': 'http://data.creditclassification.biz/ontology/ccf/credit_requestor/R681', 'number_of_dependents': '1', 'sexText': 'Female', 'class_desc': 'Good credit risk (will repay as agreed)'}
+{'age': 'P53Y', 'requestor': 'http://data.creditclassification.biz/ontology/ccf/credit_requestor/R886', 'number_of_dependents': '1', 'sexText': 'Female', 'class_desc': 'Bad credit risk (will default, pay late, etc)'}
+
+
+#### 3.2.2. Query about the number of credits by credit risk evaluation (class) and purpose
+The script is designed to met:
+- FR2 Provide a query about the number of credits by credit risk evaluation (class) and purpose
+And it does it through the function 'query_1', which executes a GROUP BY query that retrieves all the combinations of evaluation (class) and purpose providing the amount of evaluations for each combination:
+
+Lorenzo_del_Rio\queries>python QueriesCreditData.py
+Show menu
+
+--- Options available ---
+1 - Number of credits by class and purpose
+2 - Info about loan term, credit classification and employment status for credits above a given amount, foreing worker status and housing
+3 - Query by purpose, retrieving external info for the purpose
+0 - Exit
+Select an option : 1
+Number of credits by class and purpose
+Alt Label            Class Description                        Count
+------------------------------------------------------------------------------------------------------------------------------------------------------
+new car              Good credit risk (will repay as agreed)  145
+new car              Bad credit risk (will default, pay late, etc) 89
+used car             Good credit risk (will repay as agreed)  86
+used car             Bad credit risk (will default, pay late, etc) 17
+others               Good credit risk (will repay as agreed)  7
+others               Bad credit risk (will default, pay late, etc) 5
+furniture/equipment  Good credit risk (will repay as agreed)  123
+furniture/equipment  Bad credit risk (will default, pay late, etc) 58
+radio/television     Good credit risk (will repay as agreed)  218
+radio/television     Bad credit risk (will default, pay late, etc) 62
+domestic appliances  Good credit risk (will repay as agreed)  8
+domestic appliances  Bad credit risk (will default, pay late, etc) 4
+repairs              Good credit risk (will repay as agreed)  14
+repairs              Bad credit risk (will default, pay late, etc) 8
+education            Good credit risk (will repay as agreed)  28
+education            Bad credit risk (will default, pay late, etc) 22
+retraining           Good credit risk (will repay as agreed)  8
+retraining           Bad credit risk (will default, pay late, etc) 1
+business             Good credit risk (will repay as agreed)  63
+business             Bad credit risk (will default, pay late, etc) 34
+
+#### 3.2.3. Query for loan term/risk evaluation (class) and employment status
+The script is designed to met:
+- FR3 Provide a query that returns the loan term, credit risk evaluation (class) and employment status of credit requestor/credit evaluations for credits about an amount, foreing worker status and housing provided as input by the user
+and it does through function query_2. This function perform the following steps:
+- Ask for a credit amount
+- Ask whether the requestor is foreing worker or not
+- Retrieves the different possible values of the housing code
+- Ask the user to select one of these housing values
+- Performs a query returning the loan term, credit risk evaluation (class) and employment status of the credit_evaluation/credit_requestor where the credit_evaluation amount is over the value chosen by the user and the credit_requestor foreign worker situation and housing are the ones chosen by the user.
+- The loan term is transformed from the ISO format (P<num of months>M) to a more user friendly format (<num_of_months> months)
+
+Example of execution (not all results included):
+Lorenzo_del_Rio\queries>python QueriesCreditData.py
+Show menu
+
+--- Options available ---
+1 - Number of credits by class and purpose
+2 - Info about loan term, credit classification and employment status for credits above a given amount, foreing worker status and housing
+3 - Query by purpose, retrieving external info for the purpose
+0 - Exit
+Select an option : 2
+Info about loan term, credit classification and employment status for credits above a given amount, foreing worker status and housing
+Enter credit amount (e.g. 1000): 100
+Is the requestor a foreign worker? (yes/no): yes
+
+Fetching housing options...
+
+Available Housing Options:
+1. own [housing#A152]
+2. for free [housing#A153]
+3. rent [housing#A151]
+Select a housing option (number): 2
+
+Running filtered query...
+
+Loan Term    Class                          Employment Status
+-----------------------------------------------------------------
+42 months    Good credit risk (will repay as agreed) employed
+24 months    Bad credit risk (will default, pay late, etc) employed
+36 months    Good credit risk (will repay as agreed) employed
+24 months    Bad credit risk (will default, pay late, etc) employed
+48 months    Good credit risk (will repay as agreed) employed
+48 months    Bad credit risk (will default, pay late, etc) employed
+36 months    Bad credit risk (will default, pay late, etc) employed
+36 months    Bad credit risk (will default, pay late, etc) employed
+36 months    Bad credit risk (will default, pay late, etc) employed
+8 months     Good credit risk (will repay as agreed) employed
+12 months    Good credit risk (will repay as agreed) employed
+36 months    Bad credit risk (will default, pay late, etc) employed
+10 months    Good credit risk (will repay as agreed) employed
+18 months    Good credit risk (will repay as agreed) employed
+6 months     Good credit risk (will repay as agreed) employed
+10 months    Good credit risk (will repay as agreed) unemployed
+...................
+....................
+
+#### 3.2.4. Query by purpose including external link info
+The script is designed to met:
+- FR4 Provide a query by purpose of the credit evaluation that return the number of credit evaluations for this purpose and retrieves info from the external links (if available) about the meaning of this specific purpose
+And it does using query_3 function. This function perform the following steps:
+- Retrieve all possible values of has_purpose property and their "readable" labels (in this case modelled as dcterms:description)
+- Presents the values to the user, who should select one of them
+- Perfoms a group by query to count all the credit_evaluations that have this purpose
+- Retrieves any skos:exactMatch or skos:closeMatch info of the selected purpose
+- If there is exactMatch info closeMatch info is not used. If there is no exactMatch info the closeMatch info links are used.
+- For each match (either close or exact) the info from the source (Wikidata or Dbpedia) is retrieved. As security aspect is not key for this work certificate validation has been disabled when accessing wikidata/dbpedia. 
+- The info about number of credits and also the meaning of the purpose according to the external links is presented to the user.
+
+Examples of execution:
+
+- With exact match:
+Lorenzo_del_Rio\queries>python QueriesCreditData.py
+Show menu
+
+--- Options available ---
+1 - Number of credits by class and purpose
+2 - Info about loan term, credit classification and employment status for credits above a given amount, foreing worker status and housing
+3 - Query by purpose, retrieving external info for the purpose
+0 - Exit
+Select an option : 3
+Query by purpose, retrieving external info for the purpose
+
+Available Credit Purposes:
+1. business [purpose#A49]
+2. domestic appliances [purpose#A44]
+3. education [purpose#A46]
+4. furniture/equipment [purpose#A42]
+5. new car [purpose#A40]
+6. others [purpose#A410]
+7. radio/television [purpose#A43]
+8. repairs [purpose#A45]
+9. retraining [purpose#A48]
+10. used car [purpose#A41]
+Select a credit purpose (number): 3
+
+Total credit evaluations with the chosen purpose: 50
+
+The meaning of the chosen purpose is described in the following URLs:
+- http://dbpedia.org/resource/Education
+- http://www.wikidata.org/entity/Q8434
+
+From this source http://dbpedia.org/resource/Education, this info about the chosen purpose has been retrieved:
+Education is a purposeful activity directed at achieving certain aims, such as transmitting knowledge or fostering skills and character traits. These aims may include the development of understanding, rationality, kindness, and honesty. Various researchers emphasize the role of critical thinking in order to distinguish education from indoctrination. Some theorists require that education results in an improvement of the student while others prefer a value-neutral definition of the term. In a slightly different sense, education may also refer, not to the process, but to the product of this process: the mental states and dispositions possessed by educated people. Education originated as the transmission of cultural heritage from one generation to the next. Today, educational goals increasingly encompass new ideas such as the liberation of learners, skills needed for modern society, empathy, and complex vocational skills. Types of education are commonly divided into formal, non-formal, and informal education. Formal education takes place in education and training institutions, is usually structured by curricular aims and objectives, and learning is typically guided by a teacher. In most regions, formal education is compulsory up to a certain age and commonly divided into educational stages such as kindergarten, primary school and secondary school. Nonformal education occurs as addition or alternative to formal education. It may be structured according to educational arrangements, but in a more flexible manner, and usually takes place in community-based, workplace-based or civil society-based settings. Lastly, informal education occurs in daily life, in the family, any experience that has a formative effect on the way one thinks, feels, or acts may be considered educational, whether unintentional or intentional. In practice there is a continuum from the highly formalized to the highly informalized, and informal learning can occur in all three settings. For instance, homeschooling can be classified as nonformal or informal, depending upon the structure. Regardless of setting, educational methods include teaching, training, storytelling, discussion, and directed research. The methodology of teaching is called pedagogy. Education is supported by a variety of different philosophies, theories and empirical research agendas. There are movements for education reforms, such as for improving quality and efficiency of education towards relevance in students' lives and efficient problem solving in modern or future society at large, or for evidence-based education methodologies. A right to education has been recognized by some governments and the United Nations. Global initiatives aim at achieving the Sustainable Development Goal 4, which promotes quality education for all.
+
+From this source http://www.wikidata.org/entity/Q8434, this info about the chosen purpose has been retrieved:
+transmission of knowledge and skills
+
+
+- With close match:
+
+C:\cmdlrt\OneDrive - Hewlett Packard Enterprise\directorio_lorenzo\Personal\DocPersonalNoGrabado\1_Oportunidades\2024MasterIA\WebSemantica\repo\Web-Semantica-Curso20242025\Lorenzo_del_Rio\queries>
+
+Lorenzo_del_Rio\queries>python QueriesCreditData.py
+Show menu
+
+--- Options available ---
+1 - Number of credits by class and purpose
+2 - Info about loan term, credit classification and employment status for credits above a given amount, foreing worker status and housing
+3 - Query by purpose, retrieving external info for the purpose
+0 - Exit
+Select an option : 3
+Query by purpose, retrieving external info for the purpose
+
+Available Credit Purposes:
+1. business [purpose#A49]
+2. domestic appliances [purpose#A44]
+3. education [purpose#A46]
+4. furniture/equipment [purpose#A42]
+5. new car [purpose#A40]
+6. others [purpose#A410]
+7. radio/television [purpose#A43]
+8. repairs [purpose#A45]
+9. retraining [purpose#A48]
+10. used car [purpose#A41]
+Select a credit purpose (number): 4
+
+Total credit evaluations with the chosen purpose: 181
+
+The approximate meaning of the chosen purpose is described in the following URLs:
+- http://dbpedia.org/resource/Furniture
+- http://www.wikidata.org/entity/Q14745
+
+From this source http://dbpedia.org/resource/Furniture, this info about the chosen purpose has been retrieved:
+Furniture refers to movable objects intended to support various human activities such as seating (e.g., stools, chairs, and sofas), eating (tables), storing items, eating and/or working with an item, and sleeping (e.g., beds and hammocks). Furniture is also used to hold objects at a convenient height for work (as horizontal surfaces above the ground, such as tables and desks), or to store things (e.g., cupboards, shelves, and drawers). Furniture can be a product of design and can be considered a form of decorative art. In addition to furniture's functional role, it can serve a symbolic or religious purpose. It can be made from a vast multitude of materials, including metal, plastic, and wood. Furniture can be made using a variety of woodworking joints which often reflects the local culture. People have been using natural objects, such as tree stumps, rocks and moss, as furniture since the beginning of human civilization and continues today in some households/campsites. Archaeological research shows that from around 30,000 years ago, people started to construct and carve their own furniture, using wood, stone, and animal bones. Early furniture from this period is known from artwork such as a Venus figurine found in Russia, depicting the goddess on a throne. The first surviving extant furniture is in the homes of Skara Brae in Scotland, and includes cupboards, dressers and beds all constructed from stone. Complex construction techniques such as joinery began in the early dynastic period of ancient Egypt. This era saw constructed wooden pieces, including stools and tables, sometimes decorated with valuable metals or ivory. The evolution of furniture design continued in ancient Greece and ancient Rome, with thrones being commonplace as well as the klinai, multipurpose couches used for relaxing, eating, and sleeping. The furniture of the Middle Ages was usually heavy, oak, and ornamented. Furniture design expanded during the Italian Renaissance of the fourteenth and fifteenth century. The seventeenth century, in both Southern and Northern Europe, was characterized by opulent, often gilded Baroque designs. The nineteenth century is usually defined by revival styles. The first three-quarters of the twentieth century are often seen as the march towards Modernism. One unique outgrowth of post-modern furniture design is a return to natural shapes and textures.
+
+From this source http://www.wikidata.org/entity/Q14745, this info about the chosen purpose has been retrieved:
+movable objects used to equip households, offices, or shops for purposes such as storage, seating, sleeping
+
+The only difference between the processing of exactMatch and closeMatch info is that when presenting the info to the user the wording changes from "The meaning" (exactMatch) to "The approximate meaning" (closeMatch).
 
 ## 4. Conclusions
 ### 4.1. Functional requirements
+As described in section 3.2 "Python/SPARQLWrapper queries" the funcional requirements have been met.
 ### 4.2. Non functional requirements
 The non functional requirements have been met: 
 - NFR1 Use of linked data/semantic web tools -> Protégé, Openrefine and GraphDB among others have been used
-- NFR2 Maximize reuse of existing ontologies. -> Several ontologies included, FIBO, schema.org, FOAF
+- NFR2 Maximize reuse of existing ontologies. -> Several ontologies included as for instance skos, FIBO or schema.org 
 - NFR3 Ensure the ontology is easy to reuse and extend. -> Codes have been represented with nested URI, each input record has been split in credit_requestor and credit_evaluation info to allow for easy extension, for instance adding credit_evaluation individuals for existing credit_requestor individuals.
+
 
 ## 5. Bibliography
 - [Oops!](https://oops.linkeddata.es/)
 - [Wikidata](https://www.wikidata.org/)
 - [OpenRefine](https://openrefine.org/)
 - [GraphDB](https://graphdb.ontotext.com/documentation/11.0/index.html)
-
+- [Schema.org](https://schema.org/docs/documents.html)
+- [FIBO](https://github.com/edmcouncil/fibo/blob/master/ONTOLOGY_GUIDE.md)
+And course materials.
 
 
 
