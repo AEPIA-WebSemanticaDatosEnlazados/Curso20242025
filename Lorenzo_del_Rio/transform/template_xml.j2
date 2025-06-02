@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ccf="http://data.creditclassification.biz/ontology/ccf#"
+         xmlns:schema="https://schema.org/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:cc="http://creativecommons.org/ns#">
+
+  <!-- Metadata about this RDF dataset -->
+  <rdf:Description rdf:about="">
+    <dcterms:title xml:lang="en">Credit Classification Dataset</dcterms:title>
+    <dcterms:description xml:lang="en">
+      This RDF dataset contains structured data representing credit requestors and their associated credit evaluations for use in financial risk assessment.
+    </dcterms:description>
+    <dcterms:creator>
+      <foaf:Person>
+        <foaf:name>Lorenzo del Rio</foaf:name>
+      </foaf:Person>
+    </dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-05-27</dcterms:created>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+    <cc:license rdf:resource="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>   
+  </rdf:Description>
+
+
+{% for row in rows %}
+
+
+  <!-- credit_requestor -->
+  <ccf:credit_requestor rdf:about="http://data.creditclassification.biz/ontology/ccf/credit_requestor/R{{ row.row_number }}">
+    <ccf:has_sex rdf:resource="{{ row.sex }}"/>
+    <ccf:has_credit_history rdf:resource="http://data.creditclassification.biz/ontology/ccf/credit_history#{{ row.credit_history }}"/>
+    <ccf:has_foreign_worker rdf:resource="http://data.creditclassification.biz/ontology/ccf/foreign_worker#{{ row.foreign_worker }}"/>
+    <ccf:has_housing rdf:resource="http://data.creditclassification.biz/ontology/ccf/housing#{{ row.housing }}"/>
+    <ccf:has_job rdf:resource="http://data.creditclassification.biz/ontology/ccf/job#{{ row.job }}"/>
+    <ccf:has_other_debtors_guarantors rdf:resource="http://data.creditclassification.biz/ontology/ccf/other_debtors_guarantors#{{ row.other_debtors_guarantors }}"/>
+    <ccf:has_other_installment_plans rdf:resource="http://data.creditclassification.biz/ontology/ccf/other_installment_plans#{{ row.other_installment_plans }}"/>
+    <ccf:has_personal_status_sex rdf:resource="http://data.creditclassification.biz/ontology/ccf/personal_status_sex#{{ row.personal_status_sex }}"/>    
+    <ccf:has_present_employment rdf:resource="http://data.creditclassification.biz/ontology/ccf/present_employment#{{ row.present_employment }}"/>        
+    <ccf:has_property rdf:resource="http://data.creditclassification.biz/ontology/ccf/property#{{ row.property }}"/>            
+    <ccf:has_savings_account rdf:resource="http://data.creditclassification.biz/ontology/ccf/savings_account#{{ row.savings_account }}"/>            
+    <ccf:has_status_checking_account rdf:resource="http://data.creditclassification.biz/ontology/ccf/status_checking_account#{{ row.status_checking_account }}"/>                
+    <ccf:has_telephone rdf:resource="http://data.creditclassification.biz/ontology/ccf/telephone#{{ row.telephone }}"/>                    
+    <ccf:has_employment_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{{ row.employment_status }}</ccf:has_employment_status>
+    <ccf:number_of_dependents rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">{{ row.dependents }}</ccf:number_of_dependents>   
+    <ccf:number_of_existing_credits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">{{ row.existing_credits }}</ccf:number_of_existing_credits>       
+    <ccf:has_present_residence rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">P{{ row.present_residence }}Y</ccf:has_present_residence>
+    <ccf:has_credit_evaluation rdf:resource="http://data.creditclassification.biz/ontology/ccf/credit_evaluation/E{{ row.row_number }}"/>                    
+  </ccf:credit_requestor>
+  <!-- End of credit_requestor -->
+
+  <!-- credit_evaluation -->
+  <ccf:credit_evaluation rdf:about="http://data.creditclassification.biz/ontology/ccf/credit_evaluation/E{{ row.row_number }}">
+      <ccf:age_when_risk_evaluated rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">P{{ row.age }}Y</ccf:age_when_risk_evaluated>
+      <ccf:has_purpose rdf:resource="http://data.creditclassification.biz/ontology/ccf/purpose#{{ row.purpose }}"/>
+      <ccf:has_installment_rate  rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">{{ row.installment_rate }}</ccf:has_installment_rate>       
+      <ccf:has_credit_requestor rdf:resource="http://data.creditclassification.biz/ontology/ccf/credit_requestor/R{{ row.row_number }}"/>                    
+      <schema:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{{ row.credit_amount }}</schema:amount>
+      <schema:loanTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P{{ row.duration }}M</schema:loanTerm>
+      <ccf:has_class rdf:resource="http://data.creditclassification.biz/ontology/ccf/class#{{ row.class }}"/>      
+  </ccf:credit_evaluation>
+  <!-- End of credit_evaluation -->
+
+{% endfor %}
+
+</rdf:RDF>

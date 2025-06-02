@@ -1,0 +1,37 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ccf: <http://data.creditclassification.biz/ontology/ccf#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?age ?requestor ?number_of_dependents ?sexText ?class_desc
+WHERE {
+  ?evaluation a ccf:credit_evaluation ;
+              ccf:has_purpose ?purpose_code ;
+              ccf:has_credit_requestor ?requestor;
+              ccf:age_when_risk_evaluated ?age;
+              ccf:has_class ?class.
+  
+    # Extract age value from duration string (ISO)
+    BIND(STR(?age) AS ?ageStr)
+    BIND(REPLACE(?ageStr, "^P([0-9]+)Y$", "$1") AS ?ageNumberStr)
+    BIND(xsd:integer(?ageNumberStr) AS ?ageValue)
+    FILTER(?ageValue > 40)
+
+
+    ?requestor a ccf:credit_requestor ;
+                ccf:number_of_dependents ?number_of_dependents ;
+                ccf:has_sex ?sex.
+              
+    
+    BIND(STRAFTER(STR(?sex), "/resource/") AS ?sexText)    
+    FILTER(CONTAINS(lcase(str(?sex)), "female"))
+
+    ?purpose_code skos:altLabel ?altLabel .
+    FILTER(lcase(str(?altLabel)) IN ("education", "retraining"))
+    
+    ?class dcterms:description ?class_desc.
+}
+
+
+

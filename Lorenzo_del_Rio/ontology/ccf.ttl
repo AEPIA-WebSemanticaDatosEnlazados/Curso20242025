@@ -1,0 +1,1374 @@
+@prefix : <http://data.creditclassification.biz/ontology/ccf#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix AnnotationVocabulary: <https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/> .
+@prefix AnnotationVocabulary1: <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
+@prefix IdentifiersAndIndices: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/> .
+@prefix SpecificationMetadata: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@base <http://data.creditclassification.biz/ontology/ccf#> .
+
+<http://data.creditclassification.biz/ontology/ccf> rdf:type owl:Ontology ;
+                                                     owl:imports <http://www.w3.org/2004/02/skos/core> ,
+                                                                 schema: ,
+                                                                 <https://spec.edmcouncil.org/fibo/ontology/master/2024Q4/FND/Parties/Parties/> ;
+                                                     cc:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
+                                                     dcterms:creator "Lorenzo del Río" ;
+                                                     dcterms:description "An ontology for modeling a credit classification dataset." ;
+                                                     dcterms:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
+                                                     dcterms:title "Credit Classification Ontology" ;
+                                                     foaf:homepage <http://data.creditclassification.biz/ontology/ccf> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+cc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2001/XMLSchema#pattern
+xsd:pattern rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://data.creditclassification.biz/ontology/ccf#employment_status_enum
+:employment_status_enum rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.creditclassification.biz/ontology/ccf#age_when_risk_evaluated
+:age_when_risk_evaluated rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf schema:duration ;
+                         rdfs:domain :credit_evaluation ;
+                         rdfs:range [ rdf:type owl:Class ;
+                                      owl:unionOf ( schema:Duration
+                                                    schema:QuantitativeValue
+                                                    schema:Text
+                                                  )
+                                    ] ;
+                         rdfs:comment "Age of the credit_requestor at the time the risk was evaluated. In years, in ISO 8601 format" .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_class
+:has_class rdf:type owl:ObjectProperty ;
+           rdfs:domain :credit_evaluation ;
+           rdfs:range :class_code ;
+           rdfs:label "has credit risk class"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_credit_evaluation
+:has_credit_evaluation rdf:type owl:ObjectProperty ;
+                       owl:inverseOf :has_credit_requestor ;
+                       rdfs:domain :credit_requestor ;
+                       rdfs:range :credit_evaluation ;
+                       rdfs:label "Credit evaluation of a credit requestor"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_credit_history
+:has_credit_history rdf:type owl:ObjectProperty ;
+                    rdfs:domain :credit_requestor ;
+                    rdfs:range :credit_history_code ;
+                    rdfs:label "has credit history"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_credit_requestor
+:has_credit_requestor rdf:type owl:ObjectProperty ;
+                      rdfs:domain :credit_evaluation ;
+                      rdfs:range :credit_requestor ;
+                      rdfs:label "Credit requestor of a credit evaluation"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_foreign_worker
+:has_foreign_worker rdf:type owl:ObjectProperty ;
+                    rdfs:domain :credit_requestor ;
+                    rdfs:range :foreign_worker_code ;
+                    rdfs:label "has foreign worker status"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_housing
+:has_housing rdf:type owl:ObjectProperty ;
+             rdfs:domain :credit_requestor ;
+             rdfs:range :housing_code ;
+             rdfs:label "has housing"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_job
+:has_job rdf:type owl:ObjectProperty ;
+         rdfs:domain :credit_requestor ;
+         rdfs:range :job_code ;
+         rdfs:label "has job"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_other_debtors_guarantors
+:has_other_debtors_guarantors rdf:type owl:ObjectProperty ;
+                              rdfs:domain :credit_requestor ;
+                              rdfs:range :other_debtors_guarantors_code ;
+                              rdfs:label "has other debtors or guarantors"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_other_installment_plans
+:has_other_installment_plans rdf:type owl:ObjectProperty ;
+                             rdfs:domain :credit_requestor ;
+                             rdfs:range :other_installment_plans_code ;
+                             rdfs:label "has other installment plans"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_personal_status_sex
+:has_personal_status_sex rdf:type owl:ObjectProperty ;
+                         rdfs:domain :credit_requestor ;
+                         rdfs:range :personal_status_sex_code ;
+                         rdfs:label "has personal status and sex"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_present_employment
+:has_present_employment rdf:type owl:ObjectProperty ;
+                        rdfs:domain :credit_requestor ;
+                        rdfs:range :present_employment_code ;
+                        rdfs:label "has present employment info"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_present_residence
+:has_present_residence rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf schema:duration ;
+                       rdfs:domain :credit_requestor ;
+                       rdfs:range schema:Text ;
+                       rdfs:comment "Time the credit requestor has been in its current residence. In years, in ISO 8601 format" .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_property
+:has_property rdf:type owl:ObjectProperty ;
+              rdfs:domain :credit_requestor ;
+              rdfs:range :property_code ;
+              rdfs:label "has property info"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_purpose
+:has_purpose rdf:type owl:ObjectProperty ;
+             rdfs:domain :credit_evaluation ;
+             rdfs:range :purpose_code ;
+             rdfs:label "has purpose"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_savings_account
+:has_savings_account rdf:type owl:ObjectProperty ;
+                     rdfs:domain :credit_requestor ;
+                     rdfs:range :savings_account_code ;
+                     rdfs:label "has savings account info"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_sex
+:has_sex rdf:type owl:ObjectProperty ;
+         rdfs:domain :credit_requestor ;
+         rdfs:range :Sex ;
+         rdfs:comment "The biological sex of the credit requestor."@en ;
+         rdfs:label "has sex"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_status_checking_account
+:has_status_checking_account rdf:type owl:ObjectProperty ;
+                             rdfs:domain :credit_requestor ;
+                             rdfs:range :status_checking_account_code ;
+                             rdfs:label "has checking account status"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_telephone
+:has_telephone rdf:type owl:ObjectProperty ;
+               rdfs:domain :credit_requestor ;
+               rdfs:range :telephone_code ;
+               rdfs:label "has telephone"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.creditclassification.biz/ontology/ccf#has_employment_status
+:has_employment_status rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :credit_requestor ;
+                       rdfs:range :employment_status_enum ;
+                       rdfs:comment """
+    The employment status as a string: 'employed' or 'unemployed'.
+    Refer to DBpedia for more information.
+  """@en ;
+                       rdfs:label "employment status of the credit requestor"@en ;
+                       rdfs:seeAlso <http://dbpedia.org/resource/Employment> ,
+                                    <http://dbpedia.org/resource/Unemployment> .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#has_installment_rate
+:has_installment_rate rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :credit_evaluation ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "Installment rate in percentage of disposable income" ;
+                      rdfs:label "Installment rate"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#number_of_dependents
+:number_of_dependents rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :credit_requestor ;
+                      rdfs:range xsd:integer ;
+                      rdfs:comment "Number of persons that depend on the credit requestor" .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#number_of_existing_credits
+:number_of_existing_credits rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :credit_requestor ;
+                            rdfs:range xsd:integer ;
+                            rdfs:comment "Number of other credits that the credit_requestor has" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.creditclassification.biz/ontology/ccf#Sex
+:Sex rdf:type owl:Class ;
+     owl:equivalentClass [ rdf:type owl:Class ;
+                           owl:oneOf ( <http://dbpedia.org/resource/Female>
+                                       <http://dbpedia.org/resource/Male>
+                                     )
+                         ] ;
+     rdfs:comment """
+        The class of biological sexes, limited to the individuals Male and Female from DBpedia.
+        """@en ;
+     rdfs:label "Sex"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#class_code
+:class_code rdf:type owl:Class ;
+            owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty skos:inScheme ;
+                                                         owl:hasValue :class
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+            rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+            rdfs:comment """
+        Risk classification of the credit.
+        """@en ;
+            rdfs:label "Risk classification of the credit"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#credit_evaluation
+:credit_evaluation rdf:type owl:Class ;
+                   rdfs:subClassOf schema:LoanOrCredit ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :has_credit_requestor ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   rdfs:comment "Loan info enriched with classification of the risk" ;
+                   AnnotationVocabulary1:usageNote "URIs for credit_evaluation individuals are of the form : http://data.creditclassification.biz/resource/ccf/credit_evaluation/<credit_evaluation_id> . <credit_evaluation_id>  is E<integer>" .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#credit_history_code
+:credit_history_code rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty skos:inScheme ;
+                                                                  owl:hasValue :credit_history
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                     rdfs:comment """
+        A classification code providing info about the credit history of the credit requestor.
+        """@en ;
+                     rdfs:label "Credit history Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#credit_requestor
+:credit_requestor rdf:type owl:Class ;
+                  rdfs:subClassOf <https://www.omg.org/spec/Commons/PartiesAndSituations/Party> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :has_credit_evaluation ;
+                                    owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:comment "Info of a credit requestor in the context of the evaluation of the risk of a requested loan." ;
+                  AnnotationVocabulary1:usageNote "URIs for credit_requestor individuals are of the form : http://data.creditclassification.biz/resource/ccf/credit_requestor/<credit_requestor_id> . <credit_requestor_id>  is R<integer>" .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#employment_status_enum
+:employment_status_enum rdf:type owl:Class ;
+                        owl:equivalentClass <http://org.semanticweb.owlapi/error#Error1> .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#foreign_worker_code
+:foreign_worker_code rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty skos:inScheme ;
+                                                                  owl:hasValue :foreign_worker
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                     rdfs:comment """
+        A classification code telling if the credit requestor is foreign worker or not.
+        """@en ;
+                     rdfs:label "Foreign worker Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#housing_code
+:housing_code rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty skos:inScheme ;
+                                                           owl:hasValue :housing
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+              rdfs:comment """
+        A classification code providing info about the housing of the credit requestor.
+        """@en ;
+              rdfs:label "Housing Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#job_code
+:job_code rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty skos:inScheme ;
+                                                       owl:hasValue :job
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+          rdfs:comment """
+        A classification code providing info about the job of the credit requestor.
+        """@en ;
+          rdfs:label "Job Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#other_debtors_guarantors_code
+:other_debtors_guarantors_code rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty skos:inScheme ;
+                                                                            owl:hasValue :other_debtors_guarantors
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                               rdfs:comment """
+        A classification code indicating info about other debtors/guarantors.
+        """@en ;
+                               rdfs:label "Other debtors guarantors Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#other_installment_plans_code
+:other_installment_plans_code rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty skos:inScheme ;
+                                                                           owl:hasValue :other_installment_plans
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                              rdfs:comment """
+        A classification code indicating if the credit requestor has other installment plans.
+        """@en ;
+                              rdfs:label "Other installment plans code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#personal_status_sex_code
+:personal_status_sex_code rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty skos:inScheme ;
+                                                                       owl:hasValue :personal_status_sex
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                          rdfs:comment """
+        A classfication code that mixes info about the marital status and sex of the credit requestor.
+        """@en ;
+                          rdfs:label "Personal status sex code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#present_employment_code
+:present_employment_code rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty skos:inScheme ;
+                                                                      owl:hasValue :present_employment
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                         rdfs:comment """
+        A classification code providing info about the present employment status of the credit requestor.
+        """@en ;
+                         rdfs:label "Present employment Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#property_code
+:property_code rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty skos:inScheme ;
+                                                            owl:hasValue :property
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+               rdfs:comment """
+        A classification code indicating the type of property of the party.
+        """@en ;
+               rdfs:label "Property Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#purpose_code
+:purpose_code rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty skos:inScheme ;
+                                                           owl:hasValue :purpose
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+              rdfs:comment """
+        A classification code indicating the purpose associated with a financial product or transaction.
+        """@en ;
+              rdfs:label "Purpose Code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#savings_account_code
+:savings_account_code rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty skos:inScheme ;
+                                                                   owl:hasValue :savings_account
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                      rdfs:comment """
+        A classification code for the savings account.
+        """@en ;
+                      rdfs:label "Savings account code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#status_checking_account_code
+:status_checking_account_code rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty skos:inScheme ;
+                                                                           owl:hasValue :status_checking_account
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                              rdfs:comment """
+        A classification code related to the status of the checking account.
+        """@en ;
+                              rdfs:label "Checking account code"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#telephone_code
+:telephone_code rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( skos:Concept
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty skos:inScheme ;
+                                                             owl:hasValue :telephone
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf <https://www.omg.org/spec/Commons/CodesAndCodeSets/CodeElement> ;
+                rdfs:comment """
+        A classification code indicating whether the party owns a phone line or not.
+        """@en ;
+                rdfs:label "Telephone code"@en .
+
+
+###  http://org.semanticweb.owlapi/error#Error1
+<http://org.semanticweb.owlapi/error#Error1> rdf:type owl:Class ;
+                                             rdfs:subClassOf xsd:string .
+
+
+###  https://schema.org/Duration
+schema:Duration rdf:type owl:Class .
+
+
+###  https://schema.org/QuantitativeValue
+schema:QuantitativeValue rdf:type owl:Class .
+
+
+###  https://schema.org/Text
+schema:Text rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://data.creditclassification.biz/ontology/ccf#class
+:class rdf:type owl:NamedIndividual ,
+                skos:ConceptScheme ;
+       dcterms:description "Credit risk classification" ;
+       skos:prefLabel "Credit risk classification"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#credit_history
+:credit_history rdf:type owl:NamedIndividual ,
+                         skos:ConceptScheme ;
+                dcterms:description "Credit history of the credit requestor" ;
+                skos:prefLabel "Credit history"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#foreign_worker
+:foreign_worker rdf:type owl:NamedIndividual ,
+                         skos:ConceptScheme ;
+                dcterms:description "Foreign worker status" ;
+                skos:prefLabel "Foreign worker status"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#housing
+:housing rdf:type owl:NamedIndividual ,
+                  skos:ConceptScheme ;
+         dcterms:description "Housing situation" ;
+         skos:prefLabel "Housing situation"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#job
+:job rdf:type owl:NamedIndividual ,
+              skos:ConceptScheme ;
+     dcterms:description "Occupation or job type" ;
+     skos:prefLabel "Occupation or job type"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#other_debtors_guarantors
+:other_debtors_guarantors rdf:type owl:NamedIndividual ,
+                                   skos:ConceptScheme ;
+                          dcterms:description "Other debtors or guarantors" ;
+                          skos:prefLabel "Other debtors or guarantors"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#other_installment_plans
+:other_installment_plans rdf:type owl:NamedIndividual ,
+                                  skos:ConceptScheme ;
+                         dcterms:description "Other installment plans" ;
+                         skos:prefLabel "Other installment plans"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#personal_status_sex
+:personal_status_sex rdf:type owl:NamedIndividual ,
+                              skos:ConceptScheme ;
+                     dcterms:description "Personal status and sex" ;
+                     skos:prefLabel "Personal status and sex"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#present_employment
+:present_employment rdf:type owl:NamedIndividual ,
+                             skos:ConceptScheme ;
+                    dcterms:description "Present employment duration" ;
+                    skos:prefLabel "Present employment duration"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#property
+:property rdf:type owl:NamedIndividual ,
+                   skos:ConceptScheme ;
+          dcterms:description "Type of property" ;
+          skos:prefLabel "Type of property"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#purpose
+:purpose rdf:type owl:NamedIndividual ,
+                  skos:ConceptScheme ;
+         dcterms:description "Purpose of the loan" ;
+         skos:prefLabel "Purpose of the loan"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#savings_account
+:savings_account rdf:type owl:NamedIndividual ,
+                          skos:ConceptScheme ;
+                 dcterms:description "Savings account or bonds" ;
+                 skos:prefLabel "Savings account or bonds"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#status_checking_account
+:status_checking_account rdf:type owl:NamedIndividual ,
+                                  skos:ConceptScheme ;
+                         dcterms:description "Status of the checking account" ;
+                         skos:prefLabel "Status of existing checking account"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf#telephone
+:telephone rdf:type owl:NamedIndividual ,
+                    skos:ConceptScheme ;
+           dcterms:description "Telephone ownership" ;
+           skos:prefLabel "Telephone ownership"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf%20#present_employment
+<http://data.creditclassification.biz/ontology/ccf%20#present_employment> rdf:type owl:NamedIndividual .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/class#1
+<http://data.creditclassification.biz/ontology/ccf/class#1> rdf:type owl:NamedIndividual ,
+                                                                     skos:Concept ;
+                                                            skos:inScheme :class ;
+                                                            dcterms:description "Good credit risk (will repay as agreed)" ;
+                                                            skos:altLabel "bon risque de crédit"@fr ,
+                                                                          "bona kreditrisko"@eo ,
+                                                                          "buen riesgo crediticio"@es ,
+                                                                          "good credit risk"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/class#2
+<http://data.creditclassification.biz/ontology/ccf/class#2> rdf:type owl:NamedIndividual ,
+                                                                     skos:Concept ;
+                                                            skos:inScheme :class ;
+                                                            dcterms:description "Bad credit risk (will default, pay late, etc)" ;
+                                                            skos:altLabel "bad credit risk"@en ,
+                                                                          "mal riesgo crediticio"@es ,
+                                                                          "malbona kreditrisko"@eo ,
+                                                                          "mauvais risque de crédit"@fr .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/credit_history#A30
+<http://data.creditclassification.biz/ontology/ccf/credit_history#A30> rdf:type owl:NamedIndividual ,
+                                                                                skos:Concept ;
+                                                                       skos:inScheme :credit_history ;
+                                                                       dcterms:description "no credits taken / all credits paid back duly" ;
+                                                                       skos:altLabel "aucun crédit / tous remboursés correctement"@fr ,
+                                                                                     "neniuj kreditoj / ĉiuj pagitaj laŭregule"@eo ,
+                                                                                     "no credits / all paid duly"@en ,
+                                                                                     "sin créditos / todos pagados debidamente"@es .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/credit_history#A31
+<http://data.creditclassification.biz/ontology/ccf/credit_history#A31> rdf:type owl:NamedIndividual ,
+                                                                                skos:Concept ;
+                                                                       skos:inScheme :credit_history ;
+                                                                       dcterms:description "all credits at this bank paid back duly" ;
+                                                                       skos:altLabel "all credits at bank paid duly"@en ,
+                                                                                     "todos los créditos en este banco pagados debidamente"@es ,
+                                                                                     "tous les crédits dans cette banque remboursés correctement"@fr ,
+                                                                                     "ĉiuj kreditoj en ĉi tiu banko pagitaj laŭregule"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/credit_history#A32
+<http://data.creditclassification.biz/ontology/ccf/credit_history#A32> rdf:type owl:NamedIndividual ,
+                                                                                skos:Concept ;
+                                                                       skos:inScheme :credit_history ;
+                                                                       dcterms:description "existing credits paid back duly till now" ;
+                                                                       skos:altLabel "créditos existentes pagados debidamente hasta ahora"@es ,
+                                                                                     "crédits existants remboursés correctement jusqu'à présent"@fr ,
+                                                                                     "ekzistantaj kreditoj pagitaj laŭregule ĝis nun"@eo ,
+                                                                                     "existing credits paid duly"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/credit_history#A33
+<http://data.creditclassification.biz/ontology/ccf/credit_history#A33> rdf:type owl:NamedIndividual ,
+                                                                                skos:Concept ;
+                                                                       skos:inScheme :credit_history ;
+                                                                       dcterms:description "delay in paying off in the past" ;
+                                                                       skos:altLabel "malfruoj en pagoj en la pasinteco"@eo ,
+                                                                                     "past payment delays"@en ,
+                                                                                     "retards de paiement dans le passé"@fr ,
+                                                                                     "retrasos en pagos en el pasado"@es .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/credit_history#A34
+<http://data.creditclassification.biz/ontology/ccf/credit_history#A34> rdf:type owl:NamedIndividual ,
+                                                                                skos:Concept ;
+                                                                       skos:inScheme :credit_history ;
+                                                                       dcterms:description "critical account / other credits existing (not at this bank)" ;
+                                                                       skos:altLabel "compte critique / autres crédits existants"@fr ,
+                                                                                     "critical account / other credits"@en ,
+                                                                                     "cuenta crítica / otros créditos existentes"@es ,
+                                                                                     "kritika konto / aliaj kreditoj ekzistantaj"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/foreign_worker#A201
+<http://data.creditclassification.biz/ontology/ccf/foreign_worker#A201> rdf:type owl:NamedIndividual ,
+                                                                                 skos:Concept ;
+                                                                        skos:exactMatch <https://www.wikidata.org/wiki/Q6452715> ;
+                                                                        skos:inScheme :foreign_worker ;
+                                                                        dcterms:description "yes" ;
+                                                                        skos:altLabel "jes"@eo ,
+                                                                                      "oui"@fr ,
+                                                                                      "sí"@es ,
+                                                                                      "yes"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/foreign_worker#A202
+<http://data.creditclassification.biz/ontology/ccf/foreign_worker#A202> rdf:type owl:NamedIndividual ,
+                                                                                 skos:Concept ;
+                                                                        skos:exactMatch <https://www.wikidata.org/wiki/Q55965107> ;
+                                                                        skos:inScheme :foreign_worker ;
+                                                                        dcterms:description "no" ;
+                                                                        skos:altLabel "ne"@eo ,
+                                                                                      "no"@en ,
+                                                                                      "no"@es ,
+                                                                                      "non"@fr .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/housing#A151
+<http://data.creditclassification.biz/ontology/ccf/housing#A151> rdf:type owl:NamedIndividual ,
+                                                                          skos:Concept ;
+                                                                 skos:inScheme :housing ;
+                                                                 dcterms:description "rent" ;
+                                                                 skos:altLabel "rent"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/housing#A152
+<http://data.creditclassification.biz/ontology/ccf/housing#A152> rdf:type owl:NamedIndividual ,
+                                                                          skos:Concept ;
+                                                                 skos:inScheme :housing ;
+                                                                 dcterms:description "own" ;
+                                                                 skos:altLabel "own"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/housing#A153
+<http://data.creditclassification.biz/ontology/ccf/housing#A153> rdf:type owl:NamedIndividual ,
+                                                                          skos:Concept ;
+                                                                 skos:inScheme :housing ;
+                                                                 dcterms:description "for free" ;
+                                                                 skos:altLabel "for free"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/job#A171
+<http://data.creditclassification.biz/ontology/ccf/job#A171> rdf:type owl:NamedIndividual ,
+                                                                      skos:Concept ;
+                                                             skos:inScheme :job ;
+                                                             dcterms:description "unemployed / unskilled – non-resident" ;
+                                                             skos:altLabel "chômeur / non qualifié non-résident"@fr ,
+                                                                           "desempleado / no calificado no residente"@es ,
+                                                                           "senlabora / nekvalifikita ne-loĝanto"@eo ,
+                                                                           "unemployed / unskilled non-resident"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/job#A172
+<http://data.creditclassification.biz/ontology/ccf/job#A172> rdf:type owl:NamedIndividual ,
+                                                                      skos:Concept ;
+                                                             skos:inScheme :job ;
+                                                             dcterms:description "unskilled – resident" ;
+                                                             skos:altLabel "nekvalifikita loĝanto"@eo ,
+                                                                           "no calificado residente"@es ,
+                                                                           "non qualifié résident"@fr ,
+                                                                           "unskilled resident"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/job#A173
+<http://data.creditclassification.biz/ontology/ccf/job#A173> rdf:type owl:NamedIndividual ,
+                                                                      skos:Concept ;
+                                                             skos:inScheme :job ;
+                                                             dcterms:description "skilled employee / official" ;
+                                                             skos:altLabel "empleado calificado / oficial"@es ,
+                                                                           "employé qualifié / fonctionnaire"@fr ,
+                                                                           "kvalifikita dungito / oficiala"@eo ,
+                                                                           "skilled employee / official"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/job#A174
+<http://data.creditclassification.biz/ontology/ccf/job#A174> rdf:type owl:NamedIndividual ,
+                                                                      skos:Concept ;
+                                                             skos:inScheme :job ;
+                                                             dcterms:description "management / self-employed / highly qualified employee" ;
+                                                             skos:altLabel "administrado / mem-dungita / altkvalifikita dungito"@eo ,
+                                                                           "gerencia / autónomo / empleado altamente calificado"@es ,
+                                                                           "gestion / indépendant / employé hautement qualifié"@fr ,
+                                                                           "management / self-employed / highly qualified"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/other_debtors_guarantors#A101
+<http://data.creditclassification.biz/ontology/ccf/other_debtors_guarantors#A101> rdf:type owl:NamedIndividual ,
+                                                                                           skos:Concept ;
+                                                                                  skos:inScheme :other_debtors_guarantors ;
+                                                                                  dcterms:description "none" ;
+                                                                                  skos:altLabel "aucun"@fr ,
+                                                                                                "neniu"@eo ,
+                                                                                                "ninguno"@es ,
+                                                                                                "none"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/other_debtors_guarantors#A102
+<http://data.creditclassification.biz/ontology/ccf/other_debtors_guarantors#A102> rdf:type owl:NamedIndividual ,
+                                                                                           skos:Concept ;
+                                                                                  skos:inScheme :other_debtors_guarantors ;
+                                                                                  dcterms:description "co-applicant" ;
+                                                                                  skos:altLabel "co-applicant"@en ,
+                                                                                                "co-demandeur"@fr ,
+                                                                                                "co-solicitante"@es ,
+                                                                                                "kunpetanto"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/other_debtors_guarantors#A103
+<http://data.creditclassification.biz/ontology/ccf/other_debtors_guarantors#A103> rdf:type owl:NamedIndividual ,
+                                                                                           skos:Concept ;
+                                                                                  skos:inScheme :other_debtors_guarantors ;
+                                                                                  dcterms:description "guarantor" ;
+                                                                                  skos:altLabel "garant"@fr ,
+                                                                                                "garante"@es ,
+                                                                                                "garantianto"@eo ,
+                                                                                                "guarantor"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/other_installment_plans#A141
+<http://data.creditclassification.biz/ontology/ccf/other_installment_plans#A141> rdf:type owl:NamedIndividual ,
+                                                                                          skos:Concept ;
+                                                                                 skos:inScheme :other_installment_plans ;
+                                                                                 dcterms:description "bank" ;
+                                                                                 skos:altLabel "banco"@es ,
+                                                                                               "bank"@en ,
+                                                                                               "banko"@eo ,
+                                                                                               "banque"@fr .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/other_installment_plans#A142
+<http://data.creditclassification.biz/ontology/ccf/other_installment_plans#A142> rdf:type owl:NamedIndividual ,
+                                                                                          skos:Concept ;
+                                                                                 skos:inScheme :other_installment_plans ;
+                                                                                 dcterms:description "stores" ;
+                                                                                 skos:altLabel "magasins"@fr ,
+                                                                                               "stores"@en ,
+                                                                                               "tiendas"@es ,
+                                                                                               "vendejoj"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/other_installment_plans#A143
+<http://data.creditclassification.biz/ontology/ccf/other_installment_plans#A143> rdf:type owl:NamedIndividual ,
+                                                                                          skos:Concept ;
+                                                                                 skos:inScheme :other_installment_plans ;
+                                                                                 dcterms:description "none" ;
+                                                                                 skos:altLabel "aucun"@fr ,
+                                                                                               "neniu"@eo ,
+                                                                                               "ninguno"@es ,
+                                                                                               "none"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A91
+<http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A91> rdf:type owl:NamedIndividual ,
+                                                                                     skos:Concept ;
+                                                                            skos:inScheme :personal_status_sex ;
+                                                                            dcterms:description "male : divorced/separated" ;
+                                                                            skos:altLabel "hombre divorciado/separado"@es ,
+                                                                                          "homme divorcé/séparé"@fr ,
+                                                                                          "male divorced/separated"@en ,
+                                                                                          "viro divorcita/disigita"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A92
+<http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A92> rdf:type owl:NamedIndividual ,
+                                                                                     skos:Concept ;
+                                                                            skos:inScheme :personal_status_sex ;
+                                                                            dcterms:description "female : divorced/separated/married" ;
+                                                                            skos:altLabel "female divorced/separated/married"@en ,
+                                                                                          "femme divorcée/séparée/mariée"@fr ,
+                                                                                          "mujer divorciada/separada/casada"@es ,
+                                                                                          "virino divorcita/disigita/edziĝinta"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A93
+<http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A93> rdf:type owl:NamedIndividual ,
+                                                                                     skos:Concept ;
+                                                                            skos:inScheme :personal_status_sex ;
+                                                                            dcterms:description "male : single" ;
+                                                                            skos:altLabel "hombre soltero"@es ,
+                                                                                          "homme célibataire"@fr ,
+                                                                                          "male single"@en ,
+                                                                                          "viro fraŭla"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A94
+<http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A94> rdf:type owl:NamedIndividual ,
+                                                                                     skos:Concept ;
+                                                                            skos:inScheme :personal_status_sex ;
+                                                                            dcterms:description "male : married/widowed" ;
+                                                                            skos:altLabel "hombre casado/viudo"@es ,
+                                                                                          "homme marié/veuf"@fr ,
+                                                                                          "male married/widowed"@en ,
+                                                                                          "viro edziĝinta/vidva"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A95
+<http://data.creditclassification.biz/ontology/ccf/personal_status_sex#A95> rdf:type owl:NamedIndividual ,
+                                                                                     skos:Concept ;
+                                                                            skos:inScheme :personal_status_sex ;
+                                                                            dcterms:description "female : single" ;
+                                                                            skos:altLabel "female single"@en ,
+                                                                                          "femme célibataire"@fr ,
+                                                                                          "mujer soltera"@es ,
+                                                                                          "virino fraŭla"@eo .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/present_employment#A71
+<http://data.creditclassification.biz/ontology/ccf/present_employment#A71> rdf:type owl:NamedIndividual ,
+                                                                                    skos:Concept ;
+                                                                           skos:inScheme :present_employment ;
+                                                                           dcterms:description "unemployed" ;
+                                                                           skos:altLabel "chômeur"@fr ,
+                                                                                         "desempleado"@es ,
+                                                                                         "senlabora"@eo ,
+                                                                                         "unemployed"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/present_employment#A72
+<http://data.creditclassification.biz/ontology/ccf/present_employment#A72> rdf:type owl:NamedIndividual ,
+                                                                                    skos:Concept ;
+                                                                           skos:inScheme :present_employment ;
+                                                                           dcterms:description "employed less than 1 year" ;
+                                                                           skos:altLabel "dungita malpli ol 1 jaro"@eo ,
+                                                                                         "empleado menos de 1 año"@es ,
+                                                                                         "employé moins d'un an"@fr ,
+                                                                                         "less than 1 year"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/present_employment#A73
+<http://data.creditclassification.biz/ontology/ccf/present_employment#A73> rdf:type owl:NamedIndividual ,
+                                                                                    skos:Concept ;
+                                                                           skos:inScheme :present_employment ;
+                                                                           dcterms:description "employed between 1 and 4 years" ;
+                                                                           skos:altLabel "1 to 4 years"@en ,
+                                                                                         "dungita inter 1 kaj 4 jaroj"@eo ,
+                                                                                         "empleado entre 1 y 4 años"@es ,
+                                                                                         "employé entre 1 et 4 ans"@fr .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/present_employment#A74
+<http://data.creditclassification.biz/ontology/ccf/present_employment#A74> rdf:type owl:NamedIndividual ,
+                                                                                    skos:Concept ;
+                                                                           skos:inScheme <http://data.creditclassification.biz/ontology/ccf%20#present_employment> ;
+                                                                           dcterms:description "employed between 4 and 7 years" ;
+                                                                           skos:altLabel "4 to 7 years"@en ,
+                                                                                         "dungita inter 4 kaj 7 jaroj"@eo ,
+                                                                                         "empleado entre 4 y 7 años"@es ,
+                                                                                         "employé entre 4 et 7 ans"@fr .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/present_employment#A75
+<http://data.creditclassification.biz/ontology/ccf/present_employment#A75> rdf:type owl:NamedIndividual ,
+                                                                                    skos:Concept ;
+                                                                           skos:inScheme :present_employment ;
+                                                                           dcterms:description "employed over 7 years" ;
+                                                                           skos:altLabel "dungita pli ol 7 jaroj"@eo ,
+                                                                                         "empleado más de 7 años"@es ,
+                                                                                         "employé plus de 7 ans"@fr ,
+                                                                                         "over 7 years"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/property#A121
+<http://data.creditclassification.biz/ontology/ccf/property#A121> rdf:type owl:NamedIndividual ,
+                                                                           skos:Concept ;
+                                                                  skos:inScheme :property ;
+                                                                  dcterms:description "real estate" ;
+                                                                  skos:altLabel "bienes raíces"@es ,
+                                                                                "immobilier"@fr ,
+                                                                                "nemoveblaĵoj"@eo ,
+                                                                                "real estate"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/property#A122
+<http://data.creditclassification.biz/ontology/ccf/property#A122> rdf:type owl:NamedIndividual ,
+                                                                           skos:Concept ;
+                                                                  skos:inScheme :property ;
+                                                                  dcterms:description "building society savings agreement / life insurance" ;
+                                                                  skos:altLabel "acuerdo de ahorro de sociedad de construcción / seguro de vida"@es ,
+                                                                                "building society savings / life insurance"@en ,
+                                                                                "konstrua societa ŝparado / vivaseguro"@eo ,
+                                                                                "épargne de société de construction / assurance-vie"@fr .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/property#A123
+<http://data.creditclassification.biz/ontology/ccf/property#A123> rdf:type owl:NamedIndividual ,
+                                                                           skos:Concept ;
+                                                                  skos:inScheme :property ;
+                                                                  dcterms:description "car or other, not in attribute 6" ;
+                                                                  skos:altLabel "aŭto aŭ alia"@eo ,
+                                                                                "car or other"@en ,
+                                                                                "coche u otro"@es ,
+                                                                                "voiture ou autre"@fr .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/property#A124
+<http://data.creditclassification.biz/ontology/ccf/property#A124> rdf:type owl:NamedIndividual ,
+                                                                           skos:Concept ;
+                                                                  skos:inScheme :property ;
+                                                                  dcterms:description "unknown / no property" ;
+                                                                  skos:altLabel "desconocido / sin propiedad"@es ,
+                                                                                "inconnu / pas de propriété"@fr ,
+                                                                                "nekonata / neniu posedaĵo"@eo ,
+                                                                                "unknown / no property"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A40
+<http://data.creditclassification.biz/ontology/ccf/purpose#A40> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:exactMatch <http://dbpedia.org/resource/Car> ,
+                                                                                <http://www.wikidata.org/entity/Q1420> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "car (new)" ;
+                                                                skos:altLabel "new car"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A41
+<http://data.creditclassification.biz/ontology/ccf/purpose#A41> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:exactMatch <http://dbpedia.org/resource/Used_car> ,
+                                                                                <http://www.wikidata.org/entity/Q1137287> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "car (used)" ;
+                                                                skos:altLabel "used car"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A410
+<http://data.creditclassification.biz/ontology/ccf/purpose#A410> rdf:type owl:NamedIndividual ,
+                                                                          skos:Concept ;
+                                                                 skos:inScheme :purpose ;
+                                                                 dcterms:description "others" ;
+                                                                 skos:altLabel "others"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A42
+<http://data.creditclassification.biz/ontology/ccf/purpose#A42> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:closeMatch <http://dbpedia.org/resource/Furniture> ,
+                                                                                <http://www.wikidata.org/entity/Q14745> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "furniture/equipment" ;
+                                                                skos:altLabel "furniture/equipment"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A43
+<http://data.creditclassification.biz/ontology/ccf/purpose#A43> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:closeMatch <http://dbpedia.org/resource/Radio> ,
+                                                                                <http://dbpedia.org/resource/Television> ,
+                                                                                <https://www.wikidata.org/entity/Q159391> ,
+                                                                                <https://www.wikidata.org/entity/Q289> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "radio/television" ;
+                                                                skos:altLabel "radio/television"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A44
+<http://data.creditclassification.biz/ontology/ccf/purpose#A44> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:closeMatch <http://dbpedia.org/resource/Home_appliance> ,
+                                                                                <http://www.wikidata.org/entity/Q212920> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "domestic appliances" ;
+                                                                skos:altLabel "domestic appliances"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A45
+<http://data.creditclassification.biz/ontology/ccf/purpose#A45> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:exactMatch <http://www.wikidata.org/entity/Q1043452> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "repairs" ;
+                                                                skos:altLabel "repairs"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A46
+<http://data.creditclassification.biz/ontology/ccf/purpose#A46> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:exactMatch <http://dbpedia.org/resource/Education> ,
+                                                                                <http://www.wikidata.org/entity/Q8434> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "education" ;
+                                                                skos:altLabel "education"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A47
+<http://data.creditclassification.biz/ontology/ccf/purpose#A47> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:exactMatch <http://dbpedia.org/resource/Vacation> ,
+                                                                                <https://www.wikidata.org/entity/Q116213> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "vacation" ;
+                                                                skos:altLabel "vacation"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A48
+<http://data.creditclassification.biz/ontology/ccf/purpose#A48> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:exactMatch <https://dbpedia.org/resource/Retraining> ,
+                                                                                <https://www.wikidata.org/entity/Q3505966> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "retraining" ;
+                                                                skos:altLabel "retraining"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/purpose#A49
+<http://data.creditclassification.biz/ontology/ccf/purpose#A49> rdf:type owl:NamedIndividual ,
+                                                                         skos:Concept ;
+                                                                skos:exactMatch <http://dbpedia.org/resource/Business> ,
+                                                                                <http://www.wikidata.org/entity/Q4830453> ;
+                                                                skos:inScheme :purpose ;
+                                                                dcterms:description "business" ;
+                                                                skos:altLabel "business"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/savings_account#A61
+<http://data.creditclassification.biz/ontology/ccf/savings_account#A61> rdf:type owl:NamedIndividual ,
+                                                                                 skos:Concept ;
+                                                                        skos:inScheme :savings_account ;
+                                                                        dcterms:description "savings account under 100 DM" ;
+                                                                        skos:altLabel "x < 100 DM"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/savings_account#A62
+<http://data.creditclassification.biz/ontology/ccf/savings_account#A62> rdf:type owl:NamedIndividual ,
+                                                                                 skos:Concept ;
+                                                                        skos:inScheme :savings_account ;
+                                                                        dcterms:description "savings account between 100 and 500 DM" ;
+                                                                        skos:altLabel "100 <= x < 500 DM"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/savings_account#A63
+<http://data.creditclassification.biz/ontology/ccf/savings_account#A63> rdf:type owl:NamedIndividual ,
+                                                                                 skos:Concept ;
+                                                                        skos:inScheme :savings_account ;
+                                                                        dcterms:description "savings account between 500 and 1000 DM" ;
+                                                                        skos:altLabel "500 <= x < 1000 DM"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/savings_account#A64
+<http://data.creditclassification.biz/ontology/ccf/savings_account#A64> rdf:type owl:NamedIndividual ,
+                                                                                 skos:Concept ;
+                                                                        skos:inScheme :savings_account ;
+                                                                        dcterms:description "savings account over 1000 DM" ;
+                                                                        skos:altLabel "x >= 1000 DM"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/savings_account#A65
+<http://data.creditclassification.biz/ontology/ccf/savings_account#A65> rdf:type owl:NamedIndividual ,
+                                                                                 skos:Concept ;
+                                                                        skos:inScheme :savings_account ;
+                                                                        dcterms:description "unknown / no savings account" ;
+                                                                        skos:altLabel "unknown / no savings account"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/status_checking_account#A11
+<http://data.creditclassification.biz/ontology/ccf/status_checking_account#A11> rdf:type owl:NamedIndividual ,
+                                                                                         skos:Concept ;
+                                                                                skos:inScheme :status_checking_account ;
+                                                                                dcterms:description "checking account under 0 DM" ;
+                                                                                skos:altLabel "x < 0 DM"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/status_checking_account#A12
+<http://data.creditclassification.biz/ontology/ccf/status_checking_account#A12> rdf:type owl:NamedIndividual ,
+                                                                                         skos:Concept ;
+                                                                                skos:inScheme :status_checking_account ;
+                                                                                dcterms:description "checking account between 0 and 200 DM" ;
+                                                                                skos:altLabel "0 <= x < 200 DM"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/status_checking_account#A13
+<http://data.creditclassification.biz/ontology/ccf/status_checking_account#A13> rdf:type owl:NamedIndividual ,
+                                                                                         skos:Concept ;
+                                                                                skos:inScheme :status_checking_account ;
+                                                                                dcterms:description "checking account with balance ≥ 200 DM or salary assignments for at least 1 year" ;
+                                                                                skos:altLabel "x >= 200 DM / salary assignments for at least 1 year"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/status_checking_account#A14
+<http://data.creditclassification.biz/ontology/ccf/status_checking_account#A14> rdf:type owl:NamedIndividual ,
+                                                                                         skos:Concept ;
+                                                                                skos:inScheme :status_checking_account ;
+                                                                                dcterms:description "no checking account" ;
+                                                                                skos:altLabel "no checking account"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/telephone#A191
+<http://data.creditclassification.biz/ontology/ccf/telephone#A191> rdf:type owl:NamedIndividual ,
+                                                                            skos:Concept ;
+                                                                   skos:inScheme :telephone ;
+                                                                   dcterms:description "none" ;
+                                                                   skos:altLabel "aucun"@fr ,
+                                                                                 "neniu"@eo ,
+                                                                                 "ninguno"@es ,
+                                                                                 "none"@en .
+
+
+###  http://data.creditclassification.biz/ontology/ccf/telephone#A192
+<http://data.creditclassification.biz/ontology/ccf/telephone#A192> rdf:type owl:NamedIndividual ,
+                                                                            skos:Concept ;
+                                                                   skos:inScheme :telephone ;
+                                                                   dcterms:description "yes, registered under the customer's name" ;
+                                                                   skos:altLabel "jes, registrita"@eo ,
+                                                                                 "oui, enregistré"@fr ,
+                                                                                 "sí, registrado"@es ,
+                                                                                 "yes, registered"@en .
+
+
+###  http://dbpedia.org/resource/Business
+<http://dbpedia.org/resource/Business> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Car
+<http://dbpedia.org/resource/Car> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Education
+<http://dbpedia.org/resource/Education> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Female
+<http://dbpedia.org/resource/Female> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Furniture
+<http://dbpedia.org/resource/Furniture> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Home_appliance
+<http://dbpedia.org/resource/Home_appliance> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Male
+<http://dbpedia.org/resource/Male> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Radio
+<http://dbpedia.org/resource/Radio> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Television
+<http://dbpedia.org/resource/Television> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Used_car
+<http://dbpedia.org/resource/Used_car> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Vacation
+<http://dbpedia.org/resource/Vacation> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q1043452
+<http://www.wikidata.org/entity/Q1043452> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q1137287
+<http://www.wikidata.org/entity/Q1137287> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q1420
+<http://www.wikidata.org/entity/Q1420> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q14745
+<http://www.wikidata.org/entity/Q14745> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q212920
+<http://www.wikidata.org/entity/Q212920> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q4830453
+<http://www.wikidata.org/entity/Q4830453> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q8434
+<http://www.wikidata.org/entity/Q8434> rdf:type owl:NamedIndividual .
+
+
+###  https://dbpedia.org/resource/Retraining
+<https://dbpedia.org/resource/Retraining> rdf:type owl:NamedIndividual .
+
+
+###  https://www.wikidata.org/entity/Q116213
+<https://www.wikidata.org/entity/Q116213> rdf:type owl:NamedIndividual .
+
+
+###  https://www.wikidata.org/entity/Q159391
+<https://www.wikidata.org/entity/Q159391> rdf:type owl:NamedIndividual .
+
+
+###  https://www.wikidata.org/entity/Q289
+<https://www.wikidata.org/entity/Q289> rdf:type owl:NamedIndividual .
+
+
+###  https://www.wikidata.org/entity/Q3505966
+<https://www.wikidata.org/entity/Q3505966> rdf:type owl:NamedIndividual .
+
+
+###  https://www.wikidata.org/wiki/Q55965107
+<https://www.wikidata.org/wiki/Q55965107> rdf:type owl:NamedIndividual .
+
+
+###  https://www.wikidata.org/wiki/Q6452715
+<https://www.wikidata.org/wiki/Q6452715> rdf:type owl:NamedIndividual .
+
+
+[ xsd:pattern "employed|unemployed"
+] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+schema:amount rdfs:comment "The currency is not defined in the dataset, probably is DM (Deutsche Mark) but if this is relevant the dataset owner/creator should be contacted." .
+
+
+schema:loanTerm rdfs:comment "Duration of the loan in months  ISO 8601 format" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :class_code
+                :credit_history_code
+                :foreign_worker_code
+                :housing_code
+                :job_code
+                :other_debtors_guarantors_code
+                :other_installment_plans_code
+                :personal_status_sex_code
+                :present_employment_code
+                :property_code
+                :purpose_code
+                :savings_account_code
+                :status_checking_account_code
+                :telephone_code
+                <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/GeographicDirectionalSymbol>
+                <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/PhysicalAddressIdentifier>
+                <https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/Postcode>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
