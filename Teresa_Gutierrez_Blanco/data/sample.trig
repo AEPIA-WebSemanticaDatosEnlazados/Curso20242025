@@ -1,0 +1,744 @@
+@prefix :        <http://www.arxiv.org/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.arxiv.org> {
+    <http://www.arxiv.org/0704.0005/v1>
+            dcterms:dateSubmitted  "2007-04-02T18:09:58Z"^^xsd:date .
+    
+    <http://www.arxiv.org/resource/0704.0016>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  In this work, we evaluate the lifetimes of the doubly charmed baryons\n$\\Xi_{cc}^{+}$, $\\Xi_{cc}^{++}$ and $\\Omega_{cc}^{+}$. We carefully calculate\nthe non-spectator contributions at the quark level where the Cabibbo-suppressed\ndiagrams are also included. The hadronic matrix elements are evaluated in the\nsimple non-relativistic harmonic oscillator model. Our numerical results are\ngenerally consistent with that obtained by other authors who used the diquark\nmodel. However, all the theoretical predictions on the lifetimes are one order\nlarger than the upper limit set by the recent SELEX measurement. This\ndiscrepancy would be clarified by the future experiment, if more accurate\nexperiment still confirms the value of the SELEX collaboration, there must be\nsome unknown mechanism to be explored.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/ChangChao-Hsi> , <http://www.arxiv.org/researcher/LiXue-Qian> , <http://www.arxiv.org/researcher/LiTong> , <http://www.arxiv.org/researcher/WangYu-Ming>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0016/v1>;
+            dcterms:identifier   "0704.0016";
+            dcterms:publisher    <http://www.arxiv.org/submitter/LiTong>;
+            dcterms:subject      <http://www.arxiv.org/category/hep-ph>;
+            dcterms:title        "Lifetime of doubly charmed baryons";
+            bibo:numPages        "17";
+            :comments            "17 pages, 3 figures and 1 table";
+            :doi                 "10.1088/0253-6102/49/4/38";
+            :figures             "3  ";
+            :journal-ref         "Commun.Theor.Phys.49:993-1000,2008";
+            :update_date         "2008-12-18T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/DhillonVikramS.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q60614659>;
+            foaf:name   "Dhillon Vikram S." .
+    
+    <http://www.arxiv.org/0704.0016/v1>
+            dcterms:dateSubmitted  "2007-03-31T07:04:26Z"^^xsd:date .
+    
+    <http://www.arxiv.org/resource/0704.0003>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  The evolution of Earth-Moon system is described by the dark matter field\nfluid model proposed in the Meeting of Division of Particle and Field 2004,\nAmerican Physical Society. The current behavior of the Earth-Moon system agrees\nwith this model very well and the general pattern of the evolution of the\nMoon-Earth system described by this model agrees with geological and fossil\nevidence. The closest distance of the Moon to Earth was about 259000 km at 4.5\nbillion years ago, which is far beyond the Roche's limit. The result suggests\nthat the tidal friction may not be the primary cause for the evolution of the\nEarth-Moon system. The average dark matter field fluid constant derived from\nEarth-Moon system data is 4.39 x 10^(-22) s^(-1)m^(-1). This model predicts\nthat the Mars's rotation is also slowing with the angular acceleration rate\nabout -4.38 x 10^(-22) rad s^(-2).\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/PanHongjun>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0003/v1>;
+            dcterms:identifier   "0704.0003";
+            dcterms:publisher    <http://www.arxiv.org/submitter/HongjunPan>;
+            dcterms:subject      <http://www.arxiv.org/category/physics.gen-ph>;
+            dcterms:title        "The evolution of the Earth-Moon system based on the dark matter field\n  fluid model";
+            bibo:numPages        "23";
+            :comments            "23 pages, 3 figures";
+            :figures             "3  ";
+            :update_date         "2008-01-13T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/submitter/AlejandroCorichi>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q4714507>;
+            foaf:name   "Alejandro Corichi" .
+    
+    <http://www.arxiv.org/researcher/BergerE.L.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q63003111>;
+            foaf:name   "Berger E. L." .
+    
+    <http://www.arxiv.org/researcher/Abu-ShammalaWael>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102325794>;
+            foaf:name   "Abu-Shammala Wael" .
+    
+    <http://www.arxiv.org/0704.0014/v1>
+            dcterms:dateSubmitted  "2007-04-01T12:04:13Z"^^xsd:date .
+    
+    <http://www.arxiv.org/category/gr-qc>
+            rdf:type    :Category;
+            rdfs:label  "gr-qc" .
+    
+    <http://www.arxiv.org/submitter/PaulHarvey>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q772302>;
+            foaf:name   "Paul Harvey" .
+    
+    <http://www.arxiv.org/researcher/WoudtPatricA.>
+            rdf:type   foaf:Person;
+            foaf:name  "Woudt Patric A." .
+    
+    <http://www.arxiv.org/researcher/BalázsC.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q58316576>;
+            foaf:name   "Balázs C." .
+    
+    <http://www.arxiv.org/resource/0704.0009>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  We discuss the results from the combined IRAC and MIPS c2d Spitzer Legacy\nobservations of the Serpens star-forming region. In particular we present a set\nof criteria for isolating bona fide young stellar objects, YSO's, from the\nextensive background contamination by extra-galactic objects. We then discuss\nthe properties of the resulting high confidence set of YSO's. We find 235 such\nobjects in the 0.85 deg^2 field that was covered with both IRAC and MIPS. An\nadditional set of 51 lower confidence YSO's outside this area is identified\nfrom the MIPS data combined with 2MASS photometry. We describe two sets of\nresults, color-color diagrams to compare our observed source properties with\nthose of theoretical models for star/disk/envelope systems and our own modeling\nof the subset of our objects that appear to be star+disks. These objects\nexhibit a very wide range of disk properties, from many that can be fit with\nactively accreting disks to some with both passive disks and even possibly\ndebris disks. We find that the luminosity function of YSO's in Serpens extends\ndown to at least a few x .001 Lsun or lower for an assumed distance of 260 pc.\nThe lower limit may be set by our inability to distinguish YSO's from\nextra-galactic sources more than by the lack of YSO's at very low luminosities.\nA spatial clustering analysis shows that the nominally less-evolved YSO's are\nmore highly clustered than the later stages and that the background\nextra-galactic population can be fit by the same two-point correlation function\nas seen in other extra-galactic studies. We also present a table of matches\nbetween several previous infrared and X-ray studies of the Serpens YSO\npopulation and our Spitzer data set.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/ChapmanNicholas> , <http://www.arxiv.org/researcher/EvansNealJ.II> , <http://www.arxiv.org/researcher/MyersPhilipC.> , <http://www.arxiv.org/researcher/MerinBruno> , <http://www.arxiv.org/researcher/HuardTracyL.> , <http://www.arxiv.org/researcher/RebullLuisaM.> , <http://www.arxiv.org/researcher/HarveyPaul>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0009/v1>;
+            dcterms:identifier   "0704.0009";
+            dcterms:publisher    <http://www.arxiv.org/submitter/PaulHarvey>;
+            dcterms:subject      <http://www.arxiv.org/category/astro-ph>;
+            dcterms:title        "The Spitzer c2d Survey of Large, Nearby, Insterstellar Clouds. IX. The\n  Serpens YSO Population As Observed With IRAC and MIPS";
+            :doi                 "10.1086/518646";
+            :journal-ref         "Astrophys.J.663:1149-1173,2007";
+            :update_date         "2010-03-18T00:00Z"^^xsd:date;
+            owl:sameAs           <https://www.wikidata.org/wiki/Q60028378> .
+    
+    <http://www.arxiv.org/researcher/WangYu-Ming>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q59709296>;
+            foaf:name   "Wang Yu-Ming" .
+    
+    <http://www.arxiv.org/category/math.NT>
+            rdf:type    :Category;
+            rdfs:label  "math.NT" .
+    
+    <http://www.arxiv.org/0704.0006/v1>
+            dcterms:dateSubmitted  "2007-03-31T04:24:59Z"^^xsd:date .
+    
+    <http://www.arxiv.org/submitter/YueHinPong>
+            rdf:type   foaf:Person;
+            foaf:name  "Yue Hin Pong" .
+    
+    <http://www.arxiv.org/submitter/CliftonCunningham>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102167232>;
+            foaf:name   "Clifton Cunningham" .
+    
+    <http://www.arxiv.org/resource/0704.0011>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  In this paper we present an algorithm for computing Hecke eigensystems of\nHilbert-Siegel cusp forms over real quadratic fields of narrow class number\none. We give some illustrative examples using the quadratic field\n$\\Q(\\sqrt{5})$. In those examples, we identify Hilbert-Siegel eigenforms that\nare possible lifts from Hilbert eigenforms.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/DembeleLassina> , <http://www.arxiv.org/researcher/CunninghamClifton>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0011/v1>;
+            dcterms:identifier   "0704.0011";
+            dcterms:license      <http://arxiv.org/licenses/nonexclusive-distrib/1.0/>;
+            dcterms:publisher    <http://www.arxiv.org/submitter/CliftonCunningham>;
+            dcterms:subject      <http://www.arxiv.org/category/math.NT> , <http://www.arxiv.org/category/math.AG>;
+            dcterms:title        "Computing genus 2 Hilbert-Siegel modular forms over $\\Q(\\sqrt{5})$ via\n  the Jacquet-Langlands correspondence";
+            bibo:numPages        "14";
+            :comments            "14 pages; title changed; to appear in Experimental Mathematics";
+            :update_date         "2008-08-20T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/category/math.FA>
+            rdf:type    :Category;
+            rdfs:label  "math.FA" .
+    
+    <http://www.arxiv.org/0704.0017/v1>
+            dcterms:dateSubmitted  "2007-03-31T07:38:48Z"^^xsd:date .
+    
+    <http://www.arxiv.org/submitter/NorioKonno>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q11377445>;
+            foaf:name   "Norio Konno" .
+    
+    <http://www.arxiv.org/submitter/HongjunPan>
+            rdf:type   foaf:Person;
+            foaf:name  "Hongjun Pan" .
+    
+    <http://www.arxiv.org/researcher/OvchinnikovSergei>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q718765>;
+            foaf:name   "Ovchinnikov Sergei" .
+    
+    <http://www.arxiv.org/researcher/LiXue-Qian>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102213784>;
+            foaf:name   "Li Xue-Qian" .
+    
+    <http://www.arxiv.org/category/cond-mat.mtrl-sci>
+            rdf:type    :Category;
+            rdfs:label  "cond-mat.mtrl-sci" .
+    
+    <http://www.arxiv.org/resource/0704.0017>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  Results from spectroscopic observations of the Intermediate Polar (IP) EX Hya\nin quiescence during 1991 and 2001 are presented. Spin-modulated radial\nvelocities consistent with an outer disc origin were detected for the first\ntime in an IP. The spin pulsation was modulated with velocities near ~500-600\nkm/s. These velocities are consistent with those of material circulating at the\nouter edge of the accretion disc, suggesting corotation of the accretion\ncurtain with material near the Roche lobe radius. Furthermore, spin Doppler\ntomograms have revealed evidence of the accretion curtain emission extending\nfrom velocities of ~500 km/s to ~1000 km/s. These findings have confirmed the\ntheoretical model predictions of King & Wynn (1999), Belle et al. (2002) and\nNorton et al. (2004) for EX Hya, which predict large accretion curtains that\nextend to a distance close to the Roche lobe radius in this system. Evidence\nfor overflow stream of material falling onto the magnetosphere was observed,\nconfirming the result of Belle et al. (2005) that disc overflow in EX Hya is\npresent during quiescence as well as outburst. It appears that the hbeta and\nhgamma spin radial velocities originated from the rotation of the funnel at the\nouter disc edge, while those of halpha were produced due to the flow of\nmaterial along the field lines far from the white dwarf (narrow component) and\nclose to the white dwarf (broad-base component), in agreement with the\naccretion curtain model.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/WoudtPatricA.> , <http://www.arxiv.org/researcher/DhillonVikramS.> , <http://www.arxiv.org/researcher/MhlahloNceba> , <http://www.arxiv.org/researcher/PotterStevenB.> , <http://www.arxiv.org/researcher/BuckleyDavidH.> , <http://www.arxiv.org/researcher/WarnerBrian>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0017/v1>;
+            dcterms:identifier   "0704.0017";
+            dcterms:publisher    <http://www.arxiv.org/submitter/NcebaMhlahlo>;
+            dcterms:subject      <http://www.arxiv.org/category/astro-ph>;
+            dcterms:title        "Spectroscopic Observations of the Intermediate Polar EX Hydrae in\n  Quiescence";
+            bibo:numPages        "10";
+            :comments            "10 pages, 11 figures (figures 3, 4, 7 and 8 at reduced resolution,\n  originals available on request). Accepted for publication in Monthly Notices\n  of the Royal Astronomical Society";
+            :doi                 "10.1111/j.1365-2966.2007.11762.x";
+            :figures             "11  ";
+            :journal-ref         "Mon.Not.Roy.Astron.Soc.378:211-220,2007";
+            :update_date         "2009-06-23T00:00Z"^^xsd:date;
+            owl:sameAs           <https://www.wikidata.org/wiki/Q59784075> .
+    
+    <http://www.arxiv.org/researcher/LiTong>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q713685>;
+            foaf:name   "Li Tong" .
+    
+    <http://www.arxiv.org/resource/0704.0004>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  We show that a determinant of Stirling cycle numbers counts unlabeled acyclic\nsingle-source automata. The proof involves a bijection from these automata to\ncertain marked lattice paths and a sign-reversing involution to evaluate the\ndeterminant.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/CallanDavid>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0004/v1>;
+            dcterms:identifier   "0704.0004";
+            dcterms:publisher    <http://www.arxiv.org/submitter/DavidCallan>;
+            dcterms:subject      <http://www.arxiv.org/category/math.CO>;
+            dcterms:title        "A determinant of Stirling cycle numbers counts unlabeled acyclic\n  single-source automata";
+            bibo:numPages        "11";
+            :comments            "11 pages";
+            :update_date         "2007-05-23T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/category/math.AT>
+            rdf:type    :Category;
+            rdfs:label  "math.AT" .
+    
+    <http://www.arxiv.org/0704.0007/v1>
+            dcterms:dateSubmitted  "2007-03-31T04:27:22Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/SwiftDamianC.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q90421480>;
+            foaf:name   "Swift Damian C." .
+    
+    <http://www.arxiv.org/researcher/HarveyPaul>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q772302>;
+            foaf:name   "Harvey Paul" .
+    
+    <https://www.wikidata.org/wiki/Q60028378>
+            rdf:type  dcterms:BibliographicResource .
+    
+    <http://www.arxiv.org/category/math.CO>
+            rdf:type    :Category;
+            rdfs:label  "math.CO" .
+    
+    <http://www.arxiv.org/0704.0018/v1>
+            dcterms:dateSubmitted  "2007-04-02T08:58:27Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/TorchinskyAlberto>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102136352>;
+            foaf:name   "Torchinsky Alberto" .
+    
+    <http://www.arxiv.org/submitter/PavelNadolsky>
+            rdf:type   foaf:Person;
+            foaf:name  "Pavel Nadolsky" .
+    
+    <http://www.arxiv.org/researcher/FujiiKoichi>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q11622888>;
+            foaf:name   "Fujii Koichi" .
+    
+    <http://www.arxiv.org/submitter/DohoonChoi>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102290477>;
+            foaf:name   "Dohoon Choi" .
+    
+    <http://www.arxiv.org/researcher/KonnoNorio>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q11377445>;
+            foaf:name   "Konno Norio" .
+    
+    <http://www.arxiv.org/submitter/SergeiOvchinnikov>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q718765>;
+            foaf:name   "Sergei Ovchinnikov" .
+    
+    <http://www.arxiv.org/resource/0704.0012>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  Recently, Bruinier and Ono classified cusp forms $f(z) := \\sum_{n=0}^{\\infty}\na_f(n)q ^n \\in S_{\\lambda+1/2}(\\Gamma_0(N),\\chi)\\cap \\mathbb{Z}[[q]]$ that does\nnot satisfy a certain distribution property for modulo odd primes $p$. In this\npaper, using Rankin-Cohen Bracket, we extend this result to modular forms of\nhalf integral weight for primes $p \\geq 5$. As applications of our main theorem\nwe derive distribution properties, for modulo primes $p\\geq5$, of traces of\nsingular moduli and Hurwitz class number. We also study an analogue of Newman's\nconjecture for overpartitions.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/ChoiDohoon>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0012/v1>;
+            dcterms:identifier   "0704.0012";
+            dcterms:publisher    <http://www.arxiv.org/submitter/DohoonChoi>;
+            dcterms:subject      <http://www.arxiv.org/category/math.NT>;
+            dcterms:title        "Distribution of integral Fourier Coefficients of a Modular Form of Half\n  Integral Weight Modulo Primes";
+            :update_date         "2007-05-23T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/StreinuIleana>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q14263>;
+            foaf:name   "Streinu Ileana" .
+    
+    <http://www.arxiv.org/researcher/MhlahloNceba>
+            rdf:type   foaf:Person;
+            foaf:name  "Mhlahlo Nceba" .
+    
+    <http://www.arxiv.org/0704.0008/v1>
+            dcterms:dateSubmitted  "2007-03-31T04:47:20Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/PongY.H.>
+            rdf:type   foaf:Person;
+            foaf:name  "Pong Y. H." .
+    
+    <http://www.arxiv.org/researcher/ZapataJoseA.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q129540030>;
+            foaf:name   "Zapata Jose A." .
+    
+    <http://www.arxiv.org/category/hep-th>
+            rdf:type    :Category;
+            rdfs:label  "hep-th" .
+    
+    <http://www.arxiv.org/researcher/EvansNealJ.II>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q59676805>;
+            foaf:name   "Evans Neal J. II" .
+    
+    <http://www.arxiv.org/0704.0019/v1>
+            dcterms:dateSubmitted  "2007-03-31T08:12:35Z"^^xsd:date .
+    
+    <http://www.arxiv.org/category/hep-ex>
+            rdf:type    :Category;
+            rdfs:label  "hep-ex" .
+    
+    <http://www.arxiv.org/researcher/StahnChristian>
+            rdf:type   foaf:Person;
+            foaf:name  "Stahn Christian" .
+    
+    <http://www.arxiv.org/resource/0704.0018>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  We give a prescription for how to compute the Callias index, using as\nregulator an exponential function. We find agreement with old results in all\nodd dimensions. We show that the problem of computing the dimension of the\nmoduli space of self-dual strings can be formulated as an index problem in\neven-dimensional (loop-)space. We think that the regulator used in this Letter\ncan be applied to this index problem.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/GustavssonAndreas>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0018/v1>;
+            dcterms:identifier   "0704.0018";
+            dcterms:publisher    <http://www.arxiv.org/submitter/AndreasGustavsson>;
+            dcterms:subject      <http://www.arxiv.org/category/hep-th>;
+            dcterms:title        "In quest of a generalized Callias index theorem";
+            bibo:numPages        "20";
+            :comments            "20 pages, v2: an overall sign and typos corrected";
+            :update_date         "2007-05-23T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/NadolskyP.M.>
+            rdf:type   foaf:Person;
+            foaf:name  "Nadolsky P. M." .
+    
+    <https://www.wikidata.org/wiki/Q57564373>
+            rdf:type  dcterms:BibliographicResource .
+    
+    <http://www.arxiv.org/category/cond-mat.mes-hall>
+            rdf:type    :Category;
+            rdfs:label  "cond-mat.mes-hall" .
+    
+    <http://www.arxiv.org/submitter/AndreasGustavsson>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q20029017>;
+            foaf:name   "Andreas Gustavsson" .
+    
+    <http://www.arxiv.org/resource/0704.0005>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  In this paper we show how to compute the $\\Lambda_{\\alpha}$ norm, $\\alpha\\ge\n0$, using the dyadic grid. This result is a consequence of the description of\nthe Hardy spaces $H^p(R^N)$ in terms of dyadic and special atoms.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/TorchinskyAlberto> , <http://www.arxiv.org/researcher/Abu-ShammalaWael>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0005/v1>;
+            dcterms:identifier   "0704.0005";
+            dcterms:publisher    <http://www.arxiv.org/submitter/AlbertoTorchinsky>;
+            dcterms:subject      <http://www.arxiv.org/category/math.FA> , <http://www.arxiv.org/category/math.CA>;
+            dcterms:title        "From dyadic $\\Lambda_{\\alpha}$ to $\\Lambda_{\\alpha}$";
+            :journal-ref         "Illinois J. Math. 52 (2008) no.2, 681-689";
+            :update_date         "2013-10-15T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/GustavssonAndreas>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q20029017>;
+            foaf:name   "Gustavsson Andreas" .
+    
+    <http://www.arxiv.org/researcher/CunninghamClifton>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102167232>;
+            foaf:name   "Cunningham Clifton" .
+    
+    <http://www.arxiv.org/researcher/PotterStevenB.>
+            rdf:type   foaf:Person;
+            foaf:name  "Potter Steven B." .
+    
+    <http://www.arxiv.org/researcher/HuardTracyL.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q117260150>;
+            foaf:name   "Huard Tracy L." .
+    
+    <http://www.arxiv.org/resource/0704.0020>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  The shape of the hadronic form factor f+(q2) in the decay D0 --> K- e+ nue\nhas been measured in a model independent analysis and compared with theoretical\ncalculations. We use 75 fb(-1) of data recorded by the BABAR detector at the\nPEPII electron-positron collider. The corresponding decay branching fraction,\nrelative to the decay D0 --> K- pi+, has also been measured to be RD = BR(D0\n--> K- e+ nue)/BR(D0 --> K- pi+) = 0.927 +/- 0.007 +/- 0.012. From these\nresults, and using the present world average value for BR(D0 --> K- pi+), the\nnormalization of the form factor at q2=0 is determined to be f+(0)=0.727 +/-\n0.007 +/- 0.005 +/- 0.007 where the uncertainties are statistical, systematic,\nand from external inputs, respectively.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/AubertB.> , <http://www.arxiv.org/researcher/TheBABARCollaboration>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0020/v1>;
+            dcterms:identifier   "0704.0020";
+            dcterms:publisher    <http://www.arxiv.org/submitter/PatrickRoudeau>;
+            dcterms:subject      <http://www.arxiv.org/category/hep-ex>;
+            dcterms:title        "Measurement of the Hadronic Form Factor in D0 --> K- e+ nue Decays";
+            bibo:numPages        "21";
+            :comments            "21 pages, 13 postscript figures, submitted to Phys. Rev. D,\n  contributed to 42nd Rencontres de Moriond: QCD and Hadronic Interactions";
+            :doi                 "10.1103/PhysRevD.76.052005";
+            :figures             "  ";
+            :journal-ref         "Phys.Rev.D76:052005,2007";
+            :report-no           "BABAR-PUB-07/015, SLAC-PUB-12417";
+            :update_date         "2015-06-30T00:00Z"^^xsd:date;
+            owl:sameAs           <https://www.wikidata.org/wiki/Q57019144> .
+    
+    <http://www.arxiv.org/researcher/DembeleLassina>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102253535>;
+            foaf:name   "Dembele Lassina" .
+    
+    <http://www.arxiv.org/0704.0009/v1>
+            dcterms:dateSubmitted  "2007-04-02T19:41:34Z"^^xsd:date .
+    
+    <http://www.arxiv.org/resource/0704.0013>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  Serre obtained the p-adic limit of the integral Fourier coefficient of\nmodular forms on $SL_2(\\mathbb{Z})$ for $p=2,3,5,7$. In this paper, we extend\nthe result of Serre to weakly holomorphic modular forms of half integral weight\non $\\Gamma_{0}(4N)$ for $N=1,2,4$. A proof is based on linear relations among\nFourier coefficients of modular forms of half integral weight. As applications\nwe obtain congruences of Borcherds exponents, congruences of quotient of\nEisentein series and congruences of values of $L$-functions at a certain point\nare also studied. Furthermore, the congruences of the Fourier coefficients of\nSiegel modular forms on Maass Space are obtained using Ikeda lifting.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/ChoieYoungJu> , <http://www.arxiv.org/researcher/ChoiDohoon>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0013/v1>;
+            dcterms:identifier   "0704.0013";
+            dcterms:publisher    <http://www.arxiv.org/submitter/DohoonChoi>;
+            dcterms:subject      <http://www.arxiv.org/category/math.NT>;
+            dcterms:title        "$p$-adic Limit of Weakly Holomorphic Modular Forms of Half Integral\n  Weight";
+            :update_date         "2008-05-26T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/TheBABARCollaboration>
+            rdf:type   foaf:Person;
+            foaf:name  "The BABAR Collaboration" .
+    
+    <http://www.arxiv.org/category/hep-ph>
+            rdf:type    :Category;
+            rdfs:label  "hep-ph" .
+    
+    <http://www.arxiv.org/category/cs.CG>
+            rdf:type    :Category;
+            rdfs:label  "cs.CG" .
+    
+    <http://www.arxiv.org/0704.0020/v1>
+            dcterms:dateSubmitted  "2007-03-31T09:49:10Z"^^xsd:date .
+    
+    <http://www.arxiv.org/resource/0704.0019>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  In this note we give a new method for getting a series of approximations for\nthe extinction probability of the one-dimensional contact process by using the\nGr\\\"obner basis.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/KonnoNorio>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0019/v1>;
+            dcterms:identifier   "0704.0019";
+            dcterms:publisher    <http://www.arxiv.org/submitter/NorioKonno>;
+            dcterms:subject      <http://www.arxiv.org/category/math.PR> , <http://www.arxiv.org/category/math.AG>;
+            dcterms:title        "Approximation for extinction probability of the contact process based on\n  the Gr\\\"obner basis";
+            bibo:numPages        "6";
+            :comments            "6 pages, Journal-ref added";
+            :journal-ref         "RIMS Kokyuroku, No.1551, pp.57-62 (2007)";
+            :update_date         "2007-06-23T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/0704.0001/v1>
+            dcterms:dateSubmitted  "2007-04-02T19:18:42Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/CorichiAlejandro>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q4714507>;
+            foaf:name   "Corichi Alejandro" .
+    
+    <http://www.arxiv.org/resource/0704.0006>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  We study the two-particle wave function of paired atoms in a Fermi gas with\ntunable interaction strengths controlled by Feshbach resonance. The Cooper pair\nwave function is examined for its bosonic characters, which is quantified by\nthe correction of Bose enhancement factor associated with the creation and\nannihilation composite particle operators. An example is given for a\nthree-dimensional uniform gas. Two definitions of Cooper pair wave function are\nexamined. One of which is chosen to reflect the off-diagonal long range order\n(ODLRO). Another one corresponds to a pair projection of a BCS state. On the\nside with negative scattering length, we found that paired atoms described by\nODLRO are more bosonic than the pair projected definition. It is also found\nthat at $(k_F a)^{-1} \\ge 1$, both definitions give similar results, where more\nthan 90% of the atoms occupy the corresponding molecular condensates.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/LawC.K.> , <http://www.arxiv.org/researcher/PongY.H.>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0006/v1>;
+            dcterms:identifier   "0704.0006";
+            dcterms:publisher    <http://www.arxiv.org/submitter/YueHinPong>;
+            dcterms:subject      <http://www.arxiv.org/category/cond-mat.mes-hall>;
+            dcterms:title        "Bosonic characters of atomic Cooper pairs across resonance";
+            bibo:numPages        "6";
+            :comments            "6 pages, 4 figures, accepted by PRA";
+            :doi                 "10.1103/PhysRevA.75.043613";
+            :figures             "4  ";
+            :update_date         "2015-05-13T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/category/physics.gen-ph>
+            rdf:type    :Category;
+            rdfs:label  "physics.gen-ph" .
+    
+    <http://www.arxiv.org/researcher/ChapmanNicholas>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q75915939>;
+            foaf:name   "Chapman Nicholas" .
+    
+    <http://www.arxiv.org/researcher/PanHongjun>
+            rdf:type   foaf:Person;
+            foaf:name  "Pan Hongjun" .
+    
+    <http://www.arxiv.org/researcher/YuanC.-P.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q21613339>;
+            foaf:name   "Yuan C. -P." .
+    
+    <http://www.arxiv.org/category/astro-ph>
+            rdf:type    :Category;
+            rdfs:label  "astro-ph" .
+    
+    <http://www.arxiv.org/submitter/KoichiFujii>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q11622888>;
+            foaf:name   "Koichi Fujii" .
+    
+    <http://www.arxiv.org/submitter/PatrickRoudeau>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q52321720>;
+            foaf:name   "Patrick Roudeau" .
+    
+    <https://www.wikidata.org/wiki/Q59784075>
+            rdf:type  dcterms:BibliographicResource .
+    
+    <http://www.arxiv.org/submitter/DamianSwift>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q90421480>;
+            foaf:name   "Damian Swift" .
+    
+    <http://arxiv.org/licenses/nonexclusive-distrib/1.0/>
+            rdf:type  dcterms:LicenseDocument .
+    
+    <http://www.arxiv.org/0704.0010/v1>
+            dcterms:dateSubmitted  "2007-03-31T05:10:16Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/BuckleyDavidH.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q112961576>;
+            foaf:name   "Buckley David H." .
+    
+    <http://www.arxiv.org/researcher/WarnerBrian>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q186327>;
+            foaf:name   "Warner Brian" .
+    
+    <http://www.arxiv.org/researcher/RebullLuisaM.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q55451115>;
+            foaf:name   "Rebull Luisa M." .
+    
+    <http://www.arxiv.org/category/math.PR>
+            rdf:type    :Category;
+            rdfs:label  "math.PR" .
+    
+    <http://www.arxiv.org/resource/0704.0014>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  In this article we discuss a relation between the string topology and\ndifferential forms based on the theory of Chen's iterated integrals and the\ncyclic bar complex.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/FujiiKoichi>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0014/v1>;
+            dcterms:identifier   "0704.0014";
+            dcterms:publisher    <http://www.arxiv.org/submitter/KoichiFujii>;
+            dcterms:subject      <http://www.arxiv.org/category/math.AT> , <http://www.arxiv.org/category/math.CA>;
+            dcterms:title        "Iterated integral and the loop product";
+            bibo:numPages        "18";
+            :comments            "18 pages, 1 figure";
+            :update_date         "2009-09-29T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/0704.0002/v1>
+            dcterms:dateSubmitted  "2007-03-31T02:26:18Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/ChoiDohoon>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102290477>;
+            foaf:name   "Choi Dohoon" .
+    
+    <http://www.arxiv.org/resource/0704.0001>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  A fully differential calculation in perturbative quantum chromodynamics is\npresented for the production of massive photon pairs at hadron colliders. All\nnext-to-leading order perturbative contributions from quark-antiquark,\ngluon-(anti)quark, and gluon-gluon subprocesses are included, as well as\nall-orders resummation of initial-state gluon radiation valid at\nnext-to-next-to-leading logarithmic accuracy. The region of phase space is\nspecified in which the calculation is most reliable. Good agreement is\ndemonstrated with data from the Fermilab Tevatron, and predictions are made for\nmore detailed tests with CDF and DO data. Predictions are shown for\ndistributions of diphoton pairs produced at the energy of the Large Hadron\nCollider (LHC). Distributions of the diphoton pairs from the decay of a Higgs\nboson are contrasted with those produced from QCD processes at the LHC, showing\nthat enhanced sensitivity to the signal can be obtained with judicious\nselection of events.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/BalázsC.> , <http://www.arxiv.org/researcher/YuanC.-P.> , <http://www.arxiv.org/researcher/BergerE.L.> , <http://www.arxiv.org/researcher/NadolskyP.M.>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0001/v1>;
+            dcterms:identifier   "0704.0001";
+            dcterms:publisher    <http://www.arxiv.org/submitter/PavelNadolsky>;
+            dcterms:subject      <http://www.arxiv.org/category/hep-ph>;
+            dcterms:title        "Calculation of prompt diphoton production cross sections at Tevatron and\n  LHC energies";
+            bibo:numPages        "37";
+            :comments            "37 pages, 15 figures; published version";
+            :doi                 "10.1103/PhysRevD.76.013009";
+            :figures             "15  ";
+            :journal-ref         "Phys.Rev.D76:013009,2007";
+            :report-no           "ANL-HEP-PR-07-12";
+            :update_date         "2008-11-26T00:00Z"^^xsd:date;
+            owl:sameAs           <https://www.wikidata.org/wiki/Q56882813> .
+    
+    <https://www.wikidata.org/wiki/Q56882813>
+            rdf:type  dcterms:BibliographicResource .
+    
+    <http://www.arxiv.org/researcher/MyersPhilipC.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q97327126>;
+            foaf:name   "Myers Philip C." .
+    
+    <http://www.arxiv.org/submitter/DavidCallan>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q5232101>;
+            foaf:name   "David Callan" .
+    
+    <http://www.arxiv.org/0704.0011/v1>
+            dcterms:dateSubmitted  "2007-03-31T05:32:49Z"^^xsd:date .
+    
+    <http://www.arxiv.org/resource/0704.0007>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  A rather non-standard quantum representation of the canonical commutation\nrelations of quantum mechanics systems, known as the polymer representation has\ngained some attention in recent years, due to its possible relation with Planck\nscale physics. In particular, this approach has been followed in a symmetric\nsector of loop quantum gravity known as loop quantum cosmology. Here we explore\ndifferent aspects of the relation between the ordinary Schroedinger theory and\nthe polymer description. The paper has two parts. In the first one, we derive\nthe polymer quantum mechanics starting from the ordinary Schroedinger theory\nand show that the polymer description arises as an appropriate limit. In the\nsecond part we consider the continuum limit of this theory, namely, the reverse\nprocess in which one starts from the discrete theory and tries to recover back\nthe ordinary Schroedinger quantum mechanics. We consider several examples of\ninterest, including the harmonic oscillator, the free particle and a simple\ncosmological model.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/CorichiAlejandro> , <http://www.arxiv.org/researcher/VukasinacTatjana> , <http://www.arxiv.org/researcher/ZapataJoseA.>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0007/v1>;
+            dcterms:identifier   "0704.0007";
+            dcterms:publisher    <http://www.arxiv.org/submitter/AlejandroCorichi>;
+            dcterms:subject      <http://www.arxiv.org/category/gr-qc>;
+            dcterms:title        "Polymer Quantum Mechanics and its Continuum Limit";
+            bibo:numPages        "16";
+            :comments            "16 pages, no figures. Typos corrected to match published version";
+            :doi                 "10.1103/PhysRevD.76.044016";
+            :figures             "  ";
+            :journal-ref         "Phys.Rev.D76:044016,2007";
+            :report-no           "IGPG-07/03-2";
+            :update_date         "2008-11-26T00:00Z"^^xsd:date;
+            owl:sameAs           <https://www.wikidata.org/wiki/Q57564373> .
+    
+    <http://www.arxiv.org/researcher/ChoieYoungJu>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q19519312>;
+            foaf:name   "Choie YoungJu" .
+    
+    <http://www.arxiv.org/0704.0003/v1>
+            dcterms:dateSubmitted  "2007-04-01T20:46:54Z"^^xsd:date .
+    
+    <http://www.arxiv.org/category/math.CA>
+            rdf:type    :Category;
+            rdfs:label  "math.CA" .
+    
+    <http://www.arxiv.org/researcher/TheranLouis>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q92254944>;
+            foaf:name   "Theran Louis" .
+    
+    <http://www.arxiv.org/researcher/LawC.K.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q100787282>;
+            foaf:name   "Law C. K." .
+    
+    <http://www.arxiv.org/submitter/LiTong>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q713685>;
+            foaf:name   "Li Tong" .
+    
+    <http://www.arxiv.org/researcher/CallanDavid>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q5232101>;
+            foaf:name   "Callan David" .
+    
+    <http://www.arxiv.org/resource/0704.0015>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  The pure spinor formulation of the ten-dimensional superstring leads to\nmanifestly supersymmetric loop amplitudes, expressed as integrals in pure\nspinor superspace. This paper explores different methods to evaluate these\nintegrals and then uses them to calculate the kinematic factors of the one-loop\nand two-loop massless four-point amplitudes involving two and four Ramond\nstates.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/StahnChristian>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0015/v1>;
+            dcterms:identifier   "0704.0015";
+            dcterms:publisher    <http://www.arxiv.org/submitter/ChristianStahn>;
+            dcterms:subject      <http://www.arxiv.org/category/hep-th>;
+            dcterms:title        "Fermionic superstring loop amplitudes in the pure spinor formalism";
+            bibo:numPages        "22";
+            :comments            "22 pages; signs and coefficients adjusted for anticommuting\n  superfields, section 4.3 changed accordingly, reference added";
+            :doi                 "10.1088/1126-6708/2007/05/034";
+            :journal-ref         "JHEP 0705:034,2007";
+            :update_date         "2009-11-13T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/0704.0012/v1>
+            dcterms:dateSubmitted  "2007-03-31T05:48:51Z"^^xsd:date .
+    
+    <https://www.wikidata.org/wiki/Q57019144>
+            rdf:type  dcterms:BibliographicResource .
+    
+    <http://www.arxiv.org/submitter/ChristianStahn>
+            rdf:type   foaf:Person;
+            foaf:name  "Christian Stahn" .
+    
+    <http://www.arxiv.org/resource/0704.0002>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  We describe a new algorithm, the $(k,\\ell)$-pebble game with colors, and use\nit obtain a characterization of the family of $(k,\\ell)$-sparse graphs and\nalgorithmic solutions to a family of problems concerning tree decompositions of\ngraphs. Special instances of sparse graphs appear in rigidity theory and have\nreceived increased attention in recent years. In particular, our colored\npebbles generalize and strengthen the previous results of Lee and Streinu and\ngive a new proof of the Tutte-Nash-Williams characterization of arboricity. We\nalso present a new decomposition that certifies sparsity based on the\n$(k,\\ell)$-pebble game with colors. Our work also exposes connections between\npebble game algorithms and previous sparse graph algorithms by Gabow, Gabow and\nWestermann and Hendrickson.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/StreinuIleana> , <http://www.arxiv.org/researcher/TheranLouis>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0002/v1>;
+            dcterms:identifier   "0704.0002";
+            dcterms:license      <http://arxiv.org/licenses/nonexclusive-distrib/1.0/>;
+            dcterms:publisher    <http://www.arxiv.org/submitter/LouisTheran>;
+            dcterms:subject      <http://www.arxiv.org/category/math.CO> , <http://www.arxiv.org/category/cs.CG>;
+            dcterms:title        "Sparsity-certifying Graph Decompositions";
+            :comments            "To appear in Graphs and Combinatorics";
+            :update_date         "2008-12-13T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/0704.0004/v1>
+            dcterms:dateSubmitted  "2007-03-31T03:16:14Z"^^xsd:date .
+    
+    <http://www.arxiv.org/submitter/AlbertoTorchinsky>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102136352>;
+            foaf:name   "Alberto Torchinsky" .
+    
+    <http://www.arxiv.org/resource/0704.0008>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  A general formulation was developed to represent material models for\napplications in dynamic loading. Numerical methods were devised to calculate\nresponse to shock and ramp compression, and ramp decompression, generalizing\nprevious solutions for scalar equations of state. The numerical methods were\nfound to be flexible and robust, and matched analytic results to a high\naccuracy. The basic ramp and shock solution methods were coupled to solve for\ncomposite deformation paths, such as shock-induced impacts, and shock\ninteractions with a planar interface between different materials. These\ncalculations capture much of the physics of typical material dynamics\nexperiments, without requiring spatially-resolving simulations. Example\ncalculations were made of loading histories in metals, illustrating the effects\nof plastic work on the temperatures induced in quasi-isentropic and\nshock-release experiments, and the effect of a phase transition.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/SwiftDamianC.>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0008/v1>;
+            dcterms:identifier   "0704.0008";
+            dcterms:license      <http://arxiv.org/licenses/nonexclusive-distrib/1.0/>;
+            dcterms:publisher    <http://www.arxiv.org/submitter/DamianSwift>;
+            dcterms:subject      <http://www.arxiv.org/category/cond-mat.mtrl-sci>;
+            dcterms:title        "Numerical solution of shock and ramp compression for general material\n  properties";
+            :comments            "Minor corrections";
+            :doi                 "10.1063/1.2975338";
+            :journal-ref         "Journal of Applied Physics, vol 104, 073536 (2008)";
+            :report-no           "LA-UR-07-2051, LLNL-JRNL-410358";
+            :update_date         "2009-02-05T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/0704.0015/v1>
+            dcterms:dateSubmitted  "2007-04-02T18:10:09Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/ChangChao-Hsi>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q102197030>;
+            foaf:name   "Chang Chao-Hsi" .
+    
+    <http://www.arxiv.org/researcher/MerinBruno>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q53986343>;
+            foaf:name   "Merin Bruno" .
+    
+    <http://www.arxiv.org/category/math.AG>
+            rdf:type    :Category;
+            rdfs:label  "math.AG" .
+    
+    <http://www.arxiv.org/0704.0013/v1>
+            dcterms:dateSubmitted  "2007-03-31T06:21:49Z"^^xsd:date .
+    
+    <http://www.arxiv.org/resource/0704.0010>
+            rdf:type             dcterms:BibliographicResource;
+            dcterms:abstract     "  Partial cubes are isometric subgraphs of hypercubes. Structures on a graph\ndefined by means of semicubes, and Djokovi\\'{c}'s and Winkler's relations play\nan important role in the theory of partial cubes. These structures are employed\nin the paper to characterize bipartite graphs and partial cubes of arbitrary\ndimension. New characterizations are established and new proofs of some known\nresults are given.\n  The operations of Cartesian product and pasting, and expansion and\ncontraction processes are utilized in the paper to construct new partial cubes\nfrom old ones. In particular, the isometric and lattice dimensions of finite\npartial cubes obtained by means of these operations are calculated.\n";
+            dcterms:contributor  <http://www.arxiv.org/researcher/OvchinnikovSergei>;
+            dcterms:hasVersion   <http://www.arxiv.org/0704.0010/v1>;
+            dcterms:identifier   "0704.0010";
+            dcterms:publisher    <http://www.arxiv.org/submitter/SergeiOvchinnikov>;
+            dcterms:subject      <http://www.arxiv.org/category/math.CO>;
+            dcterms:title        "Partial cubes: structures, characterizations, and constructions";
+            bibo:numPages        "36";
+            :comments            "36 pages, 17 figures";
+            :figures             "17  ";
+            :update_date         "2007-05-23T00:00Z"^^xsd:date .
+    
+    <http://www.arxiv.org/researcher/AubertB.>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q21505422>;
+            foaf:name   "Aubert B." .
+    
+    <http://www.arxiv.org/submitter/NcebaMhlahlo>
+            rdf:type   foaf:Person;
+            foaf:name  "Nceba Mhlahlo" .
+    
+    <http://www.arxiv.org/submitter/LouisTheran>
+            rdf:type    foaf:Person;
+            owl:sameAs  <https://www.wikidata.org/wiki/Q92254944>;
+            foaf:name   "Louis Theran" .
+    
+    <http://www.arxiv.org/researcher/VukasinacTatjana>
+            rdf:type   foaf:Person;
+            foaf:name  "Vukasinac Tatjana" .
+}
+
