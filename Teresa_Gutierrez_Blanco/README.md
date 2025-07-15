@@ -31,8 +31,9 @@ El conjunto de datos se presenta en formato JSON y se actualiza en Kaggle de for
 
 Estos datos están publicados bajo la licencia Creative Commons CC0 1.0 Universal Public Domain Dedication (https://creativecommons.org/publicdomain/zero/1.0/), por lo que es libre su uso. Según la información publicada por Creative Commons, "You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission".
 De esta manera, el conjunto de datos presentado cumple con todos los requisitos establecidos.
+
 ### 2.c. Análisis de los datos
-Para el análisis de los datos, se ha utilizado la herramienta OpenRefine. Debido a la masividad del dataset, con un tamaño de más de 4 GB, y a las limitaciones del hardware y software disponibles para la realización del trabajo, se ha tenido que trabajar con una muestra reducida del conjunto de datos. Tras intentar realizar el análisis con diferentes tamaños de muestras de datos, se ha optado por trabajar sobre una muestra de 2000 registros. Uno de los principales problemas, y decisivo para la decisión de tal reducción, se trata de la heterogeneidad de las columnas del dataset, en especial aquellas como authors, submitter o doi, que dificultaron el proceso de reconciliación desarrollado en el apartado **APARTADO**.
+Para el análisis de los datos, se ha utilizado la herramienta OpenRefine. Debido a la masividad del dataset, con un tamaño de más de 4 GB, y a las limitaciones del hardware y software disponibles para la realización del trabajo, se ha tenido que trabajar con una muestra reducida del conjunto de datos. Tras intentar realizar el análisis con diferentes tamaños de muestras de datos, se ha optado por trabajar sobre una muestra de 2000 registros. Uno de los principales problemas, y decisivo para la decisión de tal reducción, se trata de la heterogeneidad de las columnas del dataset, en especial aquellas como authors, submitter o doi, que dificultaron el proceso de reconciliación desarrollado en el apartado 2.d.
 Para la obtención del dataset reducido se ha ejecutado el siguiente comando, teniendo en cuenta que los datos se encuentran en formato JSON por línea, es decir, cada registro ocupa una línea del archivo:
 ```BASH
  head -n 2000 arxiv-metadata-oai-snapshot.json > raw_data.json
@@ -71,7 +72,7 @@ Otros datos a destacar, que han podido observar aplicando facetas:
 - La columna authors es bastante heterogénea, aunque sí que se encuentran diversos artículos escritos por el mismo autor
 ![faceta authors](images/authors_facet.png)
 
-### Proceso de reconciliación
+### 2.d. Proceso de reconciliación
 A través de la herramienta de OpenRefine para el reconciliado de los datos, se ha podido reconciliar las siguientes columnas respecto a la base de datos de WikiData:
 - authors: tipo Q5 (human)
 - publisher: tipo Q5 (human)
@@ -105,21 +106,20 @@ El dominio será http://www.arxiv.org , por lo que el nombrado será:
 El primer paso será la definición de requisitos del vocabulario:
 
 Requisitos funcionales:
-RF1. Representar de artículos científicos y sus propiedades
-RF2. Representar versiones de artículos
-RF3. Representar autores
-RF4. Representar categorías temáticas
-RF5. Representar relaciones entre entidades
+- RF1. Representar de artículos científicos y sus propiedades
+- RF2. Representar versiones de artículos
+- RF3. Representar autores
+- RF4. Representar categorías temáticas
+- RF5. Representar relaciones entre entidades
 
 Requisitos no funcionales:
-RNF1. Simplicidad
-RNF2. Reutilización de vocabularios existentes
-RNF3. Interoperabilidad
-RNF4. Claridad y legibilidad
-RNF5. Extensibilidad
-RNF6. Implementación en RDF
+- RNF1. Simplicidad
+- RNF2. Reutilización de vocabularios existentes
+- RNF3. Interoperabilidad
+- RNF4. Claridad y legibilidad
+- RNF5. Extensibilidad
 
-### Glosario de términos
+### 4.2 Glosario de términos
 Observando los datos existentes podemos extraer el siguiente glosario de términos:
 
 - Artículo
@@ -138,7 +138,7 @@ Observando los datos existentes podemos extraer el siguiente glosario de términ
 - Autor
 - Versión
 
-### Ontologías existentes escogidas
+### 4.3. Ontologías existentes escogidas
 
 Los principales vocabularios reutilizados son los siguientes, encontrados a través de https://lov.linkeddata.es/dataset/lov/:
 
@@ -171,7 +171,7 @@ Cada término definido en el glosario anterior se conecta mediante propiedades q
   * Versión: `dcterms:hasVersion`: version del artículo. Cuenta con la característica `dcterms:dateSubmitted`, que se trata de la fecha de publicación de la version, en formato `xsd:date`.
   * `owl:sameAs`: enlace a la entidad reconciliada de Wikidata
 
-### Estructura y jerarquía del modelo
+### 4.4. Estructura y jerarquía del modelo
 
 * La clase `dcterms:BibliographicResource` es la entidad principal del modelo. A partir de ella se estructuran las relaciones con autores, versiones, licencias, editor, referencias, etc.
 * Cada artículo puede estar relacionado con:
@@ -183,7 +183,7 @@ Cada término definido en el glosario anterior se conecta mediante propiedades q
 
 Las fechas, tanto de versiones como de actualización del artículo, se representan en formato `xsd:date`.
 
-### Reglas semánticas y restricciones
+### 4.5. Reglas semánticas y restricciones
 
 El vocabulario está acompañado de una serie de reglas y restricciones que garantizan la coherencia del modelo:
 
@@ -193,98 +193,30 @@ El vocabulario está acompañado de una serie de reglas y restricciones que gara
 5. **Las fechas deben ser fechas válidas**.
 6. **La información de autor debe incluir al menos el nombre completo (`foaf:name`)**.
 
-### Elaboración de la ontología
-Se ha elaborado la ontología a través de **REFERENCIA** la extensión RDF Transform. 
+### 4.5. Elaboración de la ontología
+Se ha elaborado la ontología a través de la extensión RDF Transform (https://github.com/AtesComp/rdf-transform). 
 ![](images/transform1.png)
 ![](images/transform2.png)
 
-A continuación se muestra un ejemplo del RDF obtenido tras esta transformación. Este ejemplo se encuentra de forma más extensa en `data/sample.rdf`.
-```
-<?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF
-  xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns="http://www.arxiv.org/"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-  xmlns:bibo="http://purl.org/ontology/bibo/"
-  xmlns:foaf="http://xmlns.com/foaf/0.1/"
-  xmlns:owl="http://www.w3.org/2002/07/owl#"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
->
-  <dcterms:BibliographicResource rdf:about="http://www.arxiv.org/resource/0704.0020">
-    <dcterms:abstract>  The shape of the hadronic form factor f+(q2) in the decay D0 --&gt; K- e+ nue
-has been measured in a model independent analysis and compared with theoretical
-calculations. We use 75 fb(-1) of data recorded by the BABAR detector at the
-PEPII electron-positron collider. The corresponding decay branching fraction,
-relative to the decay D0 --&gt; K- pi+, has also been measured to be RD = BR(D0
---&gt; K- e+ nue)/BR(D0 --&gt; K- pi+) = 0.927 +/- 0.007 +/- 0.012. From these
-results, and using the present world average value for BR(D0 --&gt; K- pi+), the
-normalization of the form factor at q2=0 is determined to be f+(0)=0.727 +/-
-0.007 +/- 0.005 +/- 0.007 where the uncertainties are statistical, systematic,
-and from external inputs, respectively.
-</dcterms:abstract>
-    <dcterms:contributor>
-      <foaf:Person rdf:about="http://www.arxiv.org/researcher/AubertB.">
-        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q21505422"/>
-        <foaf:name>Aubert B.</foaf:name>
-      </foaf:Person>
-    </dcterms:contributor>
-    <dcterms:contributor>
-      <foaf:Person rdf:about="http://www.arxiv.org/researcher/TheBABARCollaboration">
-        <foaf:name>The BABAR Collaboration</foaf:name>
-      </foaf:Person>
-    </dcterms:contributor>
-    <dcterms:hasVersion>
-      <rdf:Description rdf:about="http://www.arxiv.org/0704.0020/v1">
-        <dcterms:dateSubmitted rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2007-03-31T09:49:10Z</dcterms:dateSubmitted>
-      </rdf:Description>
-    </dcterms:hasVersion>
-    <dcterms:identifier>0704.0020</dcterms:identifier>
-    <dcterms:publisher>
-      <foaf:Person rdf:about="http://www.arxiv.org/submitter/PatrickRoudeau">
-        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q52321720"/>
-        <foaf:name>Patrick Roudeau</foaf:name>
-      </foaf:Person>
-    </dcterms:publisher>
-    <dcterms:subject>
-      <Category rdf:about="http://www.arxiv.org/category/hep-ex">
-        <rdfs:label>hep-ex</rdfs:label>
-      </Category>
-    </dcterms:subject>
-    <dcterms:title>Measurement of the Hadronic Form Factor in D0 --&gt; K- e+ nue Decays</dcterms:title>
-    <bibo:numPages>21</bibo:numPages>
-    <comments>21 pages, 13 postscript figures, submitted to Phys. Rev. D,
-  contributed to 42nd Rencontres de Moriond: QCD and Hadronic Interactions</comments>
-    <doi>10.1103/PhysRevD.76.052005</doi>
-    <figures>  </figures>
-    <journal-ref>Phys.Rev.D76:052005,2007</journal-ref>
-    <report-no>BABAR-PUB-07/015, SLAC-PUB-12417</report-no>
-    <update_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-06-30T00:00Z</update_date>
-    <owl:sameAs>
-      <dcterms:BibliographicResource rdf:about="https://www.wikidata.org/wiki/Q57019144"/>
-    </owl:sameAs>
-  </dcterms:BibliographicResource>
-```
-
 Se ha exportado el dataset completo en formato TriG, y por su tamaño se ha comprimido y se puede encontrar en `data/data_transform.zip`. Tambiéne puede encontrar una muestra en `data/sample.trig`.
+También se ha exportado el proyecto de OpenRefine y se puede encontrar en `proyect.openrefine.tar.gz`. Se ha incluido también el historial de transformaciones de los datos, en `data/transform.json`.
+Se consideran cumplidos los requisitos tanto funcionales como no funcionales.
 
-## 7. Análisis de la ontología 
-Se ha utilizado la herramienta RDF Validation (https://www.w3.org/RDF/Validator/rdfval) y se ha encontrado un resultado positivo:
-![](images/rdf_validation.png)
-## 6. Aplicación y explotación
+## 5. Aplicación y explotación
 
 La solución desarrollada permite la exploración y explotación de los datos RDF generados a partir del dataset de **arXiv**, enriquecidos y enlazados con vocabularios y fuentes externas. Para comprobar su funcionalidad, se ha desplegado un servidor **Apache Jena Fuseki**, que actúa como endpoint de consulta SPARQL sobre el conjunto de datos RDF.
 
-### Funcionalidades principales
+### 5.1. Funcionalidades principales
 
 La solución ofrece diversas funcionalidades, entre las que destacan:
 
-- Exploración temática** de publicaciones por categoría científica.
+- Exploración temática de publicaciones por categoría científica.
 - Identificación de autores relevantes en determinadas áreas del conocimiento.
 - Análisis temporal de la evolución de publicaciones por disciplina.
 - Navegación entre datos enlazados, accediendo a información externa asociada mediante URIs y propiedades como `owl:sameAs`.
 
 
-### Consultas SPARQL y resultados
+### 5.2. Consultas SPARQL y resultados
 
 A continuación se presentan algunas de las consultas SPARQL ejecutadas sobre el endpoint de Fuseki, junto con sus resultados. 
 
@@ -399,7 +331,7 @@ ORDER BY DESC(?numArticles)
 ![Años de publicación](images/queries/years.png)
 
 
-### 6. Artículos que mencionan la ecuación de Euler-Lagrange
+### Artículos que mencionan la ecuación de Euler-Lagrange
 
 ```
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -415,7 +347,9 @@ WHERE {
 ```
 ![Artículos que mencionan la ecuación de Euler-Lagramge](images/queries/euler.png)
 
-Quiza añadir mejoras posibles:
-- mas datos
-- querys a wikidata
-- publicacion
+
+## Conclusión
+A lo largo de este trabajo se ha implementado una base de datos enlazados correspondientes a artículos alojados en la plataforma arXiv, desde la especificación de requisitos
+hasta su aplicación. Se han usado herramientas como OpenRefine para el análisis de los datos, así como para la elaboración de la ontología y enlazado con fuentes externas. Para la explotación de los datos se ha utilizado Apache Jena Fuseki y a través de consultas SPARQL se ha podido comprobar la utilidad de la base de datos. Como posibles mejoras se puede valorar:
+- La inclusión de más datos en el dataset, que tuvo que ser reducido debido a limitaciones del sistema en el que se realizó la práctica.
+- La publicación de la ontología elaborada.
