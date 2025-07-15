@@ -1,0 +1,442 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - update_date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna _ - update_date usando la expresión value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - versions - _ - created",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna _ - versions - _ - created usando la expresión value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - update_date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna _ - update_date usando la expresión value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - versions - _ - created",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna _ - versions - _ - created usando la expresión value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - update_date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna _ - update_date usando la expresión value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "_ - versions - _ - created",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna _ - versions - _ - created usando la expresión value.toDate()"
+  },
+  {
+    "op": "core/multivalued-cell-split",
+    "columnName": "_ - categories",
+    "keyColumnName": "_ - id",
+    "mode": "separator",
+    "separator": " ",
+    "regex": false,
+    "description": "Separa celdas con múltiples valores en columna _ - categories"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "range",
+          "name": "Pages",
+          "expression": "value",
+          "columnName": "Pages",
+          "from": 530,
+          "to": 570,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "baseColumnName": "_ - comments",
+    "expression": "grel:value.find(/[0-9]* pages/)[0].replace(\"pages\", \" \")",
+    "onError": "set-to-blank",
+    "newColumnName": "pages",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna pages en el índice 5 basada en la columna _ - comments usando la expresión grel:value.find(/[0-9]* pages/)[0].replace(\"pages\", \" \")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "range",
+          "name": "Pages",
+          "expression": "value",
+          "columnName": "Pages",
+          "from": 530,
+          "to": 570,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "pages",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Transforma el texto de las celdas en la columna pages usando la expresión value.toNumber()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "range",
+          "name": "Pages",
+          "expression": "value",
+          "columnName": "Pages",
+          "from": 530,
+          "to": 570,
+          "selectNumeric": true,
+          "selectNonNumeric": true,
+          "selectBlank": true,
+          "selectError": true
+        }
+      ],
+      "mode": "record-based"
+    },
+    "baseColumnName": "_ - comments",
+    "expression": "grel:value.find(/[0-9]* figures/)[0].replace(\"figures\", \" \")",
+    "onError": "set-to-blank",
+    "newColumnName": "figures",
+    "columnInsertIndex": 5,
+    "description": "Crear la columna figures en el índice 5 basada en la columna _ - comments usando la expresión grel:value.find(/[0-9]* figures/)[0].replace(\"figures\", \" \")"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - id",
+    "newColumnName": "id",
+    "description": "Renombra la columna _ - id a id"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - submitter",
+    "newColumnName": "submitter",
+    "description": "Renombra la columna _ - submitter a submitter"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - title",
+    "newColumnName": "title",
+    "description": "Renombra la columna _ - title a title"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - comments",
+    "newColumnName": "comments",
+    "description": "Renombra la columna _ - comments a comments"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - journal-ref",
+    "newColumnName": "journal-ref",
+    "description": "Renombra la columna _ - journal-ref a journal-ref"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - report-no",
+    "newColumnName": "report-no",
+    "description": "Renombra la columna _ - report-no a report-no"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - categories",
+    "newColumnName": "categories",
+    "description": "Renombra la columna _ - categories a categories"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - license",
+    "newColumnName": "license",
+    "description": "Renombra la columna _ - license a license"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - abstract",
+    "newColumnName": "abstract",
+    "description": "Renombra la columna _ - abstract a abstract"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - update_date",
+    "newColumnName": "update_date",
+    "description": "Renombra la columna _ - update_date a update_date"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - versions - _ - version",
+    "newColumnName": "version_name",
+    "description": "Renombra la columna _ - versions - _ - version a version_name"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - versions - _ - created",
+    "newColumnName": "version_created",
+    "description": "Renombra la columna _ - versions - _ - created a version_created"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - doi",
+    "newColumnName": "doi",
+    "description": "Renombra la columna _ - doi a doi"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "_ - authors_parsed - authors_parsed",
+    "newColumnName": "authors",
+    "description": "Renombra la columna _ - authors_parsed - authors_parsed a authors"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "authors",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column authors to type Q5"
+  },
+  {
+    "op": "core/recon-match-best-candidates",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "authors",
+    "description": "Emparejar cada celda con su mejor candidato de cotejo en la columna authors"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "submitter",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column submitter to type Q5"
+  },
+  {
+    "op": "core/recon-match-best-candidates",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "submitter",
+    "description": "Emparejar cada celda con su mejor candidato de cotejo en la columna submitter"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "baseColumnName": "authors",
+    "expression": "if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)",
+    "onError": "set-to-blank",
+    "newColumnName": "author_wiki",
+    "columnInsertIndex": 15,
+    "description": "Crear la columna author_wiki en el índice 15 basada en la columna authors usando la expresión if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "baseColumnName": "submitter",
+    "expression": "if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)",
+    "onError": "set-to-blank",
+    "newColumnName": "submitter_wiki",
+    "columnInsertIndex": 2,
+    "description": "Crear la columna submitter_wiki en el índice 2 basada en la columna submitter usando la expresión if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "_ - authors",
+    "description": "Eliminar columna _ - authors"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "doi",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q13442814",
+        "name": "scholarly article"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column doi to type Q13442814"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "license",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q284742",
+        "name": "Creative Commons license"
+      },
+      "autoMatch": true,
+      "batchSize": 10,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column license to type Q284742"
+  },
+  {
+    "op": "core/recon-match-best-candidates",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "doi",
+    "description": "Emparejar cada celda con su mejor candidato de cotejo en la columna doi"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "baseColumnName": "doi",
+    "expression": "if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)",
+    "onError": "set-to-blank",
+    "newColumnName": "doi_wiki",
+    "columnInsertIndex": 9,
+    "description": "Crear la columna doi_wiki en el índice 9 basada en la columna doi usando la expresión if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)"
+  },
+  {
+    "op": "core/recon-match-best-candidates",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "license",
+    "description": "Emparejar cada celda con su mejor candidato de cotejo en la columna license"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "baseColumnName": "license",
+    "expression": "if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)",
+    "onError": "set-to-blank",
+    "newColumnName": "license_wikidata",
+    "columnInsertIndex": 13,
+    "description": "Crear la columna license_wikidata en el índice 13 basada en la columna license usando la expresión if(cell.recon.match!=null,\"https://www.wikidata.org/wiki/{{id}}\".replace(\"{{id}}\",escape(cell.recon.match.id,\"url\")),null)"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "license_wikidata",
+    "newColumnName": "license_wiki",
+    "description": "Renombra la columna license_wikidata a license_wiki"
+  }
+]
